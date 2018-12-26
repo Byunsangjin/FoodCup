@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import Firebase
+import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var themeColor: String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
+        // 테마 색상 불러오기
+        self.themeColor = RemoteConfig.remoteConfig()["splash_background"].stringValue
+        
         return true
     }
 
@@ -41,6 +50,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // statusBar 색상 설정
+    func statusBarSet(view: UIView) {
+        // statusBar 설정
+        var statusBar = UIView()
+        view.addSubview(statusBar)
+        
+        statusBar.snp.makeConstraints { (make) in
+            make.right.left.equalTo(view)
+            make.height.equalTo(UIApplication.shared.statusBarFrame.height)
+        }
+        
+        // 배경 색상 설정
+        statusBar.backgroundColor = UIColor(hexString: self.themeColor!)
+    }
+    
 }
 
