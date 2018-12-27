@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-1G-Vna">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food_icon" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-Rf-WKP">
                                 <rect key="frame" x="137" y="283" width="100" height="100"/>
                                 <constraints>
@@ -29,15 +32,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hl7-Rf-WKP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="263" id="7UM-dB-6jU"/>
+                            <constraint firstItem="TVp-1G-Vna" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DI9-0r-MtM"/>
                             <constraint firstItem="hl7-Rf-WKP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="FfW-Gg-ehp"/>
+                            <constraint firstItem="TVp-1G-Vna" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gk6-tl-WO8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hl7-Rf-WKP" secondAttribute="trailing" constant="138" id="P2f-HA-FAE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hl7-Rf-WKP" secondAttribute="bottom" constant="284" id="Pi3-c2-Eff"/>
+                            <constraint firstItem="TVp-1G-Vna" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cfQ-TT-r0M"/>
+                            <constraint firstAttribute="bottom" secondItem="TVp-1G-Vna" secondAttribute="bottom" id="lNl-UY-h1y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="TVp-1G-Vna" id="68r-S5-MpB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="133.74384236453201"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="TPs-X0-Srr">
@@ -47,29 +58,180 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmM-ve-djV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-na-d7N">
-                                <rect key="frame" x="155" y="164" width="65" height="30"/>
+                                <rect key="frame" x="131" y="227" width="113" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="푸드월드컵"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="푸드월드컵">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="worldCupPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="CVb-ca-6wr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-a5-adv">
-                                <rect key="frame" x="161" y="273" width="52" height="30"/>
+                                <rect key="frame" x="142" y="336" width="90" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="랜덤뽑기"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="랜덤뽑기">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjh-GP-f5j">
-                                <rect key="frame" x="161" y="385" width="52" height="30"/>
+                                <rect key="frame" x="142" y="448" width="90" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="이전결과"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="이전결과">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resultPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="JB9-YA-uhj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33X-bt-Yz4">
+                                <rect key="frame" x="158" y="560" width="68" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="게시판">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" id="0Zq-kT-ZMG"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="top" secondItem="1Hp-0R-8dT" secondAttribute="top" id="Tui-P4-d4k"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="trailing" secondItem="1Hp-0R-8dT" secondAttribute="trailing" id="ar6-Yh-42a"/>
+                            <constraint firstAttribute="bottom" secondItem="xmM-ve-djV" secondAttribute="bottom" id="vYg-xO-o0S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Hp-0R-8dT"/>
                     </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="xmM-ve-djV" id="0iG-VE-22Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3e-xc-Ecv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="134"/>
+            <point key="canvasLocation" x="925.60000000000002" y="133.74384236453201"/>
+        </scene>
+        <!--World Cup View Controller-->
+        <scene sceneID="2zr-uP-rFh">
+            <objects>
+                <viewController storyboardIdentifier="WorldCupViewController" id="Nxa-Ro-oPY" customClass="WorldCupViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Af3-MX-as1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FgT-CO-Txp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i5r-nb-wqt">
+                                <rect key="frame" x="37" y="447" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Bjd-jh-Y8L"/>
+                                    <constraint firstAttribute="width" constant="300" id="dXc-7m-6f9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NpA-2x-kgO">
+                                <rect key="frame" x="37" y="208" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Dzh-x5-r92"/>
+                                    <constraint firstAttribute="height" constant="200" id="fdz-L7-OfL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MgO-3L-v3C" firstAttribute="trailing" secondItem="i5r-nb-wqt" secondAttribute="trailing" constant="38" id="0Tm-iC-MYl"/>
+                            <constraint firstItem="i5r-nb-wqt" firstAttribute="top" secondItem="NpA-2x-kgO" secondAttribute="bottom" constant="39" id="MxR-2a-73T"/>
+                            <constraint firstItem="FgT-CO-Txp" firstAttribute="top" secondItem="MgO-3L-v3C" secondAttribute="top" id="RXq-9H-Rki"/>
+                            <constraint firstItem="MgO-3L-v3C" firstAttribute="trailing" secondItem="NpA-2x-kgO" secondAttribute="trailing" constant="38" id="TtO-9X-six"/>
+                            <constraint firstItem="MgO-3L-v3C" firstAttribute="bottom" secondItem="i5r-nb-wqt" secondAttribute="bottom" constant="20" id="VvO-X3-lLx"/>
+                            <constraint firstAttribute="bottom" secondItem="FgT-CO-Txp" secondAttribute="bottom" id="dv5-k0-ev4"/>
+                            <constraint firstItem="FgT-CO-Txp" firstAttribute="leading" secondItem="MgO-3L-v3C" secondAttribute="leading" id="slL-AF-2KX"/>
+                            <constraint firstItem="NpA-2x-kgO" firstAttribute="leading" secondItem="MgO-3L-v3C" secondAttribute="leading" constant="37" id="tHn-7c-PC8"/>
+                            <constraint firstItem="FgT-CO-Txp" firstAttribute="trailing" secondItem="MgO-3L-v3C" secondAttribute="trailing" id="tIx-zU-99m"/>
+                            <constraint firstItem="i5r-nb-wqt" firstAttribute="leading" secondItem="MgO-3L-v3C" secondAttribute="leading" constant="37" id="z2g-H0-a4k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MgO-3L-v3C"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="FgT-CO-Txp" id="NjG-ZX-ggZ"/>
+                        <outlet property="bottomImageView" destination="i5r-nb-wqt" id="oYb-1D-Lth"/>
+                        <outlet property="topImageView" destination="NpA-2x-kgO" id="nCW-1T-6rd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yZ-Xu-PRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664.8" y="133.00492610837438"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="hnO-VK-Nza">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="bxU-5o-PJ3" customClass="MapViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cSM-w3-aQi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IPJ-fY-e5H"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAZ-4k-ehq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="134"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="Rso-US-85h">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="2tr-kb-sZ4" customClass="ResultViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="050-gK-ShM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-4U-JA0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-Ds-xNs">
+                                <rect key="frame" x="16" y="312" width="343" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="35K-Al-n6i"/>
+                                    <constraint firstAttribute="width" constant="343" id="xPc-sm-tl0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q33-QA-Eyp">
+                                <rect key="frame" x="153" y="617" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="음식점 찾기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchBtnPressed:" destination="2tr-kb-sZ4" eventType="touchUpInside" id="zWa-EC-6IP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ovX-SX-6Oy" firstAttribute="bottom" secondItem="Zjo-Ds-xNs" secondAttribute="bottom" constant="75" id="2gu-4b-qBS"/>
+                            <constraint firstItem="dKk-4U-JA0" firstAttribute="trailing" secondItem="ovX-SX-6Oy" secondAttribute="trailing" id="Suy-tO-Nad"/>
+                            <constraint firstAttribute="bottom" secondItem="dKk-4U-JA0" secondAttribute="bottom" id="Z76-v5-ytq"/>
+                            <constraint firstItem="dKk-4U-JA0" firstAttribute="leading" secondItem="ovX-SX-6Oy" secondAttribute="leading" id="dsG-6V-b0o"/>
+                            <constraint firstItem="Zjo-Ds-xNs" firstAttribute="leading" secondItem="ovX-SX-6Oy" secondAttribute="leading" constant="16" id="nKQ-0f-2bC"/>
+                            <constraint firstItem="dKk-4U-JA0" firstAttribute="top" secondItem="ovX-SX-6Oy" secondAttribute="top" id="qXD-yD-TWE"/>
+                            <constraint firstItem="ovX-SX-6Oy" firstAttribute="trailing" secondItem="Zjo-Ds-xNs" secondAttribute="trailing" constant="16" id="xWG-RZ-wwp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ovX-SX-6Oy"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="dKk-4U-JA0" id="kIv-tb-1IF"/>
+                        <outlet property="resultImageView" destination="Zjo-Ds-xNs" id="tIc-lJ-Shb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJs-PT-TzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="134"/>
         </scene>
     </scenes>
     <resources>

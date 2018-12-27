@@ -17,6 +17,9 @@
 		60FBD13621D3C0A60012B70F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD13521D3C0A60012B70F /* Utils.swift */; };
 		60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD13721D3C2C90012B70F /* GoogleService-Info.plist */; };
 		60FBD13A21D3C37B0012B70F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD13921D3C37B0012B70F /* MainViewController.swift */; };
+		60FBD13C21D491CE0012B70F /* WorldCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD13B21D491CE0012B70F /* WorldCupViewController.swift */; };
+		60FBD13E21D50D930012B70F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD13D21D50D930012B70F /* ResultViewController.swift */; };
+		60FBD14021D51A840012B70F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD13F21D51A840012B70F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		60FBD13521D3C0A60012B70F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		60FBD13721D3C2C90012B70F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60FBD13921D3C37B0012B70F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		60FBD13B21D491CE0012B70F /* WorldCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupViewController.swift; sourceTree = "<group>"; };
+		60FBD13D21D50D930012B70F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		60FBD13F21D51A840012B70F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9CC7ED7CD246088D5DCD1613 /* Pods-FoodCup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodCup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup.debug.xcconfig"; sourceTree = "<group>"; };
 		A088496E55AE7126EE9CFC58 /* Pods-FoodCup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodCup.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup.release.xcconfig"; sourceTree = "<group>"; };
 		DE42EFC97CA26600A71F93C6 /* Pods_FoodCup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodCup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +88,9 @@
 			children = (
 				60FBD11E21D3A7A10012B70F /* SplashViewController.swift */,
 				60FBD13921D3C37B0012B70F /* MainViewController.swift */,
+				60FBD13B21D491CE0012B70F /* WorldCupViewController.swift */,
+				60FBD13D21D50D930012B70F /* ResultViewController.swift */,
+				60FBD13F21D51A840012B70F /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -261,9 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				60FBD11F21D3A7A10012B70F /* SplashViewController.swift in Sources */,
+				60FBD13C21D491CE0012B70F /* WorldCupViewController.swift in Sources */,
 				60FBD11D21D3A7A10012B70F /* AppDelegate.swift in Sources */,
 				60FBD13621D3C0A60012B70F /* Utils.swift in Sources */,
 				60FBD13A21D3C37B0012B70F /* MainViewController.swift in Sources */,
+				60FBD13E21D50D930012B70F /* ResultViewController.swift in Sources */,
+				60FBD14021D51A840012B70F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
