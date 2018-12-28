@@ -48,9 +48,6 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     
     override func viewWillAppear(_ animated: Bool) {
         self.checkAuthorization()
-        
-        // 주변 장소
-        self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!)
     }
     
     
@@ -62,6 +59,9 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
         } else if status == .authorizedWhenInUse {
             // 맵뷰 세팅
             self.mapViewSet()
+
+            // 주변 장소 정보 불러오기
+            self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!)
         }
     }
     
@@ -74,8 +74,12 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
         } else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { // 권한 허용 일 때
             // 맵뷰 세팅
             self.mapViewSet()
+            
+            // 주변 장소 정보 불러오기
+            self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!)
         } else { // 권한을 설정하지 않았다면
             self.requestAuthorization()
+            
         }
     }
     
@@ -112,15 +116,7 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
         let poiItem = MTMapPOIItem()
         poiItem.itemName = name
         poiItem.markerType = .customImage //커스텀 타입으로 변경
-        
-        if name.elementsEqual("현재위치") == true {
-            //poiItem.customImage = UIImage(named: "user_marker3") //커스텀 이미지 지정
-        } else {
-            poiItem.customImage = UIImage(named: "gps_button") //커스텀 이미지 지정
-        }
-        
-        poiItem.markerSelectedType = .customImage //선택 되었을 때 마커 타입
-        poiItem.customSelectedImage = UIImage(named: "user_marker3") //선택 되었을 때 마커 이미지 지정
+        poiItem.customImage = UIImage(named: "gps_button") //커스텀 이미지 지정
         poiItem.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
         poiItem.showAnimationType = .noAnimation
         poiItem.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
@@ -172,7 +168,6 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     // 받아온 장소정보를 이용해 마커를 띄워준다.
     func showMarker() {
         var items = [MTMapPOIItem]() // 마커 배열
-        //items.append(self.poiItem(name: "현재위치", latitude: Double(self.currentLat!)!, longitude: Double(self.currentLng!)!)) // 현재 위치 마커 추가
         
         // 주변 장소 마커 추가
         for data in self.MapList {
@@ -183,5 +178,11 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
         self.mapView.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
     }
     
+    
+    
+    // MARK:- Actions
+    @IBAction func homeBtnPressed(_ sender: Any) {
+        
+    }
     
 }

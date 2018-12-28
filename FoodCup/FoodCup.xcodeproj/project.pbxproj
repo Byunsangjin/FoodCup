@@ -12,7 +12,6 @@
 		60FBD11F21D3A7A10012B70F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11E21D3A7A10012B70F /* SplashViewController.swift */; };
 		60FBD12221D3A7A10012B70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD12021D3A7A10012B70F /* Main.storyboard */; };
 		60FBD12421D3A7A20012B70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD12321D3A7A20012B70F /* Assets.xcassets */; };
-		60FBD12721D3A7A20012B70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD12521D3A7A20012B70F /* LaunchScreen.storyboard */; };
 		60FBD13421D3BEAF0012B70F /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD13321D3BEAF0012B70F /* RemoteConfigDefaults.plist */; };
 		60FBD13621D3C0A60012B70F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD13521D3C0A60012B70F /* Utils.swift */; };
 		60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD13721D3C2C90012B70F /* GoogleService-Info.plist */; };
@@ -57,6 +56,8 @@
 		60FBD31921D5DE940012B70F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FBD31821D5DE930012B70F /* libsqlite3.tbd */; };
 		60FBD31F21D625AB0012B70F /* MapVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD31E21D625AB0012B70F /* MapVO.swift */; };
 		60FBD32121D625C70012B70F /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD32021D625C70012B70F /* MapModel.swift */; };
+		60FBD32321D664D70012B70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32221D664D70012B70F /* LaunchScreen.storyboard */; };
+		60FBD32521D675A70012B70F /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD32421D675A70012B70F /* RandomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +66,6 @@
 		60FBD11E21D3A7A10012B70F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		60FBD12121D3A7A10012B70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60FBD12321D3A7A20012B70F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		60FBD12621D3A7A20012B70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60FBD12821D3A7A20012B70F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60FBD13321D3BEAF0012B70F /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		60FBD13521D3C0A60012B70F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -121,6 +121,8 @@
 		60FBD31A21D5DEDC0012B70F /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		60FBD31E21D625AB0012B70F /* MapVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVO.swift; sourceTree = "<group>"; };
 		60FBD32021D625C70012B70F /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		60FBD32221D664D70012B70F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60FBD32421D675A70012B70F /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		9CC7ED7CD246088D5DCD1613 /* Pods-FoodCup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodCup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup.debug.xcconfig"; sourceTree = "<group>"; };
 		A088496E55AE7126EE9CFC58 /* Pods-FoodCup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodCup.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup.release.xcconfig"; sourceTree = "<group>"; };
 		DE42EFC97CA26600A71F93C6 /* Pods_FoodCup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodCup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				60FBD13B21D491CE0012B70F /* WorldCupViewController.swift */,
 				60FBD13D21D50D930012B70F /* ResultViewController.swift */,
 				60FBD13F21D51A840012B70F /* MapViewController.swift */,
+				60FBD32421D675A70012B70F /* RandomViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -200,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				60FBD12021D3A7A10012B70F /* Main.storyboard */,
-				60FBD12521D3A7A20012B70F /* LaunchScreen.storyboard */,
+				60FBD32221D664D70012B70F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -372,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60FBD12721D3A7A20012B70F /* LaunchScreen.storyboard in Resources */,
 				60FBD2F121D5DD3E0012B70F /* shadow_balloon.png in Resources */,
 				60FBD30421D5DD3E0012B70F /* map_present_direction.png in Resources */,
 				60FBD2FD21D5DD3E0012B70F /* map_present_tracking.png in Resources */,
@@ -382,6 +384,7 @@
 				60FBD12421D3A7A20012B70F /* Assets.xcassets in Resources */,
 				60FBD30721D5DD3E0012B70F /* noimage.png in Resources */,
 				60FBD30921D5DD3E0012B70F /* daum_th_line.png in Resources */,
+				60FBD32321D664D70012B70F /* LaunchScreen.storyboard in Resources */,
 				60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */,
 				60FBD2FE21D5DD3E0012B70F /* map_pin_red.png in Resources */,
 				60FBD30821D5DD3E0012B70F /* map_present_background_update.png in Resources */,
@@ -478,6 +481,7 @@
 				60FBD31F21D625AB0012B70F /* MapVO.swift in Sources */,
 				60FBD13C21D491CE0012B70F /* WorldCupViewController.swift in Sources */,
 				60FBD11D21D3A7A10012B70F /* AppDelegate.swift in Sources */,
+				60FBD32521D675A70012B70F /* RandomViewController.swift in Sources */,
 				60FBD13621D3C0A60012B70F /* Utils.swift in Sources */,
 				60FBD13A21D3C37B0012B70F /* MainViewController.swift in Sources */,
 				60FBD13E21D50D930012B70F /* ResultViewController.swift in Sources */,
@@ -494,14 +498,6 @@
 				60FBD12121D3A7A10012B70F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		60FBD12521D3A7A20012B70F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60FBD12621D3A7A20012B70F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

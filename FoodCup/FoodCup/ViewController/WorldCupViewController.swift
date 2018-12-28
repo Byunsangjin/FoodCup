@@ -182,4 +182,10 @@ class WorldCupViewController: UIViewController {
     
     
     
+    // MARK:- Actions
+    @IBAction func stopBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

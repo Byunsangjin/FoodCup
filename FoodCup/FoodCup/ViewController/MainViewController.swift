@@ -57,7 +57,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    
+    // UnWind 세그웨이
+    @IBAction func gotoMainVC(_ sender: UIStoryboardSegue) {
+        
+    }
     
     
 }
