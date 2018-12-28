@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // statusBar 색상 설정
     func statusBarSet(view: UIView) {
         // statusBar 설정
-        var statusBar = UIView()
+        let statusBar = UIView()
         view.addSubview(statusBar)
         
         statusBar.snp.makeConstraints { (make) in

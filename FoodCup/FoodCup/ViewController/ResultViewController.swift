@@ -36,6 +36,8 @@ class ResultViewController: UIViewController {
     @IBAction func searchBtnPressed(_ sender: Any) {
         let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         
+        mapVC.resultFood = self.result!
+        
         present(mapVC, animated: true)
     }
     
