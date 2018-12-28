@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK:- Outlets
     @IBOutlet var bgImageView: UIImageView!
@@ -17,7 +18,7 @@ class MainViewController: UIViewController {
     
     // MARK:- Constants
     let userDefaults = UserDefaults.standard
-    
+    let locationManager = CLLocationManager()
 
 
     // MARK:- Methods
@@ -26,7 +27,12 @@ class MainViewController: UIViewController {
         
         // 배경 이미지 설정
         self.bgImageView.image = #imageLiteral(resourceName: "background")
+        
     }
+    
+    
+    
+    
     
     
     
@@ -48,6 +54,10 @@ class MainViewController: UIViewController {
         
         self.present(resultVC, animated: true)
     }
+    
+    
+    
+    
     
     
 }

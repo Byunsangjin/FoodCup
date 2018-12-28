@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 
 class SplashViewController: UIViewController {
@@ -75,6 +76,10 @@ class SplashViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(hexString: color!)
     }
+    
+    
+    
+    
 }
 
 

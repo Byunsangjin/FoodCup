@@ -201,9 +201,8 @@
                                     <constraint firstAttribute="width" constant="343" id="xPc-sm-tl0"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q33-QA-Eyp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q33-QA-Eyp">
                                 <rect key="frame" x="153" y="617" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="음식점 찾기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -215,9 +214,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ovX-SX-6Oy" firstAttribute="bottom" secondItem="Zjo-Ds-xNs" secondAttribute="bottom" constant="75" id="2gu-4b-qBS"/>
+                            <constraint firstItem="q33-QA-Eyp" firstAttribute="top" secondItem="Zjo-Ds-xNs" secondAttribute="bottom" constant="25" id="L80-g3-Abz"/>
+                            <constraint firstItem="q33-QA-Eyp" firstAttribute="leading" secondItem="ovX-SX-6Oy" secondAttribute="leading" constant="153" id="LyU-Q3-Oe6"/>
                             <constraint firstItem="dKk-4U-JA0" firstAttribute="trailing" secondItem="ovX-SX-6Oy" secondAttribute="trailing" id="Suy-tO-Nad"/>
                             <constraint firstAttribute="bottom" secondItem="dKk-4U-JA0" secondAttribute="bottom" id="Z76-v5-ytq"/>
                             <constraint firstItem="dKk-4U-JA0" firstAttribute="leading" secondItem="ovX-SX-6Oy" secondAttribute="leading" id="dsG-6V-b0o"/>
+                            <constraint firstItem="ovX-SX-6Oy" firstAttribute="bottom" secondItem="q33-QA-Eyp" secondAttribute="bottom" constant="20" id="fgh-vx-hu9"/>
+                            <constraint firstItem="ovX-SX-6Oy" firstAttribute="trailing" secondItem="q33-QA-Eyp" secondAttribute="trailing" constant="153" id="mim-lF-Xpi"/>
                             <constraint firstItem="Zjo-Ds-xNs" firstAttribute="leading" secondItem="ovX-SX-6Oy" secondAttribute="leading" constant="16" id="nKQ-0f-2bC"/>
                             <constraint firstItem="dKk-4U-JA0" firstAttribute="top" secondItem="ovX-SX-6Oy" secondAttribute="top" id="qXD-yD-TWE"/>
                             <constraint firstItem="ovX-SX-6Oy" firstAttribute="trailing" secondItem="Zjo-Ds-xNs" secondAttribute="trailing" constant="16" id="xWG-RZ-wwp"/>
