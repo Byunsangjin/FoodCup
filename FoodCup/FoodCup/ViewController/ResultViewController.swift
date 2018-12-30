@@ -34,7 +34,8 @@ class ResultViewController: UIViewController {
     
     // MARK:- Actions
     @IBAction func searchBtnPressed(_ sender: Any) {
-        let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        let storyboard = UIStoryboard.init(name: "Map", bundle: nil)
+        let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         
         mapVC.resultFood = self.result!
         

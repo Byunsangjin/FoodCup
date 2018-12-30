@@ -166,7 +166,8 @@ class WorldCupViewController: UIViewController {
     
     // 결승
     func final() {
-        guard let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {
+        let storyboard = UIStoryboard.init(name: "Result", bundle: nil)
+        guard let resultVC = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {
             print("에러")
             return
         }

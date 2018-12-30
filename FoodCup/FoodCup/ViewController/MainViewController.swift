@@ -32,13 +32,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    
-    
-    
-    
     // MARK:- Actions
     @IBAction func worldCupPressed(_ sender: Any) {
-        let worldCupVC = self.storyboard?.instantiateViewController(withIdentifier: "WorldCupViewController") as! WorldCupViewController
+        let storyboard = UIStoryboard.init(name: "WorldCup", bundle: nil)
+        let worldCupVC = storyboard.instantiateViewController(withIdentifier: "WorldCupViewController") as! WorldCupViewController
         
         self.present(worldCupVC, animated: true)
     }
@@ -46,7 +43,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func resultPressed(_ sender: Any) {
-        let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+        let storyboard = UIStoryboard.init(name: "Result", bundle: nil)
+        let resultVC = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
         
         // 이전에 선택한 음식 결과
         let result = self.userDefaults.string(forKey: "result")

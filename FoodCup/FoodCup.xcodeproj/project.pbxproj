@@ -58,6 +58,11 @@
 		60FBD32121D625C70012B70F /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD32021D625C70012B70F /* MapModel.swift */; };
 		60FBD32321D664D70012B70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32221D664D70012B70F /* LaunchScreen.storyboard */; };
 		60FBD32521D675A70012B70F /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD32421D675A70012B70F /* RandomViewController.swift */; };
+		60FBD32721D8B89C0012B70F /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32621D8B89C0012B70F /* Splash.storyboard */; };
+		60FBD32921D8BA880012B70F /* WorldCup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32821D8BA880012B70F /* WorldCup.storyboard */; };
+		60FBD32B21D8BA9E0012B70F /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32A21D8BA9E0012B70F /* Result.storyboard */; };
+		60FBD32D21D8BB150012B70F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32C21D8BB150012B70F /* Map.storyboard */; };
+		60FBD32F21D8BB230012B70F /* Random.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD32E21D8BB230012B70F /* Random.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +128,11 @@
 		60FBD32021D625C70012B70F /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		60FBD32221D664D70012B70F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60FBD32421D675A70012B70F /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
+		60FBD32621D8B89C0012B70F /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		60FBD32821D8BA880012B70F /* WorldCup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldCup.storyboard; sourceTree = "<group>"; };
+		60FBD32A21D8BA9E0012B70F /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		60FBD32C21D8BB150012B70F /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		60FBD32E21D8BB230012B70F /* Random.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Random.storyboard; sourceTree = "<group>"; };
 		9CC7ED7CD246088D5DCD1613 /* Pods-FoodCup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodCup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup.debug.xcconfig"; sourceTree = "<group>"; };
 		A088496E55AE7126EE9CFC58 /* Pods-FoodCup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodCup.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup.release.xcconfig"; sourceTree = "<group>"; };
 		DE42EFC97CA26600A71F93C6 /* Pods_FoodCup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodCup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,8 +212,13 @@
 		60FBD13121D3A84F0012B70F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				60FBD12021D3A7A10012B70F /* Main.storyboard */,
 				60FBD32221D664D70012B70F /* LaunchScreen.storyboard */,
+				60FBD32621D8B89C0012B70F /* Splash.storyboard */,
+				60FBD12021D3A7A10012B70F /* Main.storyboard */,
+				60FBD32821D8BA880012B70F /* WorldCup.storyboard */,
+				60FBD32A21D8BA9E0012B70F /* Result.storyboard */,
+				60FBD32C21D8BB150012B70F /* Map.storyboard */,
+				60FBD32E21D8BB230012B70F /* Random.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -375,6 +390,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60FBD32F21D8BB230012B70F /* Random.storyboard in Resources */,
+				60FBD32B21D8BA9E0012B70F /* Result.storyboard in Resources */,
+				60FBD32921D8BA880012B70F /* WorldCup.storyboard in Resources */,
 				60FBD2F121D5DD3E0012B70F /* shadow_balloon.png in Resources */,
 				60FBD30421D5DD3E0012B70F /* map_present_direction.png in Resources */,
 				60FBD2FD21D5DD3E0012B70F /* map_present_tracking.png in Resources */,
@@ -384,6 +402,7 @@
 				60FBD12421D3A7A20012B70F /* Assets.xcassets in Resources */,
 				60FBD30721D5DD3E0012B70F /* noimage.png in Resources */,
 				60FBD30921D5DD3E0012B70F /* daum_th_line.png in Resources */,
+				60FBD32D21D8BB150012B70F /* Map.storyboard in Resources */,
 				60FBD32321D664D70012B70F /* LaunchScreen.storyboard in Resources */,
 				60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */,
 				60FBD2FE21D5DD3E0012B70F /* map_pin_red.png in Resources */,
@@ -395,6 +414,7 @@
 				60FBD13421D3BEAF0012B70F /* RemoteConfigDefaults.plist in Resources */,
 				60FBD2EF21D5DD3E0012B70F /* map_pinup_custom@3x.png in Resources */,
 				60FBD30121D5DD3E0012B70F /* map_pinup_custom.png in Resources */,
+				60FBD32721D8B89C0012B70F /* Splash.storyboard in Resources */,
 				60FBD12221D3A7A10012B70F /* Main.storyboard in Resources */,
 				60FBD2FB21D5DD3E0012B70F /* daum_copyright.png in Resources */,
 				60FBD2F821D5DD3E0012B70F /* th_line.png in Resources */,

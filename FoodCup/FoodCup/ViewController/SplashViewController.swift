@@ -69,7 +69,8 @@ class SplashViewController: UIViewController {
                 exit(0)
             }
         } else { // 그렇지 않다면 로그인으로 이동
-            let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            let storyborad = UIStoryboard.init(name: "Main", bundle: nil)
+            let mainVC = storyborad.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
 
             self.present(mainVC, animated: true)
         }

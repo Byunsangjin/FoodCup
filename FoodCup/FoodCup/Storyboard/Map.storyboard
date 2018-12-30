@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RXq-va-i6P">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="qgL-ca-7eG">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="RXq-va-i6P" customClass="MapViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xdc-JY-hO7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2T-4z-xTj">
+                                <rect key="frame" x="314" y="42" width="44" height="30"/>
+                                <state key="normal" title="HOME"/>
+                                <connections>
+                                    <action selector="homeBtnPressed:" destination="RXq-va-i6P" eventType="touchUpInside" id="Js1-A9-e3P"/>
+                                    <segue destination="Dy4-3Z-S7Q" kind="unwind" unwindAction="gotoMainVC:" id="NbQ-Vp-zzH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J2T-4z-xTj" firstAttribute="top" secondItem="LpT-4r-yFI" secondAttribute="top" constant="22" id="AhZ-Nd-oFU"/>
+                            <constraint firstItem="LpT-4r-yFI" firstAttribute="trailing" secondItem="J2T-4z-xTj" secondAttribute="trailing" constant="17" id="foG-xI-4uF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LpT-4r-yFI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCB-WH-M9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Dy4-3Z-S7Q" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="51"/>
+        </scene>
+    </scenes>
+</document>
