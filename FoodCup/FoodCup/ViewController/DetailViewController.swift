@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // 내비게이션 바 나타내기
-        self.navigationController?.navigationBar.isHidden = false
+        // self.navigationController?.navigationBar.isHidden = false
         
         self.imageView.image = UIImage(named: foodName!)
     }

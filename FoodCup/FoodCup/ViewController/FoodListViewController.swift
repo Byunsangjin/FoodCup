@@ -62,10 +62,19 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         detailVC.foodName = self.foodList[indexPath.row % self.foodList.count]
         
         self.navigationController?.pushViewController(detailVC, animated: true)
-        // self.present(detailVC, animated: true)
-        
-        
     }
+    
+    
+    
+    // MARK:- Actions
+    @IBAction func addListBtnPressed(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "AddList", bundle: nil)
+        let addListVC = storyboard.instantiateViewController(withIdentifier: "AddListViewController") as! AddListViewController
+        
+        self.navigationController?.pushViewController(addListVC, animated: true)
+    }
+    
+    
     
 }
 

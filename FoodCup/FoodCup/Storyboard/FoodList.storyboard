@@ -66,7 +66,11 @@
                         <viewLayoutGuide key="safeArea" id="uag-oW-Pac"/>
                     </view>
                     <navigationItem key="navigationItem" title="내 맛집 리스트" id="bcM-lX-L2p">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HLy-Wn-BgK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HLy-Wn-BgK">
+                            <connections>
+                                <action selector="addListBtnPressed:" destination="rVW-b0-9GE" id="3SZ-zU-OU3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-7G-NC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
