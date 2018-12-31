@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
                 self.alert("로그인 실패", (error?.localizedDescription)!)
             } else { // 에러가 없을 때
                 let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-                let foodListVC = storyboard.instantiateViewController(withIdentifier: "FoodListViewController") as! FoodListViewController
+                let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
                 
                 self.present(foodListVC, animated: true)
             }

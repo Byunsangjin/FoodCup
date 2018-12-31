@@ -24,6 +24,13 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        // 내비게이션 바 숨기기
+        // self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 50
     }
@@ -46,6 +53,19 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         return CGSize(width: width, height: width)
     }
     
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Detail", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        detailVC.foodName = self.foodList[indexPath.row % self.foodList.count]
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        // self.present(detailVC, animated: true)
+        
+        
+    }
     
 }
 
