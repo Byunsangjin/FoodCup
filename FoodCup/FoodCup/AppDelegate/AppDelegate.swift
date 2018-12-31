@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
+        // 로그아웃
+        try! Auth.auth().signOut()
+        
         // 테마 색상 불러오기
         self.themeColor = RemoteConfig.remoteConfig()["splash_background"].stringValue
         

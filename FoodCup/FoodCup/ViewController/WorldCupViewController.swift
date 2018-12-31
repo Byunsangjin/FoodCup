@@ -88,8 +88,12 @@ class WorldCupViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if (tapGestureRecognizer.view?.tag)! == 1 { // topImageView 선택시
             foodList.remove(at: bottomNum)
+            
+            self.imageAnimating(image: self.topImageView)
         } else { // bottomImageView 선택시
             foodList.remove(at: topNum)
+            
+            self.imageAnimating(image: self.bottomImageView)
         }
         
         switch tournament {
@@ -180,6 +184,19 @@ class WorldCupViewController: UIViewController {
         self.alert("결정 성공", self.foodList[0])
     }
     
+    
+    
+    
+    // 이미지에 애니메이션 효과를 줌 (깜빡이는 듯한 효과)
+    func imageAnimating(image: UIImageView) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            image.alpha = 0.0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseOut, animations: {
+            image.alpha = 1.0
+        }, completion: nil)
+    }
     
     
     

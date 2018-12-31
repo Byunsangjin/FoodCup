@@ -26,7 +26,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // 배경 이미지 설정
-        self.bgImageView.image = #imageLiteral(resourceName: "background")
+        self.bgImageView.image = UIImage(named: "background")
         
     }
     
@@ -52,6 +52,25 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         self.present(resultVC, animated: true)
     }
+    
+    
+    
+    @IBAction func randomBtnPressed(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "Random", bundle: nil)
+        let randomVC = storyboard.instantiateViewController(withIdentifier: "RandomViewController") as! RandomViewController
+
+        self.present(randomVC, animated: true)
+    }
+    
+    
+    
+    @IBAction func boardBtnPressed(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        
+        self.present(loginVC, animated: true)
+    }
+    
     
     
     

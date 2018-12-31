@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Food List View Controller-->
+        <scene sceneID="c59-Ap-ZNx">
+            <objects>
+                <viewController storyboardIdentifier="FoodListViewController" id="rVW-b0-9GE" customClass="FoodListViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Azq-Ho-yU7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-es-arr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9ia-Ku-mpc">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="peC-em-eYY" customClass="CollectionCell" customModule="FoodCup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fiX-mA-Pjx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fiX-mA-Pjx" secondAttribute="bottom" id="0NP-CO-snA"/>
+                                            <constraint firstItem="fiX-mA-Pjx" firstAttribute="leading" secondItem="peC-em-eYY" secondAttribute="leading" id="J7M-go-nSB"/>
+                                            <constraint firstAttribute="trailing" secondItem="fiX-mA-Pjx" secondAttribute="trailing" id="jPU-OH-sdM"/>
+                                            <constraint firstItem="fiX-mA-Pjx" firstAttribute="top" secondItem="peC-em-eYY" secondAttribute="top" id="pds-yx-g0J"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="fiX-mA-Pjx" id="wSs-ob-Wui"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="rVW-b0-9GE" id="J7Q-oN-P9g"/>
+                                    <outlet property="delegate" destination="rVW-b0-9GE" id="pPJ-cJ-GXe"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="bottom" secondItem="uag-oW-Pac" secondAttribute="bottom" id="7gU-iA-4LA"/>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="top" secondItem="uag-oW-Pac" secondAttribute="top" id="B0v-TP-fkU"/>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="trailing" secondItem="uag-oW-Pac" secondAttribute="trailing" id="hws-Vf-M6s"/>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="leading" secondItem="uag-oW-Pac" secondAttribute="leading" id="pIk-HI-0Qh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uag-oW-Pac"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-7G-NC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="135.38230884557723"/>
+        </scene>
+    </scenes>
+</document>

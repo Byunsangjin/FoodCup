@@ -23,8 +23,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-Ja-gtk">
                                 <rect key="frame" x="16" y="274" width="343" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="HCU-YY-j3L"/>
-                                    <constraint firstAttribute="width" constant="343" id="Ulq-0X-7VR"/>
+                                    <constraint firstAttribute="width" secondItem="5dS-Ja-gtk" secondAttribute="height" multiplier="49:40" id="BGA-T8-G3L"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-kv-B0x">
@@ -40,15 +39,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NnK-kM-e1H" firstAttribute="bottom" secondItem="RGo-kv-B0x" secondAttribute="bottom" constant="58" id="4zK-iq-zVL"/>
-                            <constraint firstItem="NnK-kM-e1H" firstAttribute="trailing" secondItem="5dS-Ja-gtk" secondAttribute="trailing" constant="16" id="6Jj-NN-6J4"/>
-                            <constraint firstItem="NnK-kM-e1H" firstAttribute="bottom" secondItem="5dS-Ja-gtk" secondAttribute="bottom" constant="113" id="BaF-is-vW5"/>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="top" secondItem="NnK-kM-e1H" secondAttribute="top" id="G02-9K-Gar"/>
-                            <constraint firstItem="RGo-kv-B0x" firstAttribute="top" secondItem="5dS-Ja-gtk" secondAttribute="bottom" constant="25" id="bgf-Hq-FIq"/>
+                            <constraint firstItem="RGo-kv-B0x" firstAttribute="top" secondItem="5dS-Ja-gtk" secondAttribute="bottom" constant="25" id="Q91-pO-OgA"/>
                             <constraint firstAttribute="bottom" secondItem="cIB-5v-cZH" secondAttribute="bottom" id="d2L-Ok-mAL"/>
                             <constraint firstItem="NnK-kM-e1H" firstAttribute="trailing" secondItem="RGo-kv-B0x" secondAttribute="trailing" constant="153" id="exH-hH-5nz"/>
+                            <constraint firstItem="5dS-Ja-gtk" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="16" id="gUQ-Hm-uYV"/>
+                            <constraint firstItem="NnK-kM-e1H" firstAttribute="trailing" secondItem="5dS-Ja-gtk" secondAttribute="trailing" constant="16" id="gcZ-M7-eew"/>
                             <constraint firstItem="RGo-kv-B0x" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="153" id="jJ5-jM-A4i"/>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" id="rRC-ae-ikl"/>
-                            <constraint firstItem="5dS-Ja-gtk" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="16" id="u2K-Ta-kJV"/>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="trailing" secondItem="NnK-kM-e1H" secondAttribute="trailing" id="yUc-Mk-qfi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NnK-kM-e1H"/>

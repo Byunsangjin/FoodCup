@@ -20,18 +20,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hKn-Kh-8eH">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="STd-LF-ifp">
-                                <rect key="frame" x="37" y="184" width="300" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="61A-TF-QnE"/>
-                                    <constraint firstAttribute="width" constant="300" id="vv4-bX-g8S"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-ci-C04">
-                                <rect key="frame" x="37" y="435" width="300" height="200"/>
+                                <rect key="frame" x="16" y="417" width="343" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="UOh-iO-JUT"/>
-                                    <constraint firstAttribute="height" constant="200" id="mjg-56-lbB"/>
+                                    <constraint firstAttribute="width" secondItem="fpv-ci-C04" secondAttribute="height" multiplier="343:220" id="F05-TZ-a8l"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4f-j2-Szb">
@@ -41,21 +33,27 @@
                                     <action selector="stopBtnPressed:" destination="TTG-2x-iFy" eventType="touchUpInside" id="7U4-iO-LZ0"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="STd-LF-ifp">
+                                <rect key="frame" x="16" y="161" width="343" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="STd-LF-ifp" secondAttribute="height" multiplier="343:220" id="yvt-LF-sr1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fpv-ci-C04" firstAttribute="leading" secondItem="cn7-QQ-Gkn" secondAttribute="leading" constant="37" id="94U-P5-doM"/>
-                            <constraint firstItem="cn7-QQ-Gkn" firstAttribute="bottom" secondItem="fpv-ci-C04" secondAttribute="bottom" constant="32" id="9fS-RU-VUt"/>
-                            <constraint firstItem="fpv-ci-C04" firstAttribute="top" secondItem="STd-LF-ifp" secondAttribute="bottom" constant="51" id="JxG-Hz-6mE"/>
+                            <constraint firstItem="cn7-QQ-Gkn" firstAttribute="bottom" secondItem="fpv-ci-C04" secondAttribute="bottom" constant="30" id="2g1-kg-YyV"/>
+                            <constraint firstItem="fpv-ci-C04" firstAttribute="leading" secondItem="cn7-QQ-Gkn" secondAttribute="leading" constant="16" id="GXm-XJ-I9c"/>
                             <constraint firstItem="hKn-Kh-8eH" firstAttribute="leading" secondItem="cn7-QQ-Gkn" secondAttribute="leading" id="Kgw-YQ-NXn"/>
+                            <constraint firstItem="fpv-ci-C04" firstAttribute="top" secondItem="STd-LF-ifp" secondAttribute="bottom" constant="36" id="STW-Am-KVz"/>
                             <constraint firstItem="S4f-j2-Szb" firstAttribute="top" secondItem="cn7-QQ-Gkn" secondAttribute="top" constant="34" id="XcN-qu-BjR"/>
                             <constraint firstItem="cn7-QQ-Gkn" firstAttribute="trailing" secondItem="S4f-j2-Szb" secondAttribute="trailing" constant="38" id="YAG-7U-KeW"/>
                             <constraint firstItem="hKn-Kh-8eH" firstAttribute="trailing" secondItem="cn7-QQ-Gkn" secondAttribute="trailing" id="cDD-qm-WWP"/>
+                            <constraint firstItem="cn7-QQ-Gkn" firstAttribute="trailing" secondItem="fpv-ci-C04" secondAttribute="trailing" constant="16" id="ckn-sl-1mx"/>
                             <constraint firstItem="hKn-Kh-8eH" firstAttribute="top" secondItem="cn7-QQ-Gkn" secondAttribute="top" id="gfa-rx-eZu"/>
                             <constraint firstAttribute="bottom" secondItem="hKn-Kh-8eH" secondAttribute="bottom" id="h2E-K1-3O2"/>
-                            <constraint firstItem="cn7-QQ-Gkn" firstAttribute="trailing" secondItem="STd-LF-ifp" secondAttribute="trailing" constant="38" id="kwe-7I-t5P"/>
-                            <constraint firstItem="cn7-QQ-Gkn" firstAttribute="trailing" secondItem="fpv-ci-C04" secondAttribute="trailing" constant="38" id="qdC-6q-sng"/>
-                            <constraint firstItem="STd-LF-ifp" firstAttribute="leading" secondItem="cn7-QQ-Gkn" secondAttribute="leading" constant="37" id="uMy-De-2UR"/>
+                            <constraint firstItem="cn7-QQ-Gkn" firstAttribute="trailing" secondItem="STd-LF-ifp" secondAttribute="trailing" constant="16" id="kSx-tV-mTW"/>
+                            <constraint firstItem="STd-LF-ifp" firstAttribute="leading" secondItem="cn7-QQ-Gkn" secondAttribute="leading" constant="16" id="sM1-Cp-Ghk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cn7-QQ-Gkn"/>
                     </view>
@@ -67,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDc-dD-jmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="103"/>
+            <point key="canvasLocation" x="1656.8" y="102.99850074962519"/>
         </scene>
     </scenes>
 </document>
