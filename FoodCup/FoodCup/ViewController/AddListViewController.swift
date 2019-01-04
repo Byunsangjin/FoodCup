@@ -21,20 +21,19 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     
     
     // MARK:- Variables
-    lazy var alertMap: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height)) // 다음 맵 뷰
+    lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height)) // 다음 맵 뷰
     
     var currentLat: String? // 현재 위치 위도
     var currentLng: String? // 현재 위치 경도
     
     var MapList = [MapVO]() // REST API를 이용해 받은 주변 정보
     
+    var searchWord: String? = ""
     
     
     // MARK:- Constants
     let locationManager = CLLocationManager()
-    
-    let mapAlert = UIAlertController(title: nil, message: "지도", preferredStyle: .alert) // 맵 alert
-    let mapVC = UIViewController() // contentViewController에 들어갈 ViewController
+    let ud = UserDefaults.standard
     
     
     
@@ -44,27 +43,20 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
         
         self.checkAuthorization()
         
-        // alert 세팅
-        mapVC.preferredContentSize.height = 300 // 알림창 높이 설정
-        mapVC.view = self.alertMap
-        
-        mapAlert.addAction(UIAlertAction(title: "저장", style: .default) { (_) in
-            // 저장 Action
-            self.mapView.reloadInputViews()
-        })
-        mapAlert.addAction(UIAlertAction(title: "취소", style: .cancel))
-        // 알림 창 contentVC에 ViewController 추가
-        mapAlert.setValue(mapVC, forKey: "contentViewController")
-        
-        self.mapView.insertSubview(self.alertMap, at: 0)
+        self.mapView.addSubview(self.daumMapView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.searchWord = ud.string(forKey: "searchWord")
+        self.checkAuthorization()
     }
     
     
     
     // 맵뷰 세팅 메소드
     func mapViewSet() {
-        self.alertMap.delegate = self
-        self.alertMap.baseMapType = .standard
+        self.daumMapView.delegate = self
+        self.daumMapView.baseMapType = .standard
         
         // 현재 위,경도 값 저장
         self.currentLat = String((locationManager.location?.coordinate.latitude)!)
@@ -80,6 +72,8 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
         } else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { // 권한 허용 일 때
             // 맵뷰 세팅
             self.mapViewSet()
+            
+            self.getMapInfo(keword: self.searchWord!, lng: self.currentLng!, lat: self.currentLat!, radius: "2000")
         } else { // 권한을 설정하지 않았다면
             self.requestAuthorization()
         }
@@ -118,9 +112,7 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
             "Authorization" : "KakaoAK 1fe5ef0f14fc06810eec67d5775f1117"
         ]
         let params: Parameters = [
-            "query" : "\(keyword)",
-            "x" : "\(x)",
-            "y" : "\(y)",
+            "query" : "\(keyword)"
         ]
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseObject { (response: DataResponse<MapDataDTO>) in
@@ -153,15 +145,15 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     func showMarker() {
         var items = [MTMapPOIItem]() // 마커 배열
         
-        self.alertMap.removeAllPOIItems()
+        self.daumMapView.removeAllPOIItems()
         
         // 주변 장소 마커 추가
         for data in self.MapList {
             items.append(self.poiItem(name: data.name!, address: data.address!, latitude: data.y!, longitude: data.x!))
         }
         
-        self.alertMap.addPOIItems(items) // 맵뷰에 마커 추가
-        self.alertMap.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
+        self.daumMapView.addPOIItems(items) // 맵뷰에 마커 추가
+        self.daumMapView.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
     }
     
     
@@ -174,13 +166,24 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueToSearch" {
+            let searchVC = segue.destination as! SearchViewController
+            print(self.searchTextField.text)
+            searchVC.searchWord = self.searchTextField.text
+        }
+    }
+    
+    
+    
     // MARK:- Actions
     @IBAction func mapBtnPressed(_ sender: Any) {
-        
-        self.MapList.removeAll()
-        self.getMapInfo(keword: self.searchTextField.text!, lng: self.currentLng!, lat: self.currentLat!, radius: "2000")
-        
-        self.present(mapAlert, animated: true)
+        if (self.searchTextField.text?.isEmpty)! { // 텍스트 필드가 비어있다면
+            self.alert("키워드를 입력해주세요.", nil)
+        } else {
+            self.performSegue(withIdentifier: "SegueToSearch", sender: sender)
+            self.searchTextField.text = ""
+        }
     }
     
 }

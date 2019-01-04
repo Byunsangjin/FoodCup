@@ -14,7 +14,7 @@ class MapDataDTO: Mappable {
     
     // MARK:- Variables
     var document: [Document]?
-    var meta: [Meta]?
+    var meta: Meta?
     
     
     
@@ -25,6 +25,7 @@ class MapDataDTO: Mappable {
     
     func mapping(map: Map) {
         document <- map["documents"]
+        meta <- map["meta"]
     }
     
     
@@ -56,6 +57,7 @@ class MapDataDTO: Mappable {
     class Meta: Mappable {
         var pageCount: Int?
         var totalCount: Int?
+        var isEnd: Bool?
         
         required init?(map: Map) {
             
@@ -64,6 +66,7 @@ class MapDataDTO: Mappable {
         func mapping(map: Map) {
             pageCount <- map["pageable_count"]
             totalCount <- map["total_count"]
+            isEnd <- map["is_end"]
         }
         
         
