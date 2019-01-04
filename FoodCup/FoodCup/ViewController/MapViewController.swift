@@ -115,11 +115,11 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     func poiItem(name: String, latitude: Double, longitude: Double) -> MTMapPOIItem {
         let poiItem = MTMapPOIItem()
         poiItem.itemName = name
-        poiItem.markerType = .customImage //커스텀 타입으로 변경
-        poiItem.customImage = UIImage(named: "gps_button") //커스텀 이미지 지정
+        poiItem.markerType = .redPin
+//        poiItem.customImage = UIImage(named: "gps_button") //커스텀 이미지 지정
         poiItem.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
-        poiItem.showAnimationType = .noAnimation
-        poiItem.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
+        poiItem.showAnimationType = .springFromGround
+//        poiItem.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
         
         return poiItem
     }

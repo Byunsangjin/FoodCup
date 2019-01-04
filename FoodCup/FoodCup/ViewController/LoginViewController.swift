@@ -20,6 +20,15 @@ class LoginViewController: UIViewController {
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
+        let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
+        
+        self.present(foodListVC, animated: true)
     }
     
     
