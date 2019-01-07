@@ -62,10 +62,9 @@ class SplashViewController: UIViewController {
         let caps = remoteConfig["splash_message_caps"].boolValue
         let message = remoteConfig["splash_message"].stringValue
         
-        
         print(caps)
         if caps { // 서버 점검 중 이라면 알람띄우고 앱 종료
-            self.alert("공지사항", message) {
+            self.okAlert("공지사항", message) {
                 exit(0)
             }
         } else { // 그렇지 않다면 로그인으로 이동
@@ -77,10 +76,6 @@ class SplashViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(hexString: color!)
     }
-    
-    
-    
-    
 }
 
 

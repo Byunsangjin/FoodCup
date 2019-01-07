@@ -10,56 +10,65 @@ import UIKit
 
 class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK:- Outlets
+    @IBOutlet var collectionView: UICollectionView!
     
     
     
     // MARK:- Variables
-    var foodList = ["족발", "보쌈", "냉면", "돈까스", "된장찌개", "짜장면", "치킨", "햄버거"]
+    
+    
+    
+    // MARK:- Constants
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     
 
+    
+    // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-        // 내비게이션 바 숨기기
-        // self.navigationController?.navigationBar.isHidden = true
+        self.collectionView.reloadData()
     }
     
     
     
+    // collectionView 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return delegate.foodList.count
     }
     
     
     
+    // collectionView cell 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
         
-        cell.imageView.image = UIImage(named: foodList[indexPath.row % foodList.count])
+        cell.imageView.image = delegate.foodList[indexPath.row].image
         
         return cell
     }
     
     
     
+    // collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width / 3
+        let width = self.view.frame.width / 3 - 5
         
         return CGSize(width: width, height: width)
     }
     
     
     
+    // collectionView 선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Detail", bundle: nil)
         let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        detailVC.foodName = self.foodList[indexPath.row % self.foodList.count]
+        detailVC.foodContent = self.delegate.foodList[indexPath.row]
         
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

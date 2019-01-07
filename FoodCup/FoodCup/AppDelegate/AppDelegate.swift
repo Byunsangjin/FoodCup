@@ -13,8 +13,16 @@ import SnapKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK:- Variables
     var window: UIWindow?
     var themeColor: String?
+    var name: String? = ""
+    var address: String? = ""
+    var lat: Double? = 0  // 위도
+    var lng: Double? = 0 // 경도
+    var foodList: [FoodContent] = []
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,10 +33,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 로그아웃
         try! Auth.auth().signOut()
         
+        // 로그인 임시 코드
+        Auth.auth().signIn(withEmail: "123@123.com", password: "123456") { (user, error) in
+            if error != nil { // 에러가 있을 때
+         //       self.okAlert("로그인 실패", (error?.localizedDescription)!)
+            } else { // 에러가 없을 때
+//                self.uid = Auth.auth().currentUser?.uid
+                print("로그인 성공")
+            }
+        }
+        
         // 테마 색상 불러오기
         self.themeColor = RemoteConfig.remoteConfig()["splash_background"].stringValue
-        
-        
         
         return true
     }
@@ -70,5 +86,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         statusBar.backgroundColor = UIColor(hexString: self.themeColor!)
     }
     
+    
+    
+    // DB에서 음식 정보 받아오기
+    func getFoodInfo() {
+        print("getFoodInfo")
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
+            for item in dataSnapshot.children {
+                let food = FoodContent()
+                let fchild = item as! DataSnapshot
+                
+                food.setValuesForKeys(fchild.value as! [String:Any])
+                
+                self.foodList.append(food)
+            }
+        }
+    }
 }
 

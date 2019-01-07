@@ -64,6 +64,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
+    // 게시판 버튼 클릭시
     @IBAction func boardBtnPressed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController

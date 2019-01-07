@@ -11,6 +11,6 @@ class MapVO {
     var phone: String? // 가게 전화번호
     var address: String? // 지번 주소
     var roadAddress: String? // 도로명 주소
-    var x: Double? // 경도
-    var y: Double? // 위도
+    var lng: Double? // longitude
+    var lat: Double? // latitude
 }

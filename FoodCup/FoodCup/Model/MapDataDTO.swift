@@ -34,8 +34,8 @@ class MapDataDTO: Mappable {
         var roadAddress: String?
         var name: String?
         var phone: String?
-        var x: String?
-        var y: String?
+        var lng: String?
+        var lat: String?
         
         required init?(map: Map) {
             
@@ -46,8 +46,8 @@ class MapDataDTO: Mappable {
             phone <- map["phone"]
             address <- map["address_name"]
             roadAddress <- map["road_address_name"]
-            x <- map["x"]
-            y <- map["y"]
+            lng <- map["x"]
+            lat <- map["y"]
             
         }
     }

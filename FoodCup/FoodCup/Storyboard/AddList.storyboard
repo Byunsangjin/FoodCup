@@ -23,58 +23,31 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWs-TW-bFt">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-h7-7Da">
-                                                <rect key="frame" x="8" y="28" width="359" height="210"/>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_final" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-h7-7Da">
+                                                <rect key="frame" x="8" y="28" width="359" height="281"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="jSb-h7-7Da" secondAttribute="height" multiplier="49:30" constant="16" id="8Ff-A9-MUI"/>
+                                                    <constraint firstAttribute="width" secondItem="jSb-h7-7Da" secondAttribute="height" multiplier="359:281" id="Plf-rd-0DC"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="키워드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-Zj-VZ6" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="8" y="616" width="302" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBackgroundColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-AI-iTX">
-                                                <rect key="frame" x="8" y="416" width="359" height="192"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="951-Ev-CB1">
+                                                <rect key="frame" x="8" y="317" width="359" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="951-Ev-CB1">
-                                                <rect key="frame" x="8" y="246" width="359" height="155"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-KX-XcF">
-                                                <rect key="frame" x="326" y="616" width="41" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-AI-iTX">
+                                                <rect key="frame" x="8" y="373" width="359" height="192"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="cCy-AI-iTX" secondAttribute="height" multiplier="359:192" id="qDu-2e-fBE"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-KX-XcF">
+                                                <rect key="frame" x="167.5" y="573" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="iVY-U6-8RT"/>
+                                                    <constraint firstAttribute="height" constant="40" id="s6D-5x-CjE"/>
+                                                </constraints>
                                                 <state key="normal" title="지도"/>
                                                 <connections>
                                                     <action selector="mapBtnPressed:" destination="TFQ-wH-RDG" eventType="touchUpInside" id="9t3-mV-7Ui"/>
@@ -83,10 +56,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" constant="8" id="6h4-Wo-pML"/>
-                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="top" secondItem="KWs-TW-bFt" secondAttribute="top" constant="28" id="bEr-Ng-tmG"/>
+                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="top" secondItem="951-Ev-CB1" secondAttribute="bottom" constant="23" id="2DR-VB-qoa"/>
+                                            <constraint firstAttribute="trailing" secondItem="cCy-AI-iTX" secondAttribute="trailing" constant="8" id="4Vi-zT-r9x"/>
+                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="VWU-Cx-5XL"/>
+                                            <constraint firstItem="951-Ev-CB1" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="Yld-sK-Lse"/>
+                                            <constraint firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" constant="8" id="aPH-Nq-B40"/>
+                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="top" secondItem="KWs-TW-bFt" secondAttribute="top" constant="28" id="bbs-Mu-hLF"/>
+                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="top" secondItem="cCy-AI-iTX" secondAttribute="bottom" constant="8" id="cdQ-Cs-GV7"/>
+                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="h9B-W0-UMd"/>
+                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="centerX" secondItem="KWs-TW-bFt" secondAttribute="centerX" id="jMG-tj-7kZ"/>
                                             <constraint firstAttribute="height" constant="1000" id="kSR-87-Ckr"/>
-                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="zJw-ek-JAI"/>
+                                            <constraint firstAttribute="trailing" secondItem="951-Ev-CB1" secondAttribute="trailing" constant="8" id="kVt-j5-RmU"/>
+                                            <constraint firstItem="951-Ev-CB1" firstAttribute="top" secondItem="jSb-h7-7Da" secondAttribute="bottom" constant="8" id="oRE-qk-UgH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -109,15 +90,16 @@
                         <viewLayoutGuide key="safeArea" id="wl7-7K-ZhC"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="jSb-h7-7Da" id="TJG-4c-OuP"/>
                         <outlet property="mapButton" destination="uHd-KX-XcF" id="WO0-xA-5bH"/>
                         <outlet property="mapView" destination="cCy-AI-iTX" id="t7j-Wu-XOp"/>
-                        <outlet property="searchTextField" destination="IaX-Zj-VZ6" id="Tir-iM-KKw"/>
+                        <outlet property="textView" destination="951-Ev-CB1" id="Vqd-ZH-V34"/>
                         <segue destination="fZ1-Vp-827" kind="show" identifier="SegueToSearch" id="PA2-Se-hxq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUS-oe-6VT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="-11"/>
+            <point key="canvasLocation" x="-199.19999999999999" y="-11.244377811094454"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="WOY-bD-evE">
@@ -145,4 +127,7 @@
             <point key="canvasLocation" x="553" y="-11"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back_final" width="539" height="960"/>
+    </resources>
 </document>

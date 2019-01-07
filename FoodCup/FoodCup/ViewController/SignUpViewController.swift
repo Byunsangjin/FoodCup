@@ -37,16 +37,16 @@ class SignUpViewController: UIViewController {
                 
                 try! Auth.auth().signOut()
                 
-                self.alert(nil, "회원가입에 성공 하셨습니다.") {
+                self.okAlert(nil, "회원가입에 성공 하셨습니다.") {
                     self.dismiss(animated: true, completion: nil)
                 }
             } else { // 에러가 있다면
                 if error?._code == AuthErrorCode.emailAlreadyInUse.rawValue {
-                    self.alert(nil, "이미 동일한 이메일이 있습니다.")
+                    self.okAlert(nil, "이미 동일한 이메일이 있습니다.")
                 } else if error?._code == AuthErrorCode.weakPassword.rawValue {
-                    self.alert(nil, "비밀번호는 6자리 이상이어야 합니다.")
+                    self.okAlert(nil, "비밀번호는 6자리 이상이어야 합니다.")
                 } else {
-                    self.alert(nil, "계정 생성 실패 : \(String(describing: error?.localizedDescription))")
+                    self.okAlert(nil, "계정 생성 실패 : \(String(describing: error?.localizedDescription))")
                 }
             }
         }
@@ -57,9 +57,9 @@ class SignUpViewController: UIViewController {
     // MARK:- Actions
     @IBAction func signUpBtnPressed(_ sender: Any) {
         if self.emailTextField.text!.isEmpty || self.nameTextField.text!.isEmpty || self.pwTextField.text!.isEmpty { // 텍스트 필드에 입력하지 않은 값이 있으면
-            self.alert(nil, "공백을 입력하세요.")
+            self.okAlert(nil, "공백을 입력하세요.")
         } else if self.pwTextField.text != self.rePwTextField.text { // 패스워드가 다르면
-            self.alert(nil, "패스워드를 확인해주세요.")
+            self.okAlert(nil, "패스워드를 확인해주세요.")
         } else {
             createUser(email: self.emailTextField.text!, password: self.pwTextField.text!)
         }

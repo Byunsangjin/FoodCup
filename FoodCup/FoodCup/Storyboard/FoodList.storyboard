@@ -72,6 +72,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="cSY-es-arr" id="4Y3-n8-4KQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-7G-NC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

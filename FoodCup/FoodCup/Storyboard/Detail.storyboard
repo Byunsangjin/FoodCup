@@ -23,6 +23,18 @@
                                     <constraint firstAttribute="width" secondItem="Qs8-9B-kvG" secondAttribute="height" multiplier="343:240" id="EIh-B1-hx6"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dsn-ek-mNq">
+                                <rect key="frame" x="16" y="277" width="343" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKq-a8-97S">
+                                <rect key="frame" x="16" y="449" width="343" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -35,6 +47,8 @@
                     <navigationItem key="navigationItem" id="Q1D-fe-jqv"/>
                     <connections>
                         <outlet property="imageView" destination="Qs8-9B-kvG" id="bdQ-xA-nOc"/>
+                        <outlet property="mapView" destination="tKq-a8-97S" id="Lq9-y9-KoA"/>
+                        <outlet property="textView" destination="dsn-ek-mNq" id="5y9-DZ-YJx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxD-cI-d5I" userLabel="First Responder" sceneMemberID="firstResponder"/>

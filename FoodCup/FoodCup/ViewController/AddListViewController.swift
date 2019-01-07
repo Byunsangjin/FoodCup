@@ -10,30 +10,41 @@ import UIKit
 import CoreLocation
 import Alamofire
 import AlamofireObjectMapper
+import Firebase
+
+// 좌표
+class MyCoordinate {
+    var latitude: String?
+    var longitude: String?
+}
+
+
 
 class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationManagerDelegate {
     // MARK:- Outlets
-    @IBOutlet var mapButton: UIButton!
-    @IBOutlet var searchTextField: UITextField!
-    
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var mapButton: UIButton!
     
     
     
     // MARK:- Variables
     lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height)) // 다음 맵 뷰
+    var mapList = [MapVO]() // REST API를 이용해 받은 주변 정보
+    var foodContent: FoodContent = FoodContent()
     
-    var currentLat: String? // 현재 위치 위도
-    var currentLng: String? // 현재 위치 경도
+    var searchWord: String? = "" // 검색어
+    var uid: String?
     
-    var MapList = [MapVO]() // REST API를 이용해 받은 주변 정보
-    
-    var searchWord: String? = ""
     
     
     // MARK:- Constants
-    let locationManager = CLLocationManager()
-    let ud = UserDefaults.standard
+    let dataRef = Database.database().reference()
+    let storageRef = Storage.storage().reference()
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let mapManager = DaumMapManager()
     
     
     
@@ -41,14 +52,46 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.checkAuthorization()
-        
-        self.mapView.addSubview(self.daumMapView)
+        self.viewSet()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.searchWord = ud.string(forKey: "searchWord")
-        self.checkAuthorization()
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.mapViewSet()
+        
+        self.contentInfoSet()
+        
+        self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent)
+    }
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // 좌표 초기화
+        self.delegate.lng = 0
+        self.delegate.lat = 0
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueToSearch" {
+            let searchVC = segue.destination as! SearchViewController
+            searchVC.searchWord = self.searchWord
+        }
+    }
+    
+    
+    
+    // 초기 뷰 설정
+    func viewSet() {
+        self.imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker))) // 이미지 탭 제스쳐 추가
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(save)) // 내비게이션 바 아이템 추가
+        
+        // 임시코드
+        self.uid = Auth.auth().currentUser?.uid
     }
     
     
@@ -58,119 +101,65 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
         self.daumMapView.delegate = self
         self.daumMapView.baseMapType = .standard
         
-        // 현재 위,경도 값 저장
-        self.currentLat = String((locationManager.location?.coordinate.latitude)!)
-        self.currentLng = String((locationManager.location?.coordinate.longitude)!)
-    }
-    
-    
-    
-    // 위치 권한 체크하는 메소드
-    func checkAuthorization() {
-        if CLLocationManager.authorizationStatus() == .denied { // 권한 거부 일 때
-            self.alert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
-        } else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { // 권한 허용 일 때
-            // 맵뷰 세팅
-            self.mapViewSet()
-            
-            self.getMapInfo(keword: self.searchWord!, lng: self.currentLng!, lat: self.currentLat!, radius: "2000")
-        } else { // 권한을 설정하지 않았다면
-            self.requestAuthorization()
+        if self.delegate.lng != 0 {
+            self.mapView.addSubview(self.daumMapView)
         }
     }
-
     
     
-    // 위치 사용 인증 요청 메소드
-    func requestAuthorization() {
-        self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization() //권한 요청
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.startUpdatingLocation()
+    
+    // 맵에 관련 정보 설정
+    func contentInfoSet() {
+        self.foodContent.name = self.delegate.name!
+        self.foodContent.address = self.delegate.address!
+        self.foodContent.lng = self.delegate.lng!
+        self.foodContent.lat = self.delegate.lat!
     }
     
     
     
-    // 마커 생성 메소드
-    func poiItem(name: String, address: String, latitude: Double, longitude: Double) -> MTMapPOIItem {
-        let poiItem = MTMapPOIItem()
-        
-        poiItem.itemName = name + "\n" + address
-        poiItem.markerType = .redPin
-        poiItem.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
-        poiItem.showAnimationType = .springFromGround
-        
-        return poiItem
+    // 글에 관한 정보 설정 및 리스트에 추가
+    func contentSet() {
+        self.foodContent.image = self.imageView.image!
+        self.foodContent.text = self.textView.text!
+        self.delegate.foodList.append(self.foodContent)
     }
     
     
     
-    // 주변 장소 정보 받는 메소드
-    func getMapInfo(keword keyword: String, lng x: String, lat y: String, radius: String) {
-        let url = "https://dapi.kakao.com/v2/local/search/keyword.json"
-        let headers: HTTPHeaders = [
-            "Authorization" : "KakaoAK 1fe5ef0f14fc06810eec67d5775f1117"
-        ]
-        let params: Parameters = [
-            "query" : "\(keyword)"
-        ]
-        
-        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseObject { (response: DataResponse<MapDataDTO>) in
-            let addressDTO = response.result.value
+    // 저장버튼 눌렀을 때 동작 메소드
+    @objc func save() {
+        self.confirmAlert("저장하시겠습니까?", nil) {
+            var image = UIImage()
+            image = self.imageView.image!
             
-            if let documents = addressDTO?.document {
-                for document in documents {
-                    let mapVO = MapVO()
+            let data: Data = image.jpegData(compressionQuality: 0.1)! // 이미지 데이터로 변환
+            let spaceRef = self.storageRef.child("users").child(self.uid!).child(UUID().uuidString) // 저장소에 저장
+            
+            spaceRef.putData(data, metadata: nil) { (metadata, error) in
+                guard error == nil else { // 에러가 발생 했을 때
+                    print("putData error : \(String(describing: error))")
+                    return
+                }
+                
+                // 다운로드 url에 접근한다.
+                spaceRef.downloadURL { (url, error) in
+                    guard error == nil else { // 에러가 발생 했을 때
+                        print("download error \(String(describing: error?.localizedDescription))")
+                        return
+                    }
                     
-                    // mapVO 객체에 담아 MapList에 추가
-                    mapVO.name = document.name!
-                    mapVO.phone = document.phone!
-                    mapVO.address = document.address!
-                    mapVO.roadAddress = document.roadAddress!
-                    mapVO.x = (Double(document.x!))!
-                    mapVO.y = (Double(document.y!))!
-                    
-                    self.MapList.append(mapVO)
+                    // 데이터 베이스에 접근해서 이름 값과 이미지 다운로드 url을 넣어준다
+                    self.dataRef.child("users").child(self.uid!).childByAutoId().setValue(["imgUrl": url!.absoluteString, "text": self.textView.text!, "name": self.delegate.name ,"address": self.delegate.address!], withCompletionBlock: { (erro, ref) in
+                        print("데이터 저장 성공")
+                    })
                 }
             }
             
-            // 마커 찍기
-            self.showMarker()
-        }
-    }
-    
-    
-    
-    // 받아온 장소정보를 이용해 마커를 띄워준다.
-    func showMarker() {
-        var items = [MTMapPOIItem]() // 마커 배열
-        
-        self.daumMapView.removeAllPOIItems()
-        
-        // 주변 장소 마커 추가
-        for data in self.MapList {
-            items.append(self.poiItem(name: data.name!, address: data.address!, latitude: data.y!, longitude: data.x!))
-        }
-        
-        self.daumMapView.addPOIItems(items) // 맵뷰에 마커 추가
-        self.daumMapView.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
-    }
-    
-    
-    
-    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
-        print(poiItem.mapPoint.mapPointGeo().latitude)
-        print(poiItem.mapPoint.mapPointGeo().latitude)
-        return true
-    }
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueToSearch" {
-            let searchVC = segue.destination as! SearchViewController
-            print(self.searchTextField.text)
-            searchVC.searchWord = self.searchTextField.text
+            // foodList에 정보 추가
+            self.contentSet()
+            
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -178,12 +167,43 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     
     // MARK:- Actions
     @IBAction func mapBtnPressed(_ sender: Any) {
-        if (self.searchTextField.text?.isEmpty)! { // 텍스트 필드가 비어있다면
-            self.alert("키워드를 입력해주세요.", nil)
-        } else {
-            self.performSegue(withIdentifier: "SegueToSearch", sender: sender)
-            self.searchTextField.text = ""
+        let alert = UIAlertController(title: "음식점 검색", message: nil, preferredStyle: .alert)
+        alert.addTextField { (tf) in
+            tf.placeholder = "예) 돈카2014"
         }
+        
+        alert.addAction(UIAlertAction(title: "검색", style: .default, handler: { (_) in
+            self.searchWord = alert.textFields?.last?.text!
+            self.performSegue(withIdentifier: "SegueToSearch", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+}
+
+
+
+extension AddListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @objc func imagePicker() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        //picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        
+        self.present(picker, animated: true)
+        print("Picker")
     }
     
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // self.imageSelected = true // 이미지를 선택 했다면 true
+        
+        self.imageView.image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage)
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 }
+
+

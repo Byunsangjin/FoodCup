@@ -24,6 +24,15 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     
     var resultFood: String? // 최종 선택 음식
     
+    var page: Int = 1 {
+        willSet(newPage) {
+            if !self.isEnd! {
+                self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!, page: self.page)
+            }
+        }
+    }
+    
+    var isEnd: Bool? = false
     
     
     // MARK:- Constants
@@ -55,13 +64,13 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     // 권한 설정이 바뀌었을 때
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .denied {
-            self.alert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
+            self.okAlert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
         } else if status == .authorizedWhenInUse {
             // 맵뷰 세팅
             self.mapViewSet()
 
             // 주변 장소 정보 불러오기
-            self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!)
+            self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!, page: self.page)
         }
     }
     
@@ -70,13 +79,13 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     // 위치 권한 체크하는 메소드
     func checkAuthorization() {
         if CLLocationManager.authorizationStatus() == .denied { // 권한 거부 일 때
-            self.alert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
+            self.okAlert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
         } else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { // 권한 허용 일 때
             // 맵뷰 세팅
             self.mapViewSet()
             
             // 주변 장소 정보 불러오기
-            self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!)
+            self.getMapInfo(keword: self.resultFood!, lng: self.currentLng!, lat: self.currentLat!, radius: self.radius!, page: self.page)
         } else { // 권한을 설정하지 않았다면
             self.requestAuthorization()
             
@@ -116,10 +125,8 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
         let poiItem = MTMapPOIItem()
         poiItem.itemName = name
         poiItem.markerType = .redPin
-//        poiItem.customImage = UIImage(named: "gps_button") //커스텀 이미지 지정
         poiItem.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
         poiItem.showAnimationType = .springFromGround
-//        poiItem.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
         
         return poiItem
     }
@@ -127,7 +134,7 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
     
     
     // 주변 장소 정보 받는 메소드
-    func getMapInfo(keword keyword: String, lng x: String, lat y: String, radius: String) {
+    func getMapInfo(keword keyword: String, lng x: String, lat y: String, radius: String, page: Int) {
         let url = "https://dapi.kakao.com/v2/local/search/keyword.json"
         let headers: HTTPHeaders = [
             "Authorization" : "KakaoAK 1fe5ef0f14fc06810eec67d5775f1117"
@@ -136,7 +143,8 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
             "query" : "\(keyword)",
             "x" : "\(x)",
             "y" : "\(y)",
-            "radius" : "\(radius)"
+            "radius" : "\(radius)",
+            "page" : "\(page)"
         ]
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseObject { (response: DataResponse<MapDataDTO>) in
@@ -151,8 +159,8 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
                     mapVO.phone = document.phone!
                     mapVO.address = document.address!
                     mapVO.roadAddress = document.roadAddress!
-                    mapVO.x = (Double(document.x!))!
-                    mapVO.y = (Double(document.y!))!
+                    mapVO.lng = (Double(document.lng!))!
+                    mapVO.lat = (Double(document.lat!))!
                     
                     self.MapList.append(mapVO)
                 }
@@ -160,6 +168,11 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
             
             // 마커 찍기
             self.showMarker()
+            
+            if let meta = addressDTO?.meta {
+                self.isEnd = meta.isEnd
+                self.page = page + 1
+            }
         }
     }
     
@@ -171,7 +184,7 @@ class MapViewController: UIViewController, MTMapViewDelegate, CLLocationManagerD
         
         // 주변 장소 마커 추가
         for data in self.MapList {
-            items.append(self.poiItem(name: data.name!, latitude: data.y!, longitude: data.x!))
+            items.append(self.poiItem(name: data.name!, latitude: data.lat!, longitude: data.lng!))
         }
         
         self.mapView.addPOIItems(items) // 맵뷰에 마커 추가

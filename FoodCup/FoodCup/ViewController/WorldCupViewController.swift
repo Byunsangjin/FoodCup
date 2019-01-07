@@ -181,7 +181,7 @@ class WorldCupViewController: UIViewController {
 
         self.present(resultVC, animated: false)
         
-        self.alert("결정 성공", self.foodList[0])
+        self.okAlert("결정 성공", self.foodList[0])
     }
     
     

@@ -8,24 +8,38 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MTMapViewDelegate {
     // MARK:- Outlets
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var mapView: UIView!
     
     
     
     // MARK:- Variables
-    var foodName: String?
-    
-    
+    var foodContent: FoodContent?
+    lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height)) // 다음 맵 뷰
+    let mapManager = DaumMapManager()
     
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // 내비게이션 바 나타내기
-        // self.navigationController?.navigationBar.isHidden = false
         
-        self.imageView.image = UIImage(named: foodName!)
+        self.imageView.image = self.foodContent?.image
+        self.textView.text = self.foodContent?.text
+        
+        self.mapViewSet()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent!) // 맵에 마커를 찍는다.
+    }
+    
+    // 맵뷰 세팅 메소드
+    func mapViewSet() {
+        self.daumMapView.delegate = self
+        self.daumMapView.baseMapType = .standard
+        
+        self.mapView.addSubview(self.daumMapView)
     }
 }

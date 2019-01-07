@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
         let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
@@ -38,7 +41,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.pwTextField.text!) { (user, error) in
             if error != nil { // 에러가 있을 때
-                self.alert("로그인 실패", (error?.localizedDescription)!)
+                self.okAlert("로그인 실패", (error?.localizedDescription)!)
             } else { // 에러가 없을 때
                 let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
                 let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
