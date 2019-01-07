@@ -70,6 +70,4 @@ class SignUpViewController: UIViewController {
     @IBAction func cancelBtnPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-
 }

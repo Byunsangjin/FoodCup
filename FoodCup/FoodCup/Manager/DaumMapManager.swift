@@ -27,7 +27,6 @@ class DaumMapManager {
         
         items.append(self.poiItem(name: foodContent.name!, address: foodContent.address!, latitude: foodContent.lat!, longitude: foodContent.lng!))
         
-        daumMapView.removeAllPOIItems()
         daumMapView.addPOIItems(items) // 맵뷰에 마커 추가
         daumMapView.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
     }
@@ -43,8 +42,7 @@ class DaumMapManager {
             items.append(self.poiItem(name: data.name!, address: data.address!, latitude: data.lat!, longitude: data.lng!))
         }
         
-        daumMapView.removeAllPOIItems()
         daumMapView.addPOIItems(items) // 맵뷰에 마커 추가
         daumMapView.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
-    }
+    }    
 }
