@@ -58,19 +58,22 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     
     
     override func viewDidAppear(_ animated: Bool) {
-        self.mapViewSet()
-        
-        self.contentInfoSet()
-        
-        self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent)
+        if !(self.delegate.foodContent.lng?.isEmpty)! { // 위치를 지정해주었다면
+            print("위치 지정")
+            self.mapViewSet()
+            self.contentInfoSet()
+            self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent)
+        } else {
+            print("위치 지정안함")
+        }
     }
     
     
     
     override func viewWillDisappear(_ animated: Bool) {
         // 좌표 초기화
-        self.delegate.lng = 0
-        self.delegate.lat = 0
+        self.delegate.foodContent.lng = ""
+        self.delegate.foodContent.lat = ""
     }
     
     
@@ -101,19 +104,17 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
         self.daumMapView.delegate = self
         self.daumMapView.baseMapType = .standard
         
-        if self.delegate.lng != 0 {
-            self.mapView.addSubview(self.daumMapView)
-        }
+        self.mapView.addSubview(self.daumMapView)
     }
     
     
     
     // 맵에 관련 정보 설정
     func contentInfoSet() {
-        self.foodContent.name = self.delegate.name!
-        self.foodContent.address = self.delegate.address!
-        self.foodContent.lng = self.delegate.lng!
-        self.foodContent.lat = self.delegate.lat!
+        self.foodContent.name = self.delegate.foodContent.name!
+        self.foodContent.address = self.delegate.foodContent.address!
+        self.foodContent.lng = self.delegate.foodContent.lng!
+        self.foodContent.lat = self.delegate.foodContent.lat
     }
     
     
@@ -150,7 +151,7 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
                     }
                     
                     // 데이터 베이스에 접근해서 이름 값과 이미지 다운로드 url을 넣어준다
-                    self.dataRef.child("users").child(self.uid!).childByAutoId().setValue(["imgUrl": url!.absoluteString, "text": self.textView.text!, "name": self.delegate.name ,"address": self.delegate.address!], withCompletionBlock: { (erro, ref) in
+                    self.dataRef.child("users").child(self.uid!).childByAutoId().setValue(["imgUrl": url!.absoluteString, "text": self.textView.text!, "name": self.delegate.foodContent.name ,"address": self.delegate.foodContent.address!, "lng": self.delegate.foodContent.lng, "lat": self.delegate.foodContent.lat], withCompletionBlock: { (erro, ref) in
                         print("데이터 저장 성공")
                     })
                 }

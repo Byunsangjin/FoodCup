@@ -102,8 +102,8 @@ class MapViewController: UIViewController, MTMapViewDelegate{
                     mapVO.phone = document.phone!
                     mapVO.address = document.address!
                     mapVO.roadAddress = document.roadAddress!
-                    mapVO.lng = (Double(document.lng!))!
-                    mapVO.lat = (Double(document.lat!))!
+                    mapVO.lng = document.lng!
+                    mapVO.lat = document.lat!
                     
                     self.mapList.append(mapVO)
                 }

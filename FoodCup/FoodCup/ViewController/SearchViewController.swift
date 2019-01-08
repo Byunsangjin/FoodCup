@@ -26,6 +26,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    var foodContent = FoodContent()
     
     
     
@@ -90,8 +91,8 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
                     mapVO.phone = document.phone!
                     mapVO.address = document.address!
                     mapVO.roadAddress = document.roadAddress!
-                    mapVO.lng = (Double(document.lng!))!
-                    mapVO.lat = (Double(document.lat!))!
+                    mapVO.lng = document.lng!
+                    mapVO.lat = document.lat!
                     
                     self.mapList.append(mapVO)
                 }
@@ -110,6 +111,8 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK:- Actions
     @IBAction func okBtnPressed(_ sender: Any) {
+        self.delegate.foodContent = self.foodContent
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -126,10 +129,10 @@ extension SearchViewController: MTMapViewDelegate {
         
         for item in self.mapList {
             if (item.address?.elementsEqual(address))! { // 주소가 같다면
-                self.delegate.lng = item.lng // 경도
-                self.delegate.lat = item.lat // 위도
-                self.delegate.name = item.name // 가게 이름
-                self.delegate.address = item.address // 가게 주소
+                self.foodContent.lng = item.lng! // 경도
+                self.foodContent.lat = item.lat! // 위도
+                self.foodContent.name = item.name // 가게 이름
+                self.foodContent.address = item.address // 가게 주소
             }
         }
         

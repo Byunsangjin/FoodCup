@@ -12,7 +12,8 @@ class FoodContent: NSObject {
     @objc var name: String? // 가게명
     @objc var address: String? // 주소
     @objc var text: String? // 메모
-    @objc var image: UIImage? // 이미지
-    var lat: Double? // 위도
-    var lng: Double? // 경도
+    var image: UIImage? // 이미지
+    @objc var lat: String? // 위도
+    @objc var lng: String? // 경도
+    @objc var imgUrl: String? // 이미지 경로
 }

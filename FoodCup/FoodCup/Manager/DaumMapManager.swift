@@ -8,12 +8,12 @@
 
 class DaumMapManager {
     // 마커 생성 메소드
-    func poiItem(name: String, address: String,latitude: Double, longitude: Double) -> MTMapPOIItem {
+    func poiItem(name: String, address: String,latitude: String, longitude: String) -> MTMapPOIItem {
         let poiItem = MTMapPOIItem()
         
         poiItem.itemName = name + "\n\(address)"
         poiItem.markerType = .redPin
-        poiItem.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
+        poiItem.mapPoint = MTMapPoint(geoCoord: .init(latitude: Double(latitude)!, longitude: Double(longitude)!))
         poiItem.showAnimationType = .springFromGround
         
         return poiItem
@@ -44,5 +44,5 @@ class DaumMapManager {
         
         daumMapView.addPOIItems(items) // 맵뷰에 마커 추가
         daumMapView.fitAreaToShowAllPOIItems() // 모든 마커가 보이게 카메라 위치/줌 조정
-    }    
+    }
 }
