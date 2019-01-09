@@ -38,6 +38,7 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     // collectionView 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(self.delegate.foodList.count)
         return delegate.foodList.count
     }
     

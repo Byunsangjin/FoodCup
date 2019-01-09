@@ -24,7 +24,8 @@ class SplashViewController: UIViewController {
     
     
     // MARK:- Constants
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    let ud = UserDefaults.standard
     
     
     
@@ -58,7 +59,7 @@ class SplashViewController: UIViewController {
     
     
     func displayWelcome() {
-        let color = self.appDelegate.themeColor
+        let color = self.delegate.themeColor
         let caps = remoteConfig["splash_message_caps"].boolValue
         let message = remoteConfig["splash_message"].stringValue
         
@@ -68,13 +69,26 @@ class SplashViewController: UIViewController {
                 exit(0)
             }
         } else { // 그렇지 않다면 로그인으로 이동
-            let storyborad = UIStoryboard.init(name: "Main", bundle: nil)
-            let mainVC = storyborad.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-
-            self.present(mainVC, animated: true)
+            print("displayWelcome")
+            if ud.bool(forKey: "isSignIn") { // 로그인 상태라면 데이터를 받고 이동
+                self.delegate.getFoodInfo() {
+                    self.presentVC()
+                }
+            } else { // 로그인 상태가 아니라면 화면만 이동
+                self.presentVC()
+            }
         }
         
         self.view.backgroundColor = UIColor(hexString: color!)
+    }
+    
+    
+    
+    func presentVC() {
+        let storyborad = UIStoryboard.init(name: "Main", bundle: nil)
+        let mainVC = storyborad.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        
+        self.present(mainVC, animated: true)
     }
 }
 

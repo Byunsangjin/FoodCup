@@ -24,31 +24,30 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_final" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-h7-7Da">
-                                                <rect key="frame" x="8" y="28" width="359" height="281"/>
+                                                <rect key="frame" x="24" y="28" width="326" height="326"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="jSb-h7-7Da" secondAttribute="height" multiplier="359:281" id="Plf-rd-0DC"/>
+                                                    <constraint firstAttribute="width" secondItem="jSb-h7-7Da" secondAttribute="height" multiplier="359:281" constant="-90.491103202847" id="Plf-rd-0DC"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="951-Ev-CB1">
-                                                <rect key="frame" x="8" y="317" width="359" height="33"/>
+                                                <rect key="frame" x="24" y="371" width="326" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-AI-iTX">
-                                                <rect key="frame" x="8" y="373" width="359" height="192"/>
+                                                <rect key="frame" x="24" y="459" width="326" height="192"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="cCy-AI-iTX" secondAttribute="height" multiplier="359:192" id="qDu-2e-fBE"/>
+                                                    <constraint firstAttribute="width" secondItem="cCy-AI-iTX" secondAttribute="height" multiplier="163:96" id="djJ-Lt-pTE"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-KX-XcF">
-                                                <rect key="frame" x="167.5" y="573" width="40" height="40"/>
+                                                <rect key="frame" x="159" y="412" width="57" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="iVY-U6-8RT"/>
-                                                    <constraint firstAttribute="height" constant="40" id="s6D-5x-CjE"/>
+                                                    <constraint firstAttribute="width" secondItem="uHd-KX-XcF" secondAttribute="height" multiplier="19:10" id="InE-nj-mwv"/>
                                                 </constraints>
-                                                <state key="normal" title="지도"/>
+                                                <state key="normal" title="지도 검색"/>
                                                 <connections>
                                                     <action selector="mapBtnPressed:" destination="TFQ-wH-RDG" eventType="touchUpInside" id="9t3-mV-7Ui"/>
                                                 </connections>
@@ -56,18 +55,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="top" secondItem="951-Ev-CB1" secondAttribute="bottom" constant="23" id="2DR-VB-qoa"/>
-                                            <constraint firstAttribute="trailing" secondItem="cCy-AI-iTX" secondAttribute="trailing" constant="8" id="4Vi-zT-r9x"/>
-                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="VWU-Cx-5XL"/>
-                                            <constraint firstItem="951-Ev-CB1" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="Yld-sK-Lse"/>
-                                            <constraint firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" constant="8" id="aPH-Nq-B40"/>
+                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="leading" secondItem="jSb-h7-7Da" secondAttribute="leading" id="AMa-o2-jeS"/>
+                                            <constraint firstItem="951-Ev-CB1" firstAttribute="leading" secondItem="jSb-h7-7Da" secondAttribute="leading" id="C1A-TL-Al0"/>
+                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="centerX" secondItem="KWs-TW-bFt" secondAttribute="centerX" id="MjH-ER-LRd"/>
+                                            <constraint firstItem="951-Ev-CB1" firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" id="ScS-dE-YEo"/>
+                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="24" id="VWU-Cx-5XL"/>
+                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="top" secondItem="uHd-KX-XcF" secondAttribute="bottom" constant="17" id="Y0G-Dl-OKg"/>
+                                            <constraint firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" constant="25" id="aPH-Nq-B40"/>
                                             <constraint firstItem="jSb-h7-7Da" firstAttribute="top" secondItem="KWs-TW-bFt" secondAttribute="top" constant="28" id="bbs-Mu-hLF"/>
-                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="top" secondItem="cCy-AI-iTX" secondAttribute="bottom" constant="8" id="cdQ-Cs-GV7"/>
-                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="8" id="h9B-W0-UMd"/>
-                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="centerX" secondItem="KWs-TW-bFt" secondAttribute="centerX" id="jMG-tj-7kZ"/>
+                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" id="f4v-He-Bez"/>
                                             <constraint firstAttribute="height" constant="1000" id="kSR-87-Ckr"/>
-                                            <constraint firstAttribute="trailing" secondItem="951-Ev-CB1" secondAttribute="trailing" constant="8" id="kVt-j5-RmU"/>
-                                            <constraint firstItem="951-Ev-CB1" firstAttribute="top" secondItem="jSb-h7-7Da" secondAttribute="bottom" constant="8" id="oRE-qk-UgH"/>
+                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="top" secondItem="951-Ev-CB1" secondAttribute="bottom" constant="8" id="nRj-Eh-5m1"/>
+                                            <constraint firstItem="951-Ev-CB1" firstAttribute="top" secondItem="jSb-h7-7Da" secondAttribute="bottom" constant="17" id="oRE-qk-UgH"/>
                                         </constraints>
                                     </view>
                                 </subviews>

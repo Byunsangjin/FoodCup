@@ -111,7 +111,12 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK:- Actions
     @IBAction func okBtnPressed(_ sender: Any) {
+        print("self.foodContent.lng : \(self.foodContent.lng)")
+        print("self.foodContent.lat : \(self.foodContent.lat)")
         self.delegate.foodContent = self.foodContent
+        
+        print("self.delegate.foodContent.lng : \(self.delegate.foodContent.lng)")
+        print("self.delegate.foodContent.lat : \(self.delegate.foodContent.lat)")
         
         self.navigationController?.popViewController(animated: true)
     }

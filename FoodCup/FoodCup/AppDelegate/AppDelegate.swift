@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import SnapKit
+import Alamofire
+import AlamofireImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,26 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
-        // 로그아웃
-        try! Auth.auth().signOut()
         
-        // 로그인 임시 코드
-        Auth.auth().signIn(withEmail: "123@123.com", password: "123456") { (user, error) in
-            if error != nil { // 에러가 있을 때
-                //       self.okAlert("로그인 실패", (error?.localizedDescription)!)
-            } else { // 에러가 없을 때
-                //                self.uid = Auth.auth().currentUser?.uid
-                print("로그인 성공")
-                self.getFoodInfo()
-            }
-        }
         
         // 테마 색상 불러오기
         self.themeColor = RemoteConfig.remoteConfig()["splash_background"].stringValue
-        
-        self.initFoodContent() // foodConent 초기화
-        
-        
         
         return true
     }
@@ -73,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    
+    
     // statusBar 색상 설정
     func statusBarSet(view: UIView) {
         // statusBar 설정
@@ -91,31 +79,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     // DB에서 음식 정보 받아오기
-    func getFoodInfo() {
+    func getFoodInfo(completion: (()->Void)? = nil) {
         let uid = Auth.auth().currentUser?.uid
         let dataRef = Database.database().reference()
         dataRef.child("users").child(uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
             // 데이터 순회하며 유저 정보 배열 검색
+            var count = dataSnapshot.childrenCount
             for item in dataSnapshot.children {
                 let foodContent = FoodContent()
                 let fchild = item as! DataSnapshot
                 
                 foodContent.setValuesForKeys(fchild.value as! [String : Any])
                 
-                self.foodList.append(foodContent)
+                print(count)
+                Alamofire.request(foodContent.imgUrl!).responseImage { response in
+                    if let image = response.result.value {
+                        foodContent.image = image
+                    }
+                    
+                    self.foodList.append(foodContent)
+                    
+                    count = count - 1
+                    if count == 0 {
+                        completion?()
+                    }
+                }
             }
-            
-            print("getFoodInfo 성공")
         }
-    }
-    
-    
-    
-    func initFoodContent() {
-        self.foodContent.name = ""
-        self.foodContent.address = ""
-        self.foodContent.lat = ""
-        self.foodContent.lng = ""
     }
 }
 

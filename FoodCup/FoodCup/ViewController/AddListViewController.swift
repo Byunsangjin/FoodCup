@@ -70,14 +70,6 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        // 좌표 초기화
-        self.delegate.foodContent.lng = ""
-        self.delegate.foodContent.lat = ""
-    }
-    
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueToSearch" {
             let searchVC = segue.destination as! SearchViewController
@@ -123,6 +115,7 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     func contentSet() {
         self.foodContent.image = self.imageView.image!
         self.foodContent.text = self.textView.text!
+        
         self.delegate.foodList.append(self.foodContent)
     }
     
@@ -154,11 +147,18 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
                     self.dataRef.child("users").child(self.uid!).childByAutoId().setValue(["imgUrl": url!.absoluteString, "text": self.textView.text!, "name": self.delegate.foodContent.name ,"address": self.delegate.foodContent.address!, "lng": self.delegate.foodContent.lng, "lat": self.delegate.foodContent.lat], withCompletionBlock: { (erro, ref) in
                         print("데이터 저장 성공")
                     })
+                    
+                    // 좌표 초기화
+                    self.delegate.foodContent.lng = ""
+                    self.delegate.foodContent.lat = ""
                 }
             }
             
             // foodList에 정보 추가
             self.contentSet()
+            
+            
+            
             
             self.navigationController?.popViewController(animated: true)
         }
@@ -189,7 +189,7 @@ extension AddListViewController: UIImagePickerControllerDelegate, UINavigationCo
     @objc func imagePicker() {
         let picker = UIImagePickerController()
         picker.delegate = self
-        //picker.allowsEditing = true
+        picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         
         self.present(picker, animated: true)
@@ -201,7 +201,7 @@ extension AddListViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // self.imageSelected = true // 이미지를 선택 했다면 true
         
-        self.imageView.image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage)
+        self.imageView.image = (info[UIImagePickerController.InfoKey.editedImage] as! UIImage)
         
         self.dismiss(animated: true, completion: nil)
     }

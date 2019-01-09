@@ -10,30 +10,22 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-    
+    // MARK:- Outlets
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var pwTextField: UITextField!
     
     
     
-
+    // MARK:- Constants
+    let ud = UserDefaults.standard
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-    
-    
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-        let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
-        
-        self.present(foodListVC, animated: true)
-    }
-    
     
     
     
@@ -43,20 +35,24 @@ class LoginViewController: UIViewController {
             if error != nil { // 에러가 있을 때
                 self.okAlert("로그인 실패", (error?.localizedDescription)!)
             } else { // 에러가 없을 때
-                let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-                let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
+                self.ud.setValue(true, forKey: "isSignIn")
                 
-                self.present(foodListVC, animated: true)
+                self.delegate.getFoodInfo() {
+                    let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
+                    let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
+                    self.present(foodListVC, animated: true)
+                }
             }
         }
     }
     
     
-
+    
     @IBAction func signUpBtnPressed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "SignUp", bundle: nil)
         let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         
         self.present(signUpVC, animated: true)
     }
+    
 }

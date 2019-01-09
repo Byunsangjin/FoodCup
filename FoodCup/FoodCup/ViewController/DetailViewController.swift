@@ -27,13 +27,19 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
         
         self.imageView.image = self.foodContent?.image
         self.textView.text = self.foodContent?.text
-        
-        self.mapViewSet()
     }
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
-        self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent!) // 맵에 마커를 찍는다.
+        print("self.foodContent?.lng : \(self.foodContent?.lng)")
+        if (self.foodContent!.lng?.isEmpty)! != true { // 좌표 값이 비어있지 않다면
+            self.mapViewSet()
+            self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent!) // 맵에 마커를 찍는다.
+        }
     }
+    
+    
     
     // 맵뷰 세팅 메소드
     func mapViewSet() {

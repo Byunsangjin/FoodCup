@@ -12,6 +12,8 @@
 		6015477121DF76D5002DC699 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6015477021DF76D5002DC699 /* SearchViewController.swift */; };
 		602A9FEA21E302C2002BFDD6 /* FoodContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A9FE921E302C2002BFDD6 /* FoodContent.swift */; };
 		602A9FEF21E37EB7002BFDD6 /* DaumMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A9FEE21E37EB7002BFDD6 /* DaumMapManager.swift */; };
+		60C48FBD21E644F200C52F50 /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */; };
+		60C48FC021E6452900C52F50 /* InputTextAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */; };
 		60E2C41021D9D92F001098B9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C40F21D9D92F001098B9 /* Login.storyboard */; };
 		60E2C41221D9D938001098B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41121D9D938001098B9 /* LoginViewController.swift */; };
 		60E2C41421D9E90C001098B9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41321D9E90C001098B9 /* SignUpViewController.swift */; };
@@ -83,6 +85,8 @@
 		6015477021DF76D5002DC699 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		602A9FE921E302C2002BFDD6 /* FoodContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContent.swift; sourceTree = "<group>"; };
 		602A9FEE21E37EB7002BFDD6 /* DaumMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaumMapManager.swift; sourceTree = "<group>"; };
+		60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAlert.storyboard; sourceTree = "<group>"; };
+		60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextAlertViewController.swift; sourceTree = "<group>"; };
 		60E2C40F21D9D92F001098B9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		60E2C41121D9D938001098B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		60E2C41321D9E90C001098B9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,14 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		60C48FBE21E6450000C52F50 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		60FBD11021D3A7A10012B70F = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 				60FBD12E21D3A8370012B70F /* ViewController */,
 				60FBD31D21D6258A0012B70F /* Model */,
 				602A9FED21E37E9A002BFDD6 /* Manager */,
+				60C48FBE21E6450000C52F50 /* CustomAlert */,
 				60FBD13221D3A9490012B70F /* Supporting */,
 			);
 			path = FoodCup;
@@ -265,6 +278,7 @@
 				60E2C41721D9F66B001098B9 /* FoodList.storyboard */,
 				60E2C41D21DA07E3001098B9 /* Detail.storyboard */,
 				60E2C43F21DA4AF7001098B9 /* AddList.storyboard */,
+				60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -448,6 +462,7 @@
 				60FBD2F521D5DD3E0012B70F /* map_pinup@3x.png in Resources */,
 				60FBD12421D3A7A20012B70F /* Assets.xcassets in Resources */,
 				60FBD30721D5DD3E0012B70F /* noimage.png in Resources */,
+				60C48FBD21E644F200C52F50 /* CustomAlert.storyboard in Resources */,
 				60FBD30921D5DD3E0012B70F /* daum_th_line.png in Resources */,
 				60E2C44021DA4AF7001098B9 /* AddList.storyboard in Resources */,
 				60FBD32D21D8BB150012B70F /* Map.storyboard in Resources */,
@@ -495,6 +510,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodCup/Pods-FoodCup-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -511,6 +527,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -573,6 +590,7 @@
 				60FBD14021D51A840012B70F /* MapViewController.swift in Sources */,
 				60E2C41221D9D938001098B9 /* LoginViewController.swift in Sources */,
 				60E2C41A21D9F67E001098B9 /* FoodListViewController.swift in Sources */,
+				60C48FC021E6452900C52F50 /* InputTextAlertViewController.swift in Sources */,
 				60E2C41C21DA07DA001098B9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
