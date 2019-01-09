@@ -9,7 +9,12 @@
 import UIKit
 
 class InputTextAlertViewController: UIViewController {
-
+    // MARK:- Outlets
+    @IBOutlet var searchTF: UITextField!
+    
+    
+    
+    // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 

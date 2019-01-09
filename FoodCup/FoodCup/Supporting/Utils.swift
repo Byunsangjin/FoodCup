@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 // 알람 메세지
 extension UIViewController {
@@ -14,13 +15,15 @@ extension UIViewController {
     func okAlert(_ title: String?, _ message: String?, completion: (()->Void)? = nil) {
         // 메인 스레드에서 실행되도록
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .cancel) { (_) in
-                completion?() // completion 매개변수의 값이 nil이 아닐때만 실행
-            }
-            alert.addAction(okAction)
+            let alert = PopupDialog(title: title, message: message, image: nil, buttonAlignment: .horizontal, transitionStyle: .fadeIn, preferredWidth: 200, tapGestureDismissal: true, panGestureDismissal: false, hideStatusBar: true, completion: {
+                completion?()
+            })
             
-            self.present(alert, animated: false)
+            alert.addButton(PopupDialogButton(title: "확인", action: {
+                completion?()
+            }))
+            
+            self.present(alert, animated: true)
         }
     }
     
@@ -29,16 +32,15 @@ extension UIViewController {
     func confirmAlert(_ title: String?, _ message: String?, completion: (()->Void)? = nil) {
         // 메인 스레드에서 실행되도록
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default) { (_) in
-                completion?() // completion 매개변수의 값이 nil이 아닐때만 실행
-            }
-            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-                
-            alert.addAction(okAction)
-            alert.addAction(cancelAction)
             
-            self.present(alert, animated: false)
+            let alert = PopupDialog(title: title, message: message, image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, tapGestureDismissal: true, panGestureDismissal: false, hideStatusBar: false, completion: nil)
+            
+            alert.addButton(PopupDialogButton(title: "확인", action: {
+                completion?()
+            }))
+            alert.addButton(PopupDialogButton(title: "취소", action: nil))
+            
+            self.present(alert, animated: true)
         }
     }
 }

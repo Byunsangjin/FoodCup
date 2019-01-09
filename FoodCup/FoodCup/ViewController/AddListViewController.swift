@@ -11,6 +11,7 @@ import CoreLocation
 import Alamofire
 import AlamofireObjectMapper
 import Firebase
+import PopupDialog
 
 // 좌표
 class MyCoordinate {
@@ -157,9 +158,6 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
             // foodList에 정보 추가
             self.contentSet()
             
-            
-            
-            
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -167,17 +165,23 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     
     
     // MARK:- Actions
+    // 지도 검색 클릭 시
     @IBAction func mapBtnPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "음식점 검색", message: nil, preferredStyle: .alert)
-        alert.addTextField { (tf) in
-            tf.placeholder = "예) 돈카2014"
-        }
+        let storyboard = UIStoryboard.init(name: "CustomAlert", bundle: nil)
+        let inputTextAlertVC = storyboard.instantiateViewController(withIdentifier: "InputTextAlertViewController") as! InputTextAlertViewController
         
-        alert.addAction(UIAlertAction(title: "검색", style: .default, handler: { (_) in
-            self.searchWord = alert.textFields?.last?.text!
+        let alert = PopupDialog(viewController: inputTextAlertVC)
+        alert.buttonAlignment = .horizontal
+        alert.transitionStyle = .bounceDown
+        
+        let okButton = PopupDialogButton(title: "검색") {
+            self.searchWord = inputTextAlertVC.searchTF.text
             self.performSegue(withIdentifier: "SegueToSearch", sender: self)
-        }))
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+        }
+        let cancelButton = PopupDialogButton(title: "취소", action: nil)
+        cancelButton.titleColor = UIColor.red
+        
+        alert.addButtons([okButton, cancelButton])
         
         present(alert, animated: true)
     }
