@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK:- Outlets
@@ -21,11 +22,13 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     // MARK:- Constants
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-
+    
     
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(swipe)))
     }
     
     
@@ -76,6 +79,15 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     
     
+    @objc func swipe() {
+        self.dismiss(animated: true) {
+            print("메인 화면으로 이동")
+        }
+    }
+    
+    
+    
+    
     // MARK:- Actions
     @IBAction func addListBtnPressed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "AddList", bundle: nil)
@@ -86,6 +98,13 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     
     
+    // 로그아웃 버튼 클릭시
+    @IBAction func signOutBtnPressed(_ sender: Any) {
+        try! Auth.auth().signOut()
+        UserDefaults.standard.setValue(false, forKey: "isSignIn")
+        self.delegate.foodList.removeAll()
+        print("로그아웃")
+    }
 }
 
 

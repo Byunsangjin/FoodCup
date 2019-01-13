@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var pwTextField: UITextField!
     
+    @IBOutlet var bgImageView: UIImageView!
+    
     
     
     // MARK:- Constants
@@ -25,6 +27,29 @@ class LoginViewController: UIViewController {
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        self.bgImageView.image = UIImage(named: "loginBackground.png")
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+        self.view.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(swipe)))
+    }
+    
+    
+    
+    // 텍스트 필드 초기화
+    func initTextField() {
+        self.emailTextField.text = ""
+        self.pwTextField.text = ""
+    }
+    
+    
+    
+    @objc func tap() {
+        self.view.endEditing(true)
+    }
+    
+    @objc func swipe() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -40,8 +65,11 @@ class LoginViewController: UIViewController {
                 self.delegate.getFoodInfo() {
                     let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
                     let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
-                    self.present(foodListVC, animated: true)
+                    self.present(foodListVC, animated: true, completion: nil)
                 }
+                
+                // 로그인 성공시 텍스트필드 초기화
+                self.initTextField()
             }
         }
     }
@@ -51,6 +79,8 @@ class LoginViewController: UIViewController {
     @IBAction func signUpBtnPressed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "SignUp", bundle: nil)
         let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        
+        self.initTextField()
         
         self.present(signUpVC, animated: true)
     }

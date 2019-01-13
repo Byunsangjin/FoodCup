@@ -4,10 +4,16 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="경기천년바탕OTF_Regular.otf">
+            <string>GyeonggiBatangROTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="TPs-X0-Srr">
@@ -21,52 +27,40 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-na-d7N">
-                                <rect key="frame" x="131" y="227" width="113" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="sps-na-d7N" secondAttribute="height" multiplier="113:43" id="WLJ-pb-u2k"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <rect key="frame" x="119.5" y="112.5" width="136" height="42"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
                                 <state key="normal" title="푸드월드컵">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="worldCupPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="CVb-ca-6wr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-a5-adv">
-                                <rect key="frame" x="142" y="336" width="90" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="CZS-a5-adv" secondAttribute="height" multiplier="90:43" id="xlC-Cu-6qp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <rect key="frame" x="134" y="246" width="107" height="42"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
                                 <state key="normal" title="랜덤뽑기">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="randomBtnPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="d3T-Nm-udf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjh-GP-f5j">
-                                <rect key="frame" x="142" y="448" width="90" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="bjh-GP-f5j" secondAttribute="height" multiplier="90:43" id="BpL-5K-Rwg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <rect key="frame" x="134" y="379" width="107" height="42"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
                                 <state key="normal" title="이전결과">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="resultPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="JB9-YA-uhj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33X-bt-Yz4">
-                                <rect key="frame" x="158" y="560" width="68" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="33X-bt-Yz4" secondAttribute="height" multiplier="68:43" id="rGw-g4-GvC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <rect key="frame" x="147" y="512.5" width="81" height="42"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
                                 <state key="normal" title="게시판">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="boardBtnPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="iTz-HG-EMq"/>
@@ -75,22 +69,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="33X-bt-Yz4" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" constant="158" id="00W-3h-jF0"/>
-                            <constraint firstItem="xmM-ve-djV" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" id="0Zq-kT-ZMG"/>
-                            <constraint firstItem="bjh-GP-f5j" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" constant="142" id="TVV-dc-tcJ"/>
-                            <constraint firstItem="xmM-ve-djV" firstAttribute="top" secondItem="1Hp-0R-8dT" secondAttribute="top" id="Tui-P4-d4k"/>
-                            <constraint firstItem="CZS-a5-adv" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" constant="142" id="Uxp-Av-82U"/>
-                            <constraint firstItem="1Hp-0R-8dT" firstAttribute="trailing" secondItem="bjh-GP-f5j" secondAttribute="trailing" constant="143" id="Y6v-8U-wQM"/>
-                            <constraint firstItem="33X-bt-Yz4" firstAttribute="top" secondItem="bjh-GP-f5j" secondAttribute="bottom" constant="69" id="ZBW-Xr-6pV"/>
-                            <constraint firstItem="xmM-ve-djV" firstAttribute="trailing" secondItem="1Hp-0R-8dT" secondAttribute="trailing" id="ar6-Yh-42a"/>
-                            <constraint firstItem="sps-na-d7N" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" constant="131" id="dFg-Mw-Yzm"/>
-                            <constraint firstItem="1Hp-0R-8dT" firstAttribute="trailing" secondItem="CZS-a5-adv" secondAttribute="trailing" constant="143" id="f42-1N-Il9"/>
-                            <constraint firstItem="bjh-GP-f5j" firstAttribute="top" secondItem="CZS-a5-adv" secondAttribute="bottom" constant="69" id="hSz-st-geI"/>
-                            <constraint firstItem="1Hp-0R-8dT" firstAttribute="trailing" secondItem="33X-bt-Yz4" secondAttribute="trailing" constant="149" id="lFj-8j-T2Y"/>
-                            <constraint firstItem="CZS-a5-adv" firstAttribute="top" secondItem="sps-na-d7N" secondAttribute="bottom" constant="66" id="mcK-UJ-bu9"/>
-                            <constraint firstItem="1Hp-0R-8dT" firstAttribute="trailing" secondItem="sps-na-d7N" secondAttribute="trailing" constant="131" id="saa-fM-Md6"/>
-                            <constraint firstItem="1Hp-0R-8dT" firstAttribute="bottom" secondItem="33X-bt-Yz4" secondAttribute="bottom" constant="64" id="uoz-yS-yfg"/>
-                            <constraint firstAttribute="bottom" secondItem="xmM-ve-djV" secondAttribute="bottom" id="vYg-xO-o0S"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="bottom" secondItem="1Hp-0R-8dT" secondAttribute="bottom" id="5fJ-QK-j0P"/>
+                            <constraint firstItem="33X-bt-Yz4" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="1.6" id="G5E-71-K53"/>
+                            <constraint firstItem="33X-bt-Yz4" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="IdE-5h-sK9"/>
+                            <constraint firstItem="CZS-a5-adv" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="Ig7-rm-Bmq"/>
+                            <constraint firstItem="CZS-a5-adv" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="0.8" id="K5d-ke-OML"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" id="NgT-LS-EMH"/>
+                            <constraint firstItem="sps-na-d7N" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="XSV-kE-mZl"/>
+                            <constraint firstItem="bjh-GP-f5j" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="bPh-xL-iRV"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="trailing" secondItem="1Hp-0R-8dT" secondAttribute="trailing" id="jYk-Qm-dEu"/>
+                            <constraint firstItem="sps-na-d7N" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="0.4" id="may-Md-ayI"/>
+                            <constraint firstItem="bjh-GP-f5j" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="1.2" id="po6-qg-YsH"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="top" secondItem="1Hp-0R-8dT" secondAttribute="top" id="zCD-Pm-H4g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Hp-0R-8dT"/>
                     </view>
@@ -100,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3e-xc-Ecv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925.60000000000002" y="133.74384236453201"/>
+            <point key="canvasLocation" x="925.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

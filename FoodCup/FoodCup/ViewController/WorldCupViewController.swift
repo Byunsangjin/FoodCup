@@ -24,10 +24,16 @@ class WorldCupViewController: UIViewController {
     @IBOutlet var bottomImageView: UIImageView!
     @IBOutlet var bgImageView: UIImageView!
     
+    @IBOutlet var topStickerView: UIView!
+    @IBOutlet var bottomStickerView: UIView!
+    
+    @IBOutlet var topView: UIView!
+    @IBOutlet var bottomView: UIView!
+    
     
     
     // MARK:- Variables
-    var foodList = ["족발", "보쌈", "냉면", "돈까스", "된장찌개", "짜장면", "치킨", "햄버거"]
+    var foodList = ["간장게장", "김밥", "김치찌개", "냉면", "닭발", "돈까스", "떡볶이", "보쌈"]
     var topNum = 6
     var bottomNum = 7
     var tournament: Tournament = Tournament.quarterfinal // 현재 토너먼트가 몇강인지 나타내 주는 변수
@@ -42,6 +48,12 @@ class WorldCupViewController: UIViewController {
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.topImageView.transform = CGAffineTransform(rotationAngle: 0.1)
+        self.topStickerView.transform = CGAffineTransform(rotationAngle: 0.7)
+        
+        self.bottomImageView.transform = CGAffineTransform(rotationAngle: -0.1)
+        self.bottomStickerView.transform = CGAffineTransform(rotationAngle: -0.7)
 
         self.viewInit()
     }
@@ -51,7 +63,7 @@ class WorldCupViewController: UIViewController {
     // 첫 뷰 세팅
     func viewInit() {
         // 배경 이미지 설정
-        self.bgImageView.image = UIImage(named: "back_quarter_final")
+        self.bgImageView.image = UIImage(named: "roundOf8")
         
         // 음식 String List 섞기
         self.foodList.shuffle()
@@ -89,11 +101,11 @@ class WorldCupViewController: UIViewController {
         if (tapGestureRecognizer.view?.tag)! == 1 { // topImageView 선택시
             foodList.remove(at: bottomNum)
             
-            self.imageAnimating(image: self.topImageView)
+            self.imageAnimating(view: self.topView)
         } else { // bottomImageView 선택시
             foodList.remove(at: topNum)
             
-            self.imageAnimating(image: self.bottomImageView)
+            self.imageAnimating(view: self.bottomView)
         }
         
         switch tournament {
@@ -124,7 +136,7 @@ class WorldCupViewController: UIViewController {
             topNum = bottomNum - 1
             
             // 배경 사진 4강으로 바꾸기
-            self.bgImageView.image = UIImage(named: "back_semi_final")
+            self.bgImageView.image = UIImage(named: "roundOf4")
             drawImage()
             
             return
@@ -152,7 +164,7 @@ class WorldCupViewController: UIViewController {
             topNum = bottomNum - 1
             
             // 배경 사진 결승으로 바꾸기
-            self.bgImageView.image = UIImage(named: "back_final")
+            self.bgImageView.image = UIImage(named: "roundOfFinal")
             
             drawImage()
             
@@ -188,13 +200,13 @@ class WorldCupViewController: UIViewController {
     
     
     // 이미지에 애니메이션 효과를 줌 (깜빡이는 듯한 효과)
-    func imageAnimating(image: UIImageView) {
+    func imageAnimating(view: UIView) {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-            image.alpha = 0.0
+            view.alpha = 0.0
         }, completion: nil)
         
         UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseOut, animations: {
-            image.alpha = 1.0
+            view.alpha = 1.0
         }, completion: nil)
     }
     

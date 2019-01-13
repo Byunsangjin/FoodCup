@@ -170,9 +170,7 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
         let storyboard = UIStoryboard.init(name: "CustomAlert", bundle: nil)
         let inputTextAlertVC = storyboard.instantiateViewController(withIdentifier: "InputTextAlertViewController") as! InputTextAlertViewController
         
-        let alert = PopupDialog(viewController: inputTextAlertVC)
-        alert.buttonAlignment = .horizontal
-        alert.transitionStyle = .bounceDown
+        let alert = PopupDialog(viewController: inputTextAlertVC, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, tapGestureDismissal: true, panGestureDismissal: false, hideStatusBar: false, completion: nil)
         
         let okButton = PopupDialogButton(title: "검색") {
             self.searchWord = inputTextAlertVC.searchTF.text

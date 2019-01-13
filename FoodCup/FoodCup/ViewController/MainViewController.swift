@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Hero
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -27,10 +28,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("viewDidLoad")
-        
         // 배경 이미지 설정
-        self.bgImageView.image = UIImage(named: "background")
+        self.bgImageView.image = UIImage(named: "mainBackground.png")
         
     }
     
@@ -47,11 +46,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func resultPressed(_ sender: Any) {
+        // 이전에 선택한 음식 결과
+        guard let result = self.userDefaults.string(forKey: "result") else {
+            self.okAlert("이전에 선택한 음식이 없습니다.", nil)
+            return
+        }
+        
         let storyboard = UIStoryboard.init(name: "Result", bundle: nil)
         let resultVC = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
         
-        // 이전에 선택한 음식 결과
-        let result = self.userDefaults.string(forKey: "result")
         resultVC.result = result
         
         self.present(resultVC, animated: true)
@@ -72,14 +75,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func boardBtnPressed(_ sender: Any) {
         if self.ud.bool(forKey: "isSignIn") { // 로그인 상태라면
             let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-            let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
+            let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController") as! UINavigationController
+            
+            foodListVC.hero.isEnabled = true
+            foodListVC.hero.modalAnimationType = .selectBy(presenting: .pull(direction: .left), dismissing: .pull(direction: .right))
             
             self.present(foodListVC, animated: true)
         } else {
             let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
             let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             
-            self.present(loginVC, animated: true)
+            loginVC.hero.isEnabled = true
+            loginVC.hero.modalAnimationType = .selectBy(presenting: .pull(direction: .left), dismissing: .pull(direction: .right))
+            self.present(loginVC, animated: true, completion: nil)
         }
     }
     

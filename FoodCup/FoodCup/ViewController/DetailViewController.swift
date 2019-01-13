@@ -32,7 +32,6 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        print("self.foodContent?.lng : \(self.foodContent?.lng)")
         if (self.foodContent!.lng?.isEmpty)! != true { // 좌표 값이 비어있지 않다면
             self.mapViewSet()
             self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent!) // 맵에 마커를 찍는다.

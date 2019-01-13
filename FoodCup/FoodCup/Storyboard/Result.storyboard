@@ -4,10 +4,16 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="경기천년바탕OTF_Regular.otf">
+            <string>GyeonggiBatangROTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Result View Controller-->
         <scene sceneID="HWr-1R-98F">
@@ -18,47 +24,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cIB-5v-cZH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-Ja-gtk">
-                                <rect key="frame" x="16" y="274" width="343" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="5dS-Ja-gtk" secondAttribute="height" multiplier="49:40" id="BGA-T8-G3L"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-kv-B0x">
-                                <rect key="frame" x="153" y="579" width="69" height="30"/>
-                                <state key="normal" title="음식점 찾기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-Gd-dWD">
+                                <rect key="frame" x="164" y="529" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchBtnPressed:" destination="g1h-Eg-3S2" eventType="touchUpInside" id="Psu-Xb-OnU"/>
+                                    <segue destination="5aB-1f-PLN" kind="unwind" unwindAction="gotoMainVC:" id="nR2-xU-ch9"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchRestaurantBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-cj-cFa">
+                                <rect key="frame" x="112" y="485" width="151" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-Ja-gtk">
+                                <rect key="frame" x="32" y="231" width="310" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NnK-kM-e1H" firstAttribute="bottom" secondItem="RGo-kv-B0x" secondAttribute="bottom" constant="58" id="4zK-iq-zVL"/>
-                            <constraint firstItem="cIB-5v-cZH" firstAttribute="top" secondItem="NnK-kM-e1H" secondAttribute="top" id="G02-9K-Gar"/>
-                            <constraint firstItem="RGo-kv-B0x" firstAttribute="top" secondItem="5dS-Ja-gtk" secondAttribute="bottom" constant="25" id="Q91-pO-OgA"/>
-                            <constraint firstAttribute="bottom" secondItem="cIB-5v-cZH" secondAttribute="bottom" id="d2L-Ok-mAL"/>
-                            <constraint firstItem="NnK-kM-e1H" firstAttribute="trailing" secondItem="RGo-kv-B0x" secondAttribute="trailing" constant="153" id="exH-hH-5nz"/>
-                            <constraint firstItem="5dS-Ja-gtk" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="16" id="gUQ-Hm-uYV"/>
-                            <constraint firstItem="NnK-kM-e1H" firstAttribute="trailing" secondItem="5dS-Ja-gtk" secondAttribute="trailing" constant="16" id="gcZ-M7-eew"/>
-                            <constraint firstItem="RGo-kv-B0x" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="153" id="jJ5-jM-A4i"/>
-                            <constraint firstItem="cIB-5v-cZH" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" id="rRC-ae-ikl"/>
-                            <constraint firstItem="cIB-5v-cZH" firstAttribute="trailing" secondItem="NnK-kM-e1H" secondAttribute="trailing" id="yUc-Mk-qfi"/>
+                            <constraint firstItem="cIB-5v-cZH" firstAttribute="trailing" secondItem="NnK-kM-e1H" secondAttribute="trailing" id="4at-9V-qbI"/>
+                            <constraint firstItem="cIB-5v-cZH" firstAttribute="top" secondItem="WA6-Fp-wbP" secondAttribute="top" id="CLh-Ie-ckc"/>
+                            <constraint firstItem="cIB-5v-cZH" firstAttribute="bottom" secondItem="NnK-kM-e1H" secondAttribute="bottom" id="plp-5a-W3S"/>
+                            <constraint firstItem="cIB-5v-cZH" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" id="z6d-bf-7BQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NnK-kM-e1H"/>
                     </view>
                     <connections>
                         <outlet property="bgImageView" destination="cIB-5v-cZH" id="yJZ-Cl-a5F"/>
                         <outlet property="resultImageView" destination="5dS-Ja-gtk" id="lmI-PP-Onn"/>
+                        <outlet property="searchBtnImageView" destination="tDc-cj-cFa" id="YSX-4h-wbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhR-e4-qJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5aB-1f-PLN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="134"/>
+            <point key="canvasLocation" x="2388" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="searchRestaurantBtn.png" width="204" height="39"/>
+    </resources>
 </document>

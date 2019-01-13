@@ -34,7 +34,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         // 배경 이미지 설정
-        self.bgImageView.image = #imageLiteral(resourceName: "main_back")
+        self.bgImageView.image = UIImage(named: "loginBackground.png")
         
         // 우선 원격 구성 개체 인스턴스를 가져오고 캐시를 빈번하게 새로고칠 수 있도록 개발자 모드를 사용 설정합니다.
         remoteConfig = RemoteConfig.remoteConfig()

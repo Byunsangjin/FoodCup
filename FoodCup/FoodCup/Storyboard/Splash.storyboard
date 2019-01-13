@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,27 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9j9-tS-P8C">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ta2-7a-W6Y">
-                                <rect key="frame" x="137" y="283" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ta2-7a-W6Y" secondAttribute="height" multiplier="1:1" id="GzL-l4-tWB"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9j9-tS-P8C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="9j9-tS-P8C" firstAttribute="leading" secondItem="gHA-cS-vqk" secondAttribute="leading" id="7df-ud-7V1"/>
-                            <constraint firstItem="gHA-cS-vqk" firstAttribute="trailing" secondItem="Ta2-7a-W6Y" secondAttribute="trailing" constant="138" id="8jT-fR-Rx1"/>
-                            <constraint firstItem="Ta2-7a-W6Y" firstAttribute="top" secondItem="gHA-cS-vqk" secondAttribute="top" constant="263" id="TPF-qQ-sPk"/>
-                            <constraint firstItem="Ta2-7a-W6Y" firstAttribute="leading" secondItem="gHA-cS-vqk" secondAttribute="leading" constant="137" id="W8N-uz-MG5"/>
-                            <constraint firstAttribute="bottom" secondItem="9j9-tS-P8C" secondAttribute="bottom" id="dXQ-g7-xwi"/>
-                            <constraint firstItem="9j9-tS-P8C" firstAttribute="trailing" secondItem="gHA-cS-vqk" secondAttribute="trailing" id="gPC-2E-f3o"/>
-                            <constraint firstItem="9j9-tS-P8C" firstAttribute="top" secondItem="gHA-cS-vqk" secondAttribute="top" id="lim-LA-HKB"/>
-                            <constraint firstItem="gHA-cS-vqk" firstAttribute="bottom" secondItem="Ta2-7a-W6Y" secondAttribute="bottom" constant="284" id="vWY-Ak-lEg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gHA-cS-vqk"/>
                     </view>
                     <connections>
@@ -46,10 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isW-px-AGM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="133"/>
+            <point key="canvasLocation" x="132" y="132.68365817091455"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="food_icon" width="128" height="128"/>
-    </resources>
 </document>

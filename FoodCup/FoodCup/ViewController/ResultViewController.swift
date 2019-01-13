@@ -14,6 +14,7 @@ class ResultViewController: UIViewController {
     @IBOutlet var bgImageView: UIImageView!
     @IBOutlet var resultImageView: UIImageView!
     
+    @IBOutlet var searchBtnImageView: UIImageView!
     
     
     // MARK:- Variable
@@ -25,15 +26,16 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.bgImageView.image = UIImage(named: "back_result")
+        self.bgImageView.image = UIImage(named: "resultBackground.png")
         
         self.resultImageView.image = UIImage(named: self.result!)
+        
+        searchBtnImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchBtnPressed)))
     }
-
     
     
-    // MARK:- Actions
-    @IBAction func searchBtnPressed(_ sender: Any) {
+    
+    @objc func searchBtnPressed() {
         let storyboard = UIStoryboard.init(name: "Map", bundle: nil)
         let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         
@@ -41,5 +43,4 @@ class ResultViewController: UIViewController {
         
         present(mapVC, animated: true)
     }
-    
 }
