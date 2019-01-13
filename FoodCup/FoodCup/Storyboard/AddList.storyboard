@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="경기천년바탕OTF_Regular.otf">
+            <string>GyeonggiBatangROTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Add List View Controller-->
         <scene sceneID="bRR-IJ-4M9">
@@ -37,18 +42,21 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-AI-iTX">
-                                                <rect key="frame" x="24" y="459" width="326" height="192"/>
+                                                <rect key="frame" x="24" y="463.5" width="326" height="192"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="cCy-AI-iTX" secondAttribute="height" multiplier="163:96" id="djJ-Lt-pTE"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-KX-XcF">
-                                                <rect key="frame" x="159" y="412" width="57" height="30"/>
+                                                <rect key="frame" x="154.5" y="412" width="66" height="34.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="uHd-KX-XcF" secondAttribute="height" multiplier="19:10" id="InE-nj-mwv"/>
                                                 </constraints>
-                                                <state key="normal" title="지도 검색"/>
+                                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
+                                                <state key="normal" title="지도 검색">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mapBtnPressed:" destination="TFQ-wH-RDG" eventType="touchUpInside" id="9t3-mV-7Ui"/>
                                                 </connections>
@@ -110,9 +118,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiJ-my-2H1">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <rect key="frame" x="172" y="619" width="31" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
+                                <state key="normal" title="선택">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="okBtnPressed:" destination="fZ1-Vp-827" eventType="touchUpInside" id="v3t-cQ-V3u"/>
                                 </connections>

@@ -103,7 +103,10 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         try! Auth.auth().signOut()
         UserDefaults.standard.setValue(false, forKey: "isSignIn")
         self.delegate.foodList.removeAll()
-        print("로그아웃")
+        self.dismiss(animated: true) {
+            print("로그아웃")
+        }
+        
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import DCAnimationKit
 
 // 토너먼트 몇강인지
 enum Tournament {
@@ -48,12 +48,6 @@ class WorldCupViewController: UIViewController {
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.topImageView.transform = CGAffineTransform(rotationAngle: 0.1)
-        self.topStickerView.transform = CGAffineTransform(rotationAngle: 0.7)
-        
-        self.bottomImageView.transform = CGAffineTransform(rotationAngle: -0.1)
-        self.bottomStickerView.transform = CGAffineTransform(rotationAngle: -0.7)
 
         self.viewInit()
     }
@@ -65,12 +59,19 @@ class WorldCupViewController: UIViewController {
         // 배경 이미지 설정
         self.bgImageView.image = UIImage(named: "roundOf8")
         
+        // 이미지 비스듬하게 보이게 하기
+        self.topImageView.transform = CGAffineTransform(rotationAngle: 0.1)
+        self.topStickerView.transform = CGAffineTransform(rotationAngle: 0.7)
+        
+        self.bottomImageView.transform = CGAffineTransform(rotationAngle: -0.1)
+        self.bottomStickerView.transform = CGAffineTransform(rotationAngle: -0.7)
+        
         // 음식 String List 섞기
         self.foodList.shuffle()
         
         self.drawImage()
         
-        self.imageTapSet()
+        self.viewTapSet()
     }
     
     
@@ -84,28 +85,32 @@ class WorldCupViewController: UIViewController {
     
     
     // 이미지 탭 허용 설정 메소드
-    func imageTapSet() {
-        let tapTopImageView = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        self.topImageView.isUserInteractionEnabled = true
-        self.topImageView.addGestureRecognizer(tapTopImageView)
+    func viewTapSet() {
+        let tapTopGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(tapGestureRecognizer:)))
+        let tapBottomGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(tapGestureRecognizer:)))
         
-        let tapBottomImageView = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        self.bottomImageView.isUserInteractionEnabled = true
-        self.bottomImageView.addGestureRecognizer(tapBottomImageView)
+        self.topView.addGestureRecognizer(tapTopGesture)
+        self.bottomView.addGestureRecognizer(tapBottomGesture)
     }
     
     
     
     // 이미지를 탭했을 때 동작하는 메소드
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        if (tapGestureRecognizer.view?.tag)! == 1 { // topImageView 선택시
+    @objc func viewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        print(tapGestureRecognizer.view!.tag)
+        
+        if tapGestureRecognizer.view!.tag == 1 { // topView 선택시
             foodList.remove(at: bottomNum)
             
-            self.imageAnimating(view: self.topView)
-        } else { // bottomImageView 선택시
+            self.topView.expand(into: self.view, finished: {
+                print("topTap")
+            })
+        } else { // bottomView 선택시
             foodList.remove(at: topNum)
             
-            self.imageAnimating(view: self.bottomView)
+            self.bottomView.expand(into: self.view, finished: {
+                print("bottomTap")
+            })
         }
         
         switch tournament {
@@ -198,24 +203,8 @@ class WorldCupViewController: UIViewController {
     
     
     
-    
-    // 이미지에 애니메이션 효과를 줌 (깜빡이는 듯한 효과)
-    func imageAnimating(view: UIView) {
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-            view.alpha = 0.0
-        }, completion: nil)
-        
-        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseOut, animations: {
-            view.alpha = 1.0
-        }, completion: nil)
-    }
-    
-    
-    
     // MARK:- Actions
     @IBAction func stopBtnPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }

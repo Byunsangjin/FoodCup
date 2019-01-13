@@ -38,21 +38,25 @@
                                     <action selector="stopBtnPressed:" destination="OVQ-8C-Hga" eventType="touchUpInside" id="5TR-b2-nMO"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="poF-Sm-RKP">
-                                <rect key="frame" x="46" y="253" width="282" height="188"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4R7-IW-Zcb">
-                                <rect key="frame" x="16" y="38" width="56" height="29"/>
+                                <rect key="frame" x="16" y="38" width="65" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="20"/>
                                 <state key="normal" title="&lt; Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="homeBtnPressed:" destination="OVQ-8C-Hga" eventType="touchUpInside" id="GYM-gC-8iK"/>
+                                    <action selector="backBtnPressed:" destination="OVQ-8C-Hga" eventType="touchUpInside" id="GYM-gC-8iK"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchRestaurantBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="N18-k1-v2k">
+                                <rect key="frame" x="132" y="479" width="111" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="poF-Sm-RKP">
+                                <rect key="frame" x="42" y="247" width="290" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="56J-ri-Wqf"/>
@@ -60,6 +64,7 @@
                     <connections>
                         <outlet property="bgImageView" destination="dB6-ic-wAo" id="WCe-32-PEp"/>
                         <outlet property="randomImageView" destination="poF-Sm-RKP" id="hfl-3T-ZXB"/>
+                        <outlet property="searchBtnImageView" destination="N18-k1-v2k" id="Aoh-cf-Od2"/>
                         <outlet property="stopButton" destination="rMq-bX-e5p" id="dSf-uF-Ubb"/>
                     </connections>
                 </viewController>
@@ -68,4 +73,7 @@
             <point key="canvasLocation" x="80.799999999999997" y="106.59670164917542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="searchRestaurantBtn.png" width="204" height="39"/>
+    </resources>
 </document>

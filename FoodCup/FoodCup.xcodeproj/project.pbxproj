@@ -42,7 +42,8 @@
 		60B60C4F21EB7A1C003F0F49 /* 김치찌개.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C3D21EB7A1C003F0F49 /* 김치찌개.png */; };
 		60B60C5021EB7A1C003F0F49 /* 양꼬치.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C3E21EB7A1C003F0F49 /* 양꼬치.png */; };
 		60B60C5221EB7AA8003F0F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C5121EB7AA8003F0F49 /* Assets.xcassets */; };
-		60B60C5421EB80D6003F0F49 /* randomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C5321EB80D6003F0F49 /* randomBackground.png */; };
+		60B60C7621EB8A26003F0F49 /* signUpBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7521EB8A26003F0F49 /* signUpBtn.png */; };
+		60B60C7821EB8B03003F0F49 /* randomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7721EB8B03003F0F49 /* randomBackground.png */; };
 		60C48FBD21E644F200C52F50 /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */; };
 		60C48FC021E6452900C52F50 /* InputTextAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */; };
 		60E2C41021D9D92F001098B9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C40F21D9D92F001098B9 /* Login.storyboard */; };
@@ -146,7 +147,9 @@
 		60B60C3D21EB7A1C003F0F49 /* 김치찌개.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "김치찌개.png"; sourceTree = "<group>"; };
 		60B60C3E21EB7A1C003F0F49 /* 양꼬치.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "양꼬치.png"; sourceTree = "<group>"; };
 		60B60C5121EB7AA8003F0F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		60B60C5321EB80D6003F0F49 /* randomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = randomBackground.png; sourceTree = "<group>"; };
+		60B60C7421EB8963003F0F49 /* signUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpBackground.png; path = "../../../../../../../Downloads/오늘 뭐 먹지_이미지_버전2/signUpBackground.png"; sourceTree = "<group>"; };
+		60B60C7521EB8A26003F0F49 /* signUpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUpBtn.png; sourceTree = "<group>"; };
+		60B60C7721EB8B03003F0F49 /* randomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = randomBackground.png; path = "../../../../../../../Downloads/오늘 뭐 먹지_이미지_버전2/randomBackground.png"; sourceTree = "<group>"; };
 		60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAlert.storyboard; sourceTree = "<group>"; };
 		60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextAlertViewController.swift; sourceTree = "<group>"; };
 		60E2C40F21D9D92F001098B9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -271,7 +274,8 @@
 		60580EEA21EB088A0072565D /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				60B60C5321EB80D6003F0F49 /* randomBackground.png */,
+				60B60C7721EB8B03003F0F49 /* randomBackground.png */,
+				60B60C7421EB8963003F0F49 /* signUpBackground.png */,
 				60580F0721EB1E460072565D /* resultBackground.png */,
 				60580EED21EB0A990072565D /* mainBackground.png */,
 				60580EF121EB0D2A0072565D /* splashBackground.png */,
@@ -296,6 +300,7 @@
 		60580F0621EB1C620072565D /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				60B60C7521EB8A26003F0F49 /* signUpBtn.png */,
 				60580F0421EB1C5A0072565D /* searchRestaurantBtn.png */,
 			);
 			path = Button;
@@ -618,12 +623,14 @@
 				60580F0521EB1C5A0072565D /* searchRestaurantBtn.png in Resources */,
 				60FBD32D21D8BB150012B70F /* Map.storyboard in Resources */,
 				60E2C41821D9F66B001098B9 /* FoodList.storyboard in Resources */,
+				60B60C7621EB8A26003F0F49 /* signUpBtn.png in Resources */,
 				60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */,
 				60FBD2FE21D5DD3E0012B70F /* map_pin_red.png in Resources */,
 				60580EF821EB0DD20072565D /* roundOf16.png in Resources */,
 				60FBD30821D5DD3E0012B70F /* map_present_background_update.png in Resources */,
 				60580EEE21EB0A990072565D /* mainBackground.png in Resources */,
 				60FBD30221D5DD3E0012B70F /* info_box_tail.png in Resources */,
+				60B60C7821EB8B03003F0F49 /* randomBackground.png in Resources */,
 				60FBD30A21D5DD3E0012B70F /* map_pin_shadow.png in Resources */,
 				60B60C4921EB7A1C003F0F49 /* 치킨.png in Resources */,
 				60B60C4521EB7A1C003F0F49 /* 김밥.png in Resources */,
@@ -648,7 +655,6 @@
 				60FBD30021D5DD3E0012B70F /* point_sprite.png in Resources */,
 				60FBD2FF21D5DD3E0012B70F /* info_box.png in Resources */,
 				60B60C4C21EB7A1C003F0F49 /* 냉면.png in Resources */,
-				60B60C5421EB80D6003F0F49 /* randomBackground.png in Resources */,
 				60FBD2F021D5DD3E0012B70F /* map_pin_custom.png in Resources */,
 				60FBD2FC21D5DD3E0012B70F /* map_pin@3x.png in Resources */,
 				60580EF721EB0DD20072565D /* roundOf4.png in Resources */,
@@ -679,6 +685,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/DCAnimationKit/DCAnimationKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -699,6 +706,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DCAnimationKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",

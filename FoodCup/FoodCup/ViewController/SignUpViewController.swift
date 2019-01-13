@@ -17,11 +17,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet var pwTextField: UITextField!
     @IBOutlet var rePwTextField: UITextField!
     
+    @IBOutlet var signUpBtn: UIImageView!
+    
     
     
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+        self.signUpBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(signUpBtnPressed)))
     }
     
     
@@ -54,8 +59,13 @@ class SignUpViewController: UIViewController {
     
     
     
-    // MARK:- Actions
-    @IBAction func signUpBtnPressed(_ sender: Any) {
+    @objc func tap() {
+        self.view.endEditing(true)
+    }
+    
+    
+    
+    @objc func signUpBtnPressed() {
         if self.emailTextField.text!.isEmpty || self.nameTextField.text!.isEmpty || self.pwTextField.text!.isEmpty { // 텍스트 필드에 입력하지 않은 값이 있으면
             self.okAlert(nil, "공백을 입력하세요.")
         } else if self.pwTextField.text != self.rePwTextField.text { // 패스워드가 다르면
@@ -67,6 +77,7 @@ class SignUpViewController: UIViewController {
     
     
     
+    // MARK:- Actions
     @IBAction func cancelBtnPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

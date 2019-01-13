@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="경기천년바탕OTF_Bold.otf">
+            <string>GyeonggiBatangBOTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Map View Controller-->
         <scene sceneID="qgL-ca-7eG">
@@ -19,9 +24,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2T-4z-xTj">
-                                <rect key="frame" x="314" y="42" width="44" height="30"/>
+                                <rect key="frame" x="295" y="42" width="64" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="HOME"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangBOTF" family="GyeonggiBatangOTF" pointSize="17"/>
+                                <state key="normal" title="메인으로">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="homeBtnPressed:" destination="RXq-va-i6P" eventType="touchUpInside" id="Js1-A9-e3P"/>
                                     <segue destination="Dy4-3Z-S7Q" kind="unwind" unwindAction="gotoMainVC:" id="NbQ-Vp-zzH"/>

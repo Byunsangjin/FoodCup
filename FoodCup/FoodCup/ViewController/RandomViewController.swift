@@ -9,11 +9,12 @@
 import UIKit
 
 class RandomViewController: UIViewController {
-
+    
     // MARK:- Outlets
     @IBOutlet var bgImageView: UIImageView!
     @IBOutlet var randomImageView: UIImageView!
     @IBOutlet var stopButton: UIButton!
+    @IBOutlet var searchBtnImageView: UIImageView!
     
     
     
@@ -57,35 +58,37 @@ class RandomViewController: UIViewController {
         self.randomImageView.image = UIImage(named: self.resultFood!)
         
         self.ud.set(self.resultFood, forKey: "resultFood")
+        
+        self.searchBtnImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapSearchBtnImageView)))
+    }
+    
+    
+    
+    @objc func tapSearchBtnImageView() {
+        let storyboard = UIStoryboard.init(name: "Map", bundle: nil)
+        let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        
+        mapVC.resultFood = self.resultFood
+        
+        self.present(mapVC, animated: true)
     }
     
     
     
     // MARK:- Actions
     @IBAction func stopBtnPressed(_ sender: UIButton) {
-        if self.stopButton.tag == 0 { // Stop버튼 클릭 시
-            // 애니메이션 멈추고 버튼 텍스트 변경
-            self.randomImageView.stopAnimating()
-            self.stopButton.setTitle("음식점 찾기", for: .normal)
-            
-            // 태그 변경
-            self.stopButton.tag = 1
-        } else { // 주변 위치 확인 버튼 클릭 시
-            let storyboard = UIStoryboard.init(name: "Map", bundle: nil)
-            let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-            
-            mapVC.resultFood = self.resultFood
-            
-            // 태그 변경
-            self.stopButton.tag = 0
-            
-            self.present(mapVC, animated: true)
-        }
+        // 애니메이션 멈춘다
+        self.randomImageView.stopAnimating()
+        
+        // 버튼을 음식점 찾기 버튼으로 교체
+        self.searchBtnImageView.isHidden = false
+        self.stopButton.isHidden = true
+        
     }
     
     
     
-    @IBAction func homeBtnPressed(_ sender: Any) {
+    @IBAction func backBtnPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
