@@ -37,7 +37,7 @@ class MapViewController: UIViewController, MTMapViewDelegate{
     // MARK:- Constants
     let ud = UserDefaults.standard
     let locationManager = CLLocationManager()
-    let mapManager = DaumMapManager()
+    
     
     
     // MARK:- Methods
@@ -109,7 +109,7 @@ class MapViewController: UIViewController, MTMapViewDelegate{
                 }
             }
             
-            self.mapManager.showMarker(daumMapView: self.daumMapView, mapList: self.mapList) // 마커 찍기
+            DaumMapManager.shared.showMarker(daumMapView: self.daumMapView, mapList: self.mapList) // 마커 찍기
             
             if let meta = addressDTO?.meta {
                 self.isEnd = meta.isEnd

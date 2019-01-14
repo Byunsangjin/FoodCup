@@ -44,6 +44,11 @@
 		60B60C5221EB7AA8003F0F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C5121EB7AA8003F0F49 /* Assets.xcassets */; };
 		60B60C7621EB8A26003F0F49 /* signUpBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7521EB8A26003F0F49 /* signUpBtn.png */; };
 		60B60C7821EB8B03003F0F49 /* randomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7721EB8B03003F0F49 /* randomBackground.png */; };
+		60B60C7B21EC2937003F0F49 /* signUpBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7A21EC2937003F0F49 /* signUpBackground.png */; };
+		60B60C7D21EC2A31003F0F49 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B60C7C21EC2A31003F0F49 /* FirebaseManager.swift */; };
+		60B60C7F21EC388A003F0F49 /* imageSample.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7E21EC388A003F0F49 /* imageSample.png */; };
+		60B60C8121EC6100003F0F49 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C8021EC6100003F0F49 /* 123.png */; };
+		60B60C8321EC6115003F0F49 /* imageDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C8221EC6115003F0F49 /* imageDefault.png */; };
 		60C48FBD21E644F200C52F50 /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */; };
 		60C48FC021E6452900C52F50 /* InputTextAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */; };
 		60E2C41021D9D92F001098B9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C40F21D9D92F001098B9 /* Login.storyboard */; };
@@ -147,9 +152,13 @@
 		60B60C3D21EB7A1C003F0F49 /* 김치찌개.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "김치찌개.png"; sourceTree = "<group>"; };
 		60B60C3E21EB7A1C003F0F49 /* 양꼬치.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "양꼬치.png"; sourceTree = "<group>"; };
 		60B60C5121EB7AA8003F0F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		60B60C7421EB8963003F0F49 /* signUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpBackground.png; path = "../../../../../../../Downloads/오늘 뭐 먹지_이미지_버전2/signUpBackground.png"; sourceTree = "<group>"; };
 		60B60C7521EB8A26003F0F49 /* signUpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUpBtn.png; sourceTree = "<group>"; };
 		60B60C7721EB8B03003F0F49 /* randomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = randomBackground.png; path = "../../../../../../../Downloads/오늘 뭐 먹지_이미지_버전2/randomBackground.png"; sourceTree = "<group>"; };
+		60B60C7A21EC2937003F0F49 /* signUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUpBackground.png; sourceTree = "<group>"; };
+		60B60C7C21EC2A31003F0F49 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		60B60C7E21EC388A003F0F49 /* imageSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSample.png; sourceTree = "<group>"; };
+		60B60C8021EC6100003F0F49 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
+		60B60C8221EC6115003F0F49 /* imageDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageDefault.png; sourceTree = "<group>"; };
 		60C48FBC21E644F200C52F50 /* CustomAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAlert.storyboard; sourceTree = "<group>"; };
 		60C48FBF21E6452900C52F50 /* InputTextAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextAlertViewController.swift; sourceTree = "<group>"; };
 		60E2C40F21D9D92F001098B9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -252,12 +261,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		602A9FED21E37E9A002BFDD6 /* Manager */ = {
+		602A9FED21E37E9A002BFDD6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				602A9FEE21E37EB7002BFDD6 /* DaumMapManager.swift */,
+				60B60C7C21EC2A31003F0F49 /* FirebaseManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		60580EE421EA28B70072565D /* Resources */ = {
@@ -274,8 +284,11 @@
 		60580EEA21EB088A0072565D /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				60B60C8221EC6115003F0F49 /* imageDefault.png */,
+				60B60C8021EC6100003F0F49 /* 123.png */,
+				60B60C7E21EC388A003F0F49 /* imageSample.png */,
+				60B60C7A21EC2937003F0F49 /* signUpBackground.png */,
 				60B60C7721EB8B03003F0F49 /* randomBackground.png */,
-				60B60C7421EB8963003F0F49 /* signUpBackground.png */,
 				60580F0721EB1E460072565D /* resultBackground.png */,
 				60580EED21EB0A990072565D /* mainBackground.png */,
 				60580EF121EB0D2A0072565D /* splashBackground.png */,
@@ -365,7 +378,7 @@
 				60FBD12F21D3A83C0012B70F /* AppDelegate */,
 				60FBD12E21D3A8370012B70F /* ViewController */,
 				60FBD31D21D6258A0012B70F /* Model */,
-				602A9FED21E37E9A002BFDD6 /* Manager */,
+				602A9FED21E37E9A002BFDD6 /* Managers */,
 				60C48FBE21E6450000C52F50 /* CustomAlert */,
 				60FBD13221D3A9490012B70F /* Supporting */,
 				60580EE421EA28B70072565D /* Resources */,
@@ -622,6 +635,7 @@
 				60E2C44021DA4AF7001098B9 /* AddList.storyboard in Resources */,
 				60580F0521EB1C5A0072565D /* searchRestaurantBtn.png in Resources */,
 				60FBD32D21D8BB150012B70F /* Map.storyboard in Resources */,
+				60B60C8121EC6100003F0F49 /* 123.png in Resources */,
 				60E2C41821D9F66B001098B9 /* FoodList.storyboard in Resources */,
 				60B60C7621EB8A26003F0F49 /* signUpBtn.png in Resources */,
 				60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */,
@@ -632,10 +646,12 @@
 				60FBD30221D5DD3E0012B70F /* info_box_tail.png in Resources */,
 				60B60C7821EB8B03003F0F49 /* randomBackground.png in Resources */,
 				60FBD30A21D5DD3E0012B70F /* map_pin_shadow.png in Resources */,
+				60B60C7F21EC388A003F0F49 /* imageSample.png in Resources */,
 				60B60C4921EB7A1C003F0F49 /* 치킨.png in Resources */,
 				60B60C4521EB7A1C003F0F49 /* 김밥.png in Resources */,
 				60FBD2F621D5DD3E0012B70F /* map_pin_shadow@3x.png in Resources */,
 				60E2C41621D9E917001098B9 /* SignUp.storyboard in Resources */,
+				60B60C8321EC6115003F0F49 /* imageDefault.png in Resources */,
 				60B60C4221EB7A1C003F0F49 /* 닭발.png in Resources */,
 				60E2C41021D9D92F001098B9 /* Login.storyboard in Resources */,
 				60B60C4621EB7A1C003F0F49 /* 순대국.png in Resources */,
@@ -657,6 +673,7 @@
 				60B60C4C21EB7A1C003F0F49 /* 냉면.png in Resources */,
 				60FBD2F021D5DD3E0012B70F /* map_pin_custom.png in Resources */,
 				60FBD2FC21D5DD3E0012B70F /* map_pin@3x.png in Resources */,
+				60B60C7B21EC2937003F0F49 /* signUpBackground.png in Resources */,
 				60580EF721EB0DD20072565D /* roundOf4.png in Resources */,
 				60FBD2F321D5DD3E0012B70F /* detail_button.png in Resources */,
 				60FBD30621D5DD3E0012B70F /* map_present.png in Resources */,
@@ -769,6 +786,7 @@
 				6015477121DF76D5002DC699 /* SearchViewController.swift in Sources */,
 				60FBD13E21D50D930012B70F /* ResultViewController.swift in Sources */,
 				60FBD14021D51A840012B70F /* MapViewController.swift in Sources */,
+				60B60C7D21EC2A31003F0F49 /* FirebaseManager.swift in Sources */,
 				60E2C41221D9D938001098B9 /* LoginViewController.swift in Sources */,
 				60E2C41A21D9F67E001098B9 /* FoodListViewController.swift in Sources */,
 				60C48FC021E6452900C52F50 /* InputTextAlertViewController.swift in Sources */,

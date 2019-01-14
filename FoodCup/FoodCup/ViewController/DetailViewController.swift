@@ -19,7 +19,8 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
     // MARK:- Variables
     var foodContent: FoodContent?
     lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height)) // 다음 맵 뷰
-    let mapManager = DaumMapManager()
+    
+    
     
     // MARK:- Methods
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if (self.foodContent!.lng?.isEmpty)! != true { // 좌표 값이 비어있지 않다면
             self.mapViewSet()
-            self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent!) // 맵에 마커를 찍는다.
+            DaumMapManager.shared.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent!) // 맵에 마커를 찍는다.
         }
     }
     

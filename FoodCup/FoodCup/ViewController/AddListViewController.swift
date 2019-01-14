@@ -26,7 +26,8 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
     @IBOutlet var textView: UITextView!
-    @IBOutlet var mapButton: UIButton!
+    @IBOutlet var searchBtn: UIImageView!
+    
     
     
     
@@ -45,8 +46,6 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     let storageRef = Storage.storage().reference()
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-    let mapManager = DaumMapManager()
-    
     
     
     // MARK:- Methods
@@ -63,7 +62,7 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
             print("위치 지정")
             self.mapViewSet()
             self.contentInfoSet()
-            self.mapManager.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent)
+            DaumMapManager.shared.showMarker(daumMapView: self.daumMapView, foodContent: self.foodContent)
         } else {
             print("위치 지정안함")
         }
@@ -83,6 +82,7 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
     // 초기 뷰 설정
     func viewSet() {
         self.imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker))) // 이미지 탭 제스쳐 추가
+        self.searchBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchBtnPressed)))
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(save)) // 내비게이션 바 아이템 추가
         
@@ -160,6 +160,26 @@ class AddListViewController: UIViewController, MTMapViewDelegate, CLLocationMana
             
             self.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    
+    
+    @objc func searchBtnPressed() {
+        let storyboard = UIStoryboard.init(name: "CustomAlert", bundle: nil)
+        let inputTextAlertVC = storyboard.instantiateViewController(withIdentifier: "InputTextAlertViewController") as! InputTextAlertViewController
+        
+        let alert = PopupDialog(viewController: inputTextAlertVC, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, tapGestureDismissal: true, panGestureDismissal: false, hideStatusBar: false, completion: nil)
+        
+        let okButton = PopupDialogButton(title: "검색") {
+            self.searchWord = inputTextAlertVC.searchTF.text
+            self.performSegue(withIdentifier: "SegueToSearch", sender: self)
+        }
+        let cancelButton = PopupDialogButton(title: "취소", action: nil)
+        cancelButton.titleColor = UIColor.red
+        
+        alert.addButtons([okButton, cancelButton])
+        
+        present(alert, animated: true)
     }
     
     

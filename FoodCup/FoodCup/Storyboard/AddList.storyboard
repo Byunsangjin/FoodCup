@@ -23,85 +23,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0N-7x-Uyj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWs-TW-bFt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                        <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_final" translatesAutoresizingMaskIntoConstraints="NO" id="jSb-h7-7Da">
-                                                <rect key="frame" x="24" y="28" width="326" height="326"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="jSb-h7-7Da" secondAttribute="height" multiplier="359:281" constant="-90.491103202847" id="Plf-rd-0DC"/>
-                                                </constraints>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="951-Ev-CB1">
-                                                <rect key="frame" x="24" y="371" width="326" height="33"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-AI-iTX">
-                                                <rect key="frame" x="24" y="463.5" width="326" height="192"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="cCy-AI-iTX" secondAttribute="height" multiplier="163:96" id="djJ-Lt-pTE"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-KX-XcF">
-                                                <rect key="frame" x="154.5" y="412" width="66" height="34.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="uHd-KX-XcF" secondAttribute="height" multiplier="19:10" id="InE-nj-mwv"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
-                                                <state key="normal" title="지도 검색">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="mapBtnPressed:" destination="TFQ-wH-RDG" eventType="touchUpInside" id="9t3-mV-7Ui"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="leading" secondItem="jSb-h7-7Da" secondAttribute="leading" id="AMa-o2-jeS"/>
-                                            <constraint firstItem="951-Ev-CB1" firstAttribute="leading" secondItem="jSb-h7-7Da" secondAttribute="leading" id="C1A-TL-Al0"/>
-                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="centerX" secondItem="KWs-TW-bFt" secondAttribute="centerX" id="MjH-ER-LRd"/>
-                                            <constraint firstItem="951-Ev-CB1" firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" id="ScS-dE-YEo"/>
-                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="leading" secondItem="KWs-TW-bFt" secondAttribute="leading" constant="24" id="VWU-Cx-5XL"/>
-                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="top" secondItem="uHd-KX-XcF" secondAttribute="bottom" constant="17" id="Y0G-Dl-OKg"/>
-                                            <constraint firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" constant="25" id="aPH-Nq-B40"/>
-                                            <constraint firstItem="jSb-h7-7Da" firstAttribute="top" secondItem="KWs-TW-bFt" secondAttribute="top" constant="28" id="bbs-Mu-hLF"/>
-                                            <constraint firstItem="cCy-AI-iTX" firstAttribute="trailing" secondItem="jSb-h7-7Da" secondAttribute="trailing" id="f4v-He-Bez"/>
-                                            <constraint firstAttribute="height" constant="1000" id="kSR-87-Ckr"/>
-                                            <constraint firstItem="uHd-KX-XcF" firstAttribute="top" secondItem="951-Ev-CB1" secondAttribute="bottom" constant="8" id="nRj-Eh-5m1"/>
-                                            <constraint firstItem="951-Ev-CB1" firstAttribute="top" secondItem="jSb-h7-7Da" secondAttribute="bottom" constant="17" id="oRE-qk-UgH"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="KWs-TW-bFt" firstAttribute="top" secondItem="u0N-7x-Uyj" secondAttribute="top" id="4O5-yL-bWZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="KWs-TW-bFt" secondAttribute="bottom" id="ORQ-ey-eFJ"/>
-                                    <constraint firstItem="KWs-TW-bFt" firstAttribute="leading" secondItem="u0N-7x-Uyj" secondAttribute="leading" id="smj-ok-rUF"/>
-                                    <constraint firstAttribute="trailing" secondItem="KWs-TW-bFt" secondAttribute="trailing" id="tkw-r2-ANb"/>
-                                </constraints>
-                            </scrollView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageDefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="lDs-v1-MKC">
+                                <rect key="frame" x="47" y="44" width="281" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-eZ-nT3">
+                                <rect key="frame" x="47" y="288" width="281" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.74421267690000004" blue="0.76269843569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchRestaurantBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="BYL-NV-uIE">
+                                <rect key="frame" x="138" y="430" width="98" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47D-oG-hAl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="MlX-ZH-fCx"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-IG-jFK">
+                                <rect key="frame" x="47" y="461" width="281" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="u0N-7x-Uyj" firstAttribute="leading" secondItem="wl7-7K-ZhC" secondAttribute="leading" id="ECV-Jv-aUJ"/>
-                            <constraint firstItem="u0N-7x-Uyj" firstAttribute="top" secondItem="Hre-HV-kQl" secondAttribute="top" id="UxZ-Yg-Kot"/>
-                            <constraint firstItem="KWs-TW-bFt" firstAttribute="width" secondItem="Hre-HV-kQl" secondAttribute="width" id="Waw-BT-RFx"/>
-                            <constraint firstItem="u0N-7x-Uyj" firstAttribute="bottom" secondItem="wl7-7K-ZhC" secondAttribute="bottom" id="goH-Ar-1FV"/>
-                            <constraint firstItem="u0N-7x-Uyj" firstAttribute="trailing" secondItem="wl7-7K-ZhC" secondAttribute="trailing" id="oN6-JT-Av1"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wl7-7K-ZhC"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="jSb-h7-7Da" id="TJG-4c-OuP"/>
-                        <outlet property="mapButton" destination="uHd-KX-XcF" id="WO0-xA-5bH"/>
-                        <outlet property="mapView" destination="cCy-AI-iTX" id="t7j-Wu-XOp"/>
-                        <outlet property="textView" destination="951-Ev-CB1" id="Vqd-ZH-V34"/>
+                        <outlet property="imageView" destination="lDs-v1-MKC" id="Mvw-yf-LPF"/>
+                        <outlet property="mapView" destination="y3X-IG-jFK" id="nKs-4K-NEz"/>
+                        <outlet property="searchBtn" destination="BYL-NV-uIE" id="5N0-6k-zLo"/>
+                        <outlet property="textView" destination="A3Y-eZ-nT3" id="rYY-Hu-WnK"/>
                         <segue destination="fZ1-Vp-827" kind="show" identifier="SegueToSearch" id="PA2-Se-hxq"/>
                     </connections>
                 </viewController>
@@ -118,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiJ-my-2H1">
-                                <rect key="frame" x="172" y="619" width="31" height="29"/>
+                                <rect key="frame" x="318" y="49" width="31" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
                                 <state key="normal" title="선택">
@@ -139,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_final" width="539" height="960"/>
+        <image name="imageDefault.png" width="512" height="448"/>
+        <image name="searchRestaurantBtn.png" width="204" height="39"/>
     </resources>
 </document>

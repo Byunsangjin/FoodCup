@@ -60,7 +60,7 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     // collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width / 3 - 5
+        let width = (self.view.frame.width - 20) / 3
         
         return CGSize(width: width, height: width)
     }
@@ -76,6 +76,7 @@ class FoodListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
+    
     
     
     

@@ -7,6 +7,11 @@
 //
 
 class DaumMapManager {
+    // MARK:- Constants
+    static let shared = DaumMapManager()
+    
+    
+    // MARK:- Methods
     // 마커 생성 메소드
     func poiItem(name: String, address: String,latitude: String, longitude: String) -> MTMapPOIItem {
         let poiItem = MTMapPOIItem()

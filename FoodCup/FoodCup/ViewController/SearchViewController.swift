@@ -33,7 +33,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     // MARK:- Constants
     let locationManager = CLLocationManager()
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    let mapManager = DaumMapManager()
+    
     
     
     // MARK:- Methods
@@ -98,7 +98,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
             
-            self.mapManager.showMarker(daumMapView: self.daumMapView, mapList: self.mapList) // 마커 찍기
+            DaumMapManager.shared.showMarker(daumMapView: self.daumMapView, mapList: self.mapList) // 마커 찍기
             
             if let meta = addressDTO?.meta {
                 self.isEnd = meta.isEnd

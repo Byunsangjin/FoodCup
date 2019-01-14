@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var rePwTextField: UITextField!
     
     @IBOutlet var signUpBtn: UIImageView!
+    @IBOutlet var bgImageView: UIImageView!
     
     
     
@@ -27,6 +28,7 @@ class SignUpViewController: UIViewController {
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         self.signUpBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(signUpBtnPressed)))
+        self.bgImageView.image = UIImage(named: "signUpBackground.png")
     }
     
     
@@ -48,10 +50,12 @@ class SignUpViewController: UIViewController {
             } else { // 에러가 있다면
                 if error?._code == AuthErrorCode.emailAlreadyInUse.rawValue {
                     self.okAlert(nil, "이미 동일한 이메일이 있습니다.")
+                } else if error?._code == AuthErrorCode.invalidEmail.rawValue {
+                    self.okAlert(nil, "이메일을 정확히 입력해 주세요")
                 } else if error?._code == AuthErrorCode.weakPassword.rawValue {
                     self.okAlert(nil, "비밀번호는 6자리 이상이어야 합니다.")
                 } else {
-                    self.okAlert(nil, "계정 생성 실패 : \(String(describing: error?.localizedDescription))")
+                    print("계정 생성 실패 : \(String(describing: error?.localizedDescription))")
                 }
             }
         }
@@ -66,12 +70,13 @@ class SignUpViewController: UIViewController {
     
     
     @objc func signUpBtnPressed() {
+        print("test")
         if self.emailTextField.text!.isEmpty || self.nameTextField.text!.isEmpty || self.pwTextField.text!.isEmpty { // 텍스트 필드에 입력하지 않은 값이 있으면
             self.okAlert(nil, "공백을 입력하세요.")
         } else if self.pwTextField.text != self.rePwTextField.text { // 패스워드가 다르면
             self.okAlert(nil, "패스워드를 확인해주세요.")
         } else {
-            createUser(email: self.emailTextField.text!, password: self.pwTextField.text!)
+            self.createUser(email: self.emailTextField.text!, password: self.pwTextField.text!)
         }
     }
     
