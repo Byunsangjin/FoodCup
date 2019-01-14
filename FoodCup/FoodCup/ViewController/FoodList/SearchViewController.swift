@@ -12,17 +12,21 @@ import AlamofireObjectMapper
 import Alamofire
 
 class SearchViewController: UIViewController, CLLocationManagerDelegate {
+    // MARK:- Outlets
+    @IBOutlet var searchTextField: UITextField!
+    
+    
+    
     
     // MARK:- Variables
-    lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+    lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
     var mapList = [MapVO]() // REST API를 이용해 받은 주변 정보
     
-    var searchWord: String? // 검색어
     var isEnd: Bool? = false // 마지막 페이지인지 아닌지 판단하는 변수, 마지막 페이지 일때 true
     var page: Int = 1 {
         willSet(newPage) {
             if !self.isEnd! { // 마지막 페이지가 아니라면
-                self.getMapInfo(searchWord: self.searchWord!, page: self.page)
+                self.getMapInfo(searchWord: self.searchTextField.text!, page: self.page)
             }
         }
     }
@@ -46,8 +50,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         // 맵뷰 세팅
         self.mapViewSet()
-        
-        
     }
     
     
@@ -57,12 +59,14 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         self.daumMapView.delegate = self
         self.daumMapView.baseMapType = .standard
         
-        // 주변 장소 정보 불러오기
-        if !self.isEnd! {
-            self.getMapInfo(searchWord: self.searchWord!, page: self.page)
-        }
-        
         self.view.insertSubview(self.daumMapView, at: 0) // 뷰에 맵 추가
+    }
+    
+    
+    
+    // 탭할 때 키보드 사라짐
+    @objc func tap() {
+        self.view.endEditing(true)
     }
     
     
@@ -78,7 +82,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             "page" : "\(page)"
         ]
         
-        print(page)
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseObject { (response: DataResponse<MapDataDTO>) in
             let addressDTO = response.result.value
             
@@ -109,11 +112,16 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    // MARK:- Actions
-    @IBAction func okBtnPressed(_ sender: Any) {
-        self.delegate.foodContent = self.foodContent
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        self.isEnd = false
+        self.page = 1
+        self.mapList = [MapVO]()
+        self.daumMapView.removeAllPOIItems()
         
-        self.navigationController?.popViewController(animated: true)
+        // 주변 장소 정보 불러오기
+        if !self.isEnd! {
+            self.getMapInfo(searchWord: self.searchTextField.text!, page: self.page)
+        }
     }
     
 }
@@ -122,8 +130,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
 
 // MTMapViewDelegate
 extension SearchViewController: MTMapViewDelegate {
-    // 마커 클릭 시 동작하는 메소
-    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+    func mapView(_ mapView: MTMapView!, touchedCalloutBalloonRightSideOf poiItem: MTMapPOIItem!) {
         let arr = poiItem.itemName.split(separator: "\n")
         let address = arr[1]
         
@@ -136,6 +143,8 @@ extension SearchViewController: MTMapViewDelegate {
             }
         }
         
-        return true
+        self.delegate.foodContent = self.foodContent
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }

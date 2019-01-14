@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zvt-HU-JvK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="경기천년바탕OTF_Regular.otf">
+            <string>GyeonggiBatangROTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--내 맛집 리스트-->
         <scene sceneID="c59-Ap-ZNx">
@@ -18,9 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-es-arr">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="foodListBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="T2h-t1-DK5">
+                                <rect key="frame" x="-6" y="0.0" width="381" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-es-arr">
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="9ia-Ku-mpc">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,7 +57,7 @@
                                             <constraint firstItem="fiX-mA-Pjx" firstAttribute="top" secondItem="peC-em-eYY" secondAttribute="top" id="pds-yx-g0J"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="fiX-mA-Pjx" id="wSs-ob-Wui"/>
+                                            <outlet property="imageView" destination="fiX-mA-Pjx" id="hTY-it-16f"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -56,14 +66,30 @@
                                     <outlet property="delegate" destination="rVW-b0-9GE" id="pPJ-cJ-GXe"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wng-F2-hQ1">
+                                <rect key="frame" x="0.0" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7iw-vC-FZJ" kind="unwind" unwindAction="gotoMainVC:" id="RQt-Op-2sq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUl-6h-QAV">
+                                <rect key="frame" x="345" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="plusBtnPressed:" destination="rVW-b0-9GE" eventType="touchUpInside" id="efd-BG-n0W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cSY-es-arr" firstAttribute="bottom" secondItem="uag-oW-Pac" secondAttribute="bottom" id="7gU-iA-4LA"/>
-                            <constraint firstItem="cSY-es-arr" firstAttribute="top" secondItem="uag-oW-Pac" secondAttribute="top" id="B0v-TP-fkU"/>
-                            <constraint firstItem="cSY-es-arr" firstAttribute="trailing" secondItem="uag-oW-Pac" secondAttribute="trailing" id="hws-Vf-M6s"/>
-                            <constraint firstItem="cSY-es-arr" firstAttribute="leading" secondItem="uag-oW-Pac" secondAttribute="leading" id="pIk-HI-0Qh"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uag-oW-Pac"/>
                     </view>
                     <navigationItem key="navigationItem" title="내 맛집 리스트" id="bcM-lX-L2p">
@@ -83,26 +109,125 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-7G-NC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7iw-vC-FZJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1855.2" y="128.18590704647679"/>
+            <point key="canvasLocation" x="1206" y="127"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="17h-Al-6Av">
+        <!--Add Alert View Controller-->
+        <scene sceneID="Gzr-22-5Jm">
             <objects>
-                <navigationController storyboardIdentifier="_FoodListViewController" automaticallyAdjustsScrollViewInsets="NO" id="Zvt-HU-JvK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YFI-WV-s3d">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController storyboardIdentifier="AddAlertViewController" id="sBn-qn-tkh" customClass="AddAlertViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Da5-Mq-EVl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageDefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="LsF-5V-M6T">
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="U7J-6F-huX"/>
+                                    <constraint firstAttribute="height" constant="100" id="tae-ld-rhC"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.60000002384185791" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EMx-3L-6Ea">
+                                <rect key="frame" x="131" y="28" width="228" height="83"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="228" id="Arz-KS-ETa"/>
+                                    <constraint firstAttribute="height" constant="83" id="q4J-J3-3U6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="quO-1E-EfQ">
+                                <rect key="frame" x="124" y="141" width="127" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="EsI-5B-bHy"/>
+                                    <constraint firstAttribute="height" constant="24" id="hAr-6C-3Qg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YR0-pa-oRR">
+                                <rect key="frame" x="43" y="173" width="290" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="E7q-mI-yxT"/>
+                                    <constraint firstAttribute="width" constant="290" id="tpg-Us-Spi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.28814712170000001" green="0.49006587270000002" blue="0.91128283740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bqt-gr-sBO" firstAttribute="bottom" secondItem="YR0-pa-oRR" secondAttribute="bottom" constant="6" id="27Y-6U-DSn"/>
+                            <constraint firstItem="quO-1E-EfQ" firstAttribute="top" secondItem="EMx-3L-6Ea" secondAttribute="bottom" constant="30" id="DWC-2O-5GD"/>
+                            <constraint firstItem="YR0-pa-oRR" firstAttribute="leading" secondItem="Bqt-gr-sBO" secondAttribute="leading" constant="43" id="FEF-4D-4oZ"/>
+                            <constraint firstItem="LsF-5V-M6T" firstAttribute="leading" secondItem="Bqt-gr-sBO" secondAttribute="leading" constant="16" id="SWE-gr-1ph"/>
+                            <constraint firstItem="quO-1E-EfQ" firstAttribute="leading" secondItem="Bqt-gr-sBO" secondAttribute="leading" constant="124" id="V8l-kI-vdx"/>
+                            <constraint firstItem="Bqt-gr-sBO" firstAttribute="trailing" secondItem="YR0-pa-oRR" secondAttribute="trailing" constant="42" id="VAB-SD-L93"/>
+                            <constraint firstItem="Bqt-gr-sBO" firstAttribute="trailing" secondItem="quO-1E-EfQ" secondAttribute="trailing" constant="124" id="ZdV-zP-RsT"/>
+                            <constraint firstItem="EMx-3L-6Ea" firstAttribute="top" secondItem="Bqt-gr-sBO" secondAttribute="top" constant="28" id="clw-0N-Z8h"/>
+                            <constraint firstItem="EMx-3L-6Ea" firstAttribute="leading" secondItem="LsF-5V-M6T" secondAttribute="trailing" constant="15" id="fl0-at-ZvP"/>
+                            <constraint firstItem="Bqt-gr-sBO" firstAttribute="trailing" secondItem="EMx-3L-6Ea" secondAttribute="trailing" constant="16" id="fwD-MY-Pst"/>
+                            <constraint firstItem="LsF-5V-M6T" firstAttribute="top" secondItem="Bqt-gr-sBO" secondAttribute="top" constant="20" id="oc6-3l-1Ps"/>
+                            <constraint firstItem="YR0-pa-oRR" firstAttribute="top" secondItem="quO-1E-EfQ" secondAttribute="bottom" constant="8" id="v99-Re-IVO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bqt-gr-sBO"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="200"/>
                     <connections>
-                        <segue destination="rVW-b0-9GE" kind="relationship" relationship="rootViewController" id="xM4-2y-lmt"/>
+                        <outlet property="imageView" destination="LsF-5V-M6T" id="FdR-Hn-I75"/>
+                        <outlet property="searchBtn" destination="quO-1E-EfQ" id="kPX-JN-Vsx"/>
+                        <outlet property="textView" destination="EMx-3L-6Ea" id="eL8-Uv-jBW"/>
+                        <outlet property="titleLabel" destination="YR0-pa-oRR" id="703-iA-gq7"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lyp-Lx-hVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JW6-Un-e0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="128.18590704647679"/>
+            <point key="canvasLocation" x="1205.5999999999999" y="594.60269865067471"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="hHz-CV-wLs">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="j3Z-03-dPX" customClass="SearchViewController" customModule="FoodCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SQz-tu-3Lp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="예) 맘스터치 옥길점" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcB-Jq-kuL">
+                                <rect key="frame" x="16" y="28" width="304" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-pa-nyk">
+                                <rect key="frame" x="336" y="29" width="31" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
+                                <state key="normal" title="검색">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchBtnPressed:" destination="j3Z-03-dPX" eventType="touchUpInside" id="adu-wf-JJm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GWE-mi-PnS"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="UcB-Jq-kuL" id="gr4-GU-Xac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tf8-oE-c8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925.5999999999999" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="foodListBackground.png" width="539" height="960"/>
+        <image name="imageDefault.png" width="512" height="448"/>
+        <image name="searchBtn.png" width="210" height="37"/>
+    </resources>
 </document>

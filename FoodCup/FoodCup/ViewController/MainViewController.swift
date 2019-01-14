@@ -75,7 +75,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func boardBtnPressed(_ sender: Any) {
         if self.ud.bool(forKey: "isSignIn") { // 로그인 상태라면
             let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-            let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController") as! UINavigationController
+            let foodListVC = storyboard.instantiateViewController(withIdentifier: "FoodListViewController") as! FoodListViewController
             
             foodListVC.hero.isEnabled = true
             foodListVC.hero.modalAnimationType = .selectBy(presenting: .pull(direction: .left), dismissing: .pull(direction: .right))

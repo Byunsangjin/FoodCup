@@ -60,11 +60,13 @@ class LoginViewController: UIViewController {
             if error != nil { // 에러가 있을 때
                 self.okAlert("로그인 실패", (error?.localizedDescription)!)
             } else { // 에러가 없을 때
+                print("로그인 성공")
+                
                 self.ud.setValue(true, forKey: "isSignIn")
                 
                 self.delegate.getFoodInfo() {
                     let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-                    let foodListVC = storyboard.instantiateViewController(withIdentifier: "_FoodListViewController")
+                    let foodListVC = storyboard.instantiateViewController(withIdentifier: "FoodListViewController")
                     self.present(foodListVC, animated: true, completion: nil)
                 }
                 

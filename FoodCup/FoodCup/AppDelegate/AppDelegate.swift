@@ -85,13 +85,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dataRef.child("users").child(uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
             // 데이터 순회하며 유저 정보 배열 검색
             var count = dataSnapshot.childrenCount
+            if count == 0 {
+                completion?()
+            }
+            
             for item in dataSnapshot.children {
                 let foodContent = FoodContent()
                 let fchild = item as! DataSnapshot
                 
                 foodContent.setValuesForKeys(fchild.value as! [String : Any])
                 
-                print(count)
                 Alamofire.request(foodContent.imgUrl!).responseImage { response in
                     if let image = response.result.value {
                         foodContent.image = image

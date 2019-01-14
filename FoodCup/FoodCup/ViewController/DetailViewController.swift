@@ -48,4 +48,11 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
         
         self.mapView.addSubview(self.daumMapView)
     }
+    
+    
+    
+    // MARK:- Actions
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
