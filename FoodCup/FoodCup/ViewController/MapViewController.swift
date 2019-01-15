@@ -153,7 +153,9 @@ extension MapViewController: CLLocationManagerDelegate {
     // 위치 권한 체크하는 메소드
     func checkAuthorization() {
         if CLLocationManager.authorizationStatus() == .denied { // 권한 거부 일 때
-            self.okAlert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
+            self.okAlert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안") {
+                self.dismiss(animated: true, completion: nil)
+            }
         } else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { // 권한 허용 일 때
             self.mapViewSet() // 맵뷰 세팅
         } else { // 권한을 설정하지 않았다면

@@ -58,7 +58,17 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.pwTextField.text!) { (user, error) in
             if error != nil { // 에러가 있을 때
-                self.okAlert("로그인 실패", (error?.localizedDescription)!)
+                if error?._code == AuthErrorCode.emailAlreadyInUse.rawValue {
+                    self.okAlert(nil, "이미 동일한 이메일이 있습니다.")
+                } else if error?._code == AuthErrorCode.invalidEmail.rawValue {
+                    self.okAlert(nil, "이메일을 정확히 입력해 주세요")
+                } else if error?._code == AuthErrorCode.wrongPassword.rawValue {
+                    self.okAlert(nil, "비밀번호는 정확히 입력해주세요.")
+                } else if error?._code == AuthErrorCode.userNotFound.rawValue{
+                    self.okAlert("가입되지 않은 계정입니다.", nil)
+                } else {
+                    self.okAlert(error?.localizedDescription, nil)
+                }
             } else { // 에러가 없을 때
                 print("로그인 성공")
                 

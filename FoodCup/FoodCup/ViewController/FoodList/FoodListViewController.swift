@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 import PopupDialog
+import CircleMenu
 
 class FoodListViewController: UIViewController {
     // MARK:- Outlets
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var plusButton: CircleMenu!
     
     
     
@@ -31,40 +33,18 @@ class FoodListViewController: UIViewController {
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.plusButton.buttonsCount = 8
+        self.plusButton.delegate = self
+        self.plusButton.distance = Float(self.view.frame.width / 4)
+        self.plusButton.duration = 1
     }
+   
     
     
     
     override func viewWillAppear(_ animated: Bool) {
         self.collectionView.reloadData()
-    }
-    
-    
-    
-    // 로그아웃 버튼 클릭시
-    @IBAction func signOutBtnPressed(_ sender: Any) {
-        try! Auth.auth().signOut()
-        UserDefaults.standard.setValue(false, forKey: "isSignIn")
-        self.delegate.foodList.removeAll()
-        self.dismiss(animated: true) {
-            print("로그아웃")
-        }
-    }
-    
-    
-    
-    // + 버튼 클릭시
-    @IBAction func plusBtnPressed(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
-        let addListVC = storyboard.instantiateViewController(withIdentifier: "AddAlertViewController") as! AddAlertViewController
-        let alert = PopupDialog(viewController: addListVC, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, tapGestureDismissal: false, panGestureDismissal: false, hideStatusBar: false)
-        
-        alert.addButton(PopupDialogButton(title: "저장") {
-            self.addBtnPressed()
-        })
-        alert.addButton(PopupDialogButton(title: "취소", action: nil))
-        
-        present(alert, animated: true)
     }
     
     
@@ -106,6 +86,17 @@ class FoodListViewController: UIViewController {
     }
     
     
+    
+    // 사이드 버튼 만들기
+    func createSideButton(button: UIButton, imageName: String) {
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.backgroundColor = UIColor.clear
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.black.cgColor
+        button.frame.size.width = self.view.frame.width / 10
+        button.frame.size.height = self.view.frame.width / 10
+        button.layer.cornerRadius = button.frame.size.height / 2
+    }
 }
 
 
@@ -151,3 +142,46 @@ extension FoodListViewController:  UICollectionViewDelegateFlowLayout, UICollect
 }
 
 
+extension FoodListViewController: CircleMenuDelegate {
+    func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
+        if atIndex == 0 || atIndex == 1 || atIndex == 2 || atIndex == 3 || atIndex == 7 || atIndex == 8 {
+            button.backgroundColor = UIColor.clear
+        } else if atIndex == 4 {
+            self.createSideButton(button: button, imageName: "setting")
+        } else if atIndex == 5 {
+            self.createSideButton(button: button, imageName: "add")
+        } else if atIndex == 6 {
+            self.createSideButton(button: button, imageName: "exit")
+        }
+    }
+    
+    
+    
+    func circleMenu(_ circleMenu: CircleMenu, buttonWillSelected button: UIButton, atIndex: Int) {
+        if atIndex == 4 {
+            let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
+            let licenseVC = storyboard.instantiateViewController(withIdentifier: "_LisenceViewController") as! UINavigationController
+            self.present(licenseVC, animated: true)
+        } else if atIndex == 5 {
+            let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
+            let addListVC = storyboard.instantiateViewController(withIdentifier: "AddAlertViewController") as! AddAlertViewController
+            let alert = PopupDialog(viewController: addListVC, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, tapGestureDismissal: false, panGestureDismissal: false, hideStatusBar: false)
+            
+            alert.addButton(PopupDialogButton(title: "저장") {
+                self.addBtnPressed()
+            })
+            alert.addButton(PopupDialogButton(title: "취소", action: nil))
+            
+            present(alert, animated: true)
+        } else if atIndex == 6 {
+            self.confirmAlert("정말 로그아웃하시겠습니까?", nil) {
+                try! Auth.auth().signOut()
+                UserDefaults.standard.setValue(false, forKey: "isSignIn")
+                self.delegate.foodList.removeAll()
+                self.dismiss(animated: true) {
+                    print("로그아웃")
+                }
+            }
+        }
+    }
+}
