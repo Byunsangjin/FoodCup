@@ -132,7 +132,7 @@ extension FoodListViewController:  UICollectionViewDelegateFlowLayout, UICollect
     
     // collectionView 선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "Detail", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
         let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         detailVC.foodContent = self.delegate.foodList[indexPath.row]

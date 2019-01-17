@@ -130,6 +130,14 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    
+    
+    // 취소버튼을 눌렀을 때
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 

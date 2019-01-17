@@ -62,7 +62,6 @@
 		60E2C41821D9F66B001098B9 /* FoodList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C41721D9F66B001098B9 /* FoodList.storyboard */; };
 		60E2C41A21D9F67E001098B9 /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41921D9F67E001098B9 /* FoodListViewController.swift */; };
 		60E2C41C21DA07DA001098B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41B21DA07DA001098B9 /* DetailViewController.swift */; };
-		60E2C41E21DA07E3001098B9 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C41D21DA07E3001098B9 /* Detail.storyboard */; };
 		60FBD11D21D3A7A10012B70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11C21D3A7A10012B70F /* AppDelegate.swift */; };
 		60FBD11F21D3A7A10012B70F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11E21D3A7A10012B70F /* SplashViewController.swift */; };
 		60FBD12221D3A7A10012B70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD12021D3A7A10012B70F /* Main.storyboard */; };
@@ -174,7 +173,6 @@
 		60E2C41721D9F66B001098B9 /* FoodList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodList.storyboard; sourceTree = "<group>"; };
 		60E2C41921D9F67E001098B9 /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
 		60E2C41B21DA07DA001098B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		60E2C41D21DA07E3001098B9 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		60FBD11921D3A7A10012B70F /* FoodCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FBD11C21D3A7A10012B70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60FBD11E21D3A7A10012B70F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -334,6 +332,7 @@
 				60B60C8421EC7BD6003F0F49 /* AddAlertViewController.swift */,
 				6015477021DF76D5002DC699 /* SearchViewController.swift */,
 				609B635B21EE240E0097CEFE /* LisenceViewController.swift */,
+				60E2C41B21DA07DA001098B9 /* DetailViewController.swift */,
 			);
 			path = FoodList;
 			sourceTree = "<group>";
@@ -408,7 +407,6 @@
 				60E2C41121D9D938001098B9 /* LoginViewController.swift */,
 				60E2C41321D9E90C001098B9 /* SignUpViewController.swift */,
 				60B464B421EC9D65005C1ADD /* FoodList */,
-				60E2C41B21DA07DA001098B9 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -434,7 +432,6 @@
 				60E2C40F21D9D92F001098B9 /* Login.storyboard */,
 				60E2C41521D9E917001098B9 /* SignUp.storyboard */,
 				60E2C41721D9F66B001098B9 /* FoodList.storyboard */,
-				60E2C41D21DA07E3001098B9 /* Detail.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -669,7 +666,6 @@
 				60FBD12221D3A7A10012B70F /* Main.storyboard in Resources */,
 				60FBD2FB21D5DD3E0012B70F /* daum_copyright.png in Resources */,
 				60B464B821ECA359005C1ADD /* searchBtn.png in Resources */,
-				60E2C41E21DA07E3001098B9 /* Detail.storyboard in Resources */,
 				60FBD2F821D5DD3E0012B70F /* th_line.png in Resources */,
 				60580F0821EB1E460072565D /* resultBackground.png in Resources */,
 				60B464BB21ECD23A005C1ADD /* homeBtn.png in Resources */,
