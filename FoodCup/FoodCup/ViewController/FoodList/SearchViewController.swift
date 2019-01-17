@@ -104,6 +104,10 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             DaumMapManager.shared.showMarker(daumMapView: self.daumMapView, mapList: self.mapList) // 마커 찍기
             
             if let meta = addressDTO?.meta {
+                print(meta.totalCount)
+                if meta.totalCount! == 0 {
+                    self.okAlert("존재 하지 않습니다.", nil)
+                }
                 self.isEnd = meta.isEnd
                 self.page = page + 1
             }
@@ -112,6 +116,8 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
+    // MARK:- Actions
+    // 검색버튼을 눌렀을 떄
     @IBAction func searchBtnPressed(_ sender: Any) {
         self.isEnd = false
         self.page = 1
