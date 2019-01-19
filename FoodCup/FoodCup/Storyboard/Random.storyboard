@@ -49,7 +49,7 @@
                                     <action selector="backBtnPressed:" destination="OVQ-8C-Hga" eventType="touchUpInside" id="GYM-gC-8iK"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchRestaurantBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="N18-k1-v2k">
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchBtn_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="N18-k1-v2k">
                                 <rect key="frame" x="132" y="479" width="111" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -74,6 +74,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="searchRestaurantBtn.png" width="204" height="39"/>
+        <image name="searchBtn_blue.png" width="206" height="39"/>
     </resources>
 </document>

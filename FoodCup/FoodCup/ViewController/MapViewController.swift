@@ -142,7 +142,7 @@ extension MapViewController: CLLocationManagerDelegate {
     // 권한 설정이 바뀌었을 때
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .denied {
-            self.okAlert("위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
+            self.okAlert("음식점을 찾기 위해서 위치 접근을 허용해 주세요", "설정 -> FoodCup -> 위치 -> 앱을 사용하는 동안")
         } else if status == .authorizedWhenInUse {            
             self.mapViewSet() // 맵뷰 세팅
         }

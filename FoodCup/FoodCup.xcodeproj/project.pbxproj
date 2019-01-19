@@ -20,10 +20,10 @@
 		60580EFA21EB0DD20072565D /* roundOf8.png in Resources */ = {isa = PBXBuildFile; fileRef = 60580EF621EB0DD20072565D /* roundOf8.png */; };
 		60580EFE21EB15500072565D /* 경기천년바탕OTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60580EFC21EB14B70072565D /* 경기천년바탕OTF_Bold.otf */; };
 		60580EFF21EB15500072565D /* 경기천년바탕OTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60580EFD21EB14B70072565D /* 경기천년바탕OTF_Regular.otf */; };
-		60580F0321EB18010072565D /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60580F0221EB18010072565D /* loginBackground.png */; };
 		60580F0521EB1C5A0072565D /* searchRestaurantBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60580F0421EB1C5A0072565D /* searchRestaurantBtn.png */; };
 		60580F0821EB1E460072565D /* resultBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60580F0721EB1E460072565D /* resultBackground.png */; };
 		609B635C21EE240E0097CEFE /* LisenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B635B21EE240E0097CEFE /* LisenceViewController.swift */; };
+		609B638921F0C7990097CEFE /* searchBtn_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 609B638821F0C7990097CEFE /* searchBtn_blue.png */; };
 		60B464B621EC9D82005C1ADD /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B464B521EC9D82005C1ADD /* CollectionCell.swift */; };
 		60B464B821ECA359005C1ADD /* searchBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B464B721ECA359005C1ADD /* searchBtn.png */; };
 		60B464BB21ECD23A005C1ADD /* homeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B464B921ECD239005C1ADD /* homeBtn.png */; };
@@ -49,12 +49,10 @@
 		60B60C5021EB7A1C003F0F49 /* 양꼬치.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C3E21EB7A1C003F0F49 /* 양꼬치.png */; };
 		60B60C5221EB7AA8003F0F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C5121EB7AA8003F0F49 /* Assets.xcassets */; };
 		60B60C7621EB8A26003F0F49 /* signUpBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7521EB8A26003F0F49 /* signUpBtn.png */; };
-		60B60C7821EB8B03003F0F49 /* randomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7721EB8B03003F0F49 /* randomBackground.png */; };
 		60B60C7B21EC2937003F0F49 /* signUpBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7A21EC2937003F0F49 /* signUpBackground.png */; };
 		60B60C7D21EC2A31003F0F49 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B60C7C21EC2A31003F0F49 /* FirebaseManager.swift */; };
 		60B60C7F21EC388A003F0F49 /* imageSample.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C7E21EC388A003F0F49 /* imageSample.png */; };
 		60B60C8521EC7BD6003F0F49 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B60C8421EC7BD6003F0F49 /* AddAlertViewController.swift */; };
-		60B60C8B21EC9B00003F0F49 /* foodListBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B60C8A21EC9B00003F0F49 /* foodListBackground.png */; };
 		60E2C41021D9D92F001098B9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C40F21D9D92F001098B9 /* Login.storyboard */; };
 		60E2C41221D9D938001098B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41121D9D938001098B9 /* LoginViewController.swift */; };
 		60E2C41421D9E90C001098B9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41321D9E90C001098B9 /* SignUpViewController.swift */; };
@@ -62,6 +60,8 @@
 		60E2C41821D9F66B001098B9 /* FoodList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2C41721D9F66B001098B9 /* FoodList.storyboard */; };
 		60E2C41A21D9F67E001098B9 /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41921D9F67E001098B9 /* FoodListViewController.swift */; };
 		60E2C41C21DA07DA001098B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41B21DA07DA001098B9 /* DetailViewController.swift */; };
+		60F47A8321F2A11C00E0DCB2 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F47A8121F2A11C00E0DCB2 /* loginBackground.png */; };
+		60F47A8421F2A11C00E0DCB2 /* randomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F47A8221F2A11C00E0DCB2 /* randomBackground.png */; };
 		60FBD11D21D3A7A10012B70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11C21D3A7A10012B70F /* AppDelegate.swift */; };
 		60FBD11F21D3A7A10012B70F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11E21D3A7A10012B70F /* SplashViewController.swift */; };
 		60FBD12221D3A7A10012B70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD12021D3A7A10012B70F /* Main.storyboard */; };
@@ -131,10 +131,10 @@
 		60580EF621EB0DD20072565D /* roundOf8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundOf8.png; sourceTree = "<group>"; };
 		60580EFC21EB14B70072565D /* 경기천년바탕OTF_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "경기천년바탕OTF_Bold.otf"; sourceTree = "<group>"; };
 		60580EFD21EB14B70072565D /* 경기천년바탕OTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "경기천년바탕OTF_Regular.otf"; sourceTree = "<group>"; };
-		60580F0221EB18010072565D /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBackground.png; path = "../../../../../../../Downloads/오늘 뭐 먹지_이미지_버전2/loginBackground.png"; sourceTree = "<group>"; };
 		60580F0421EB1C5A0072565D /* searchRestaurantBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchRestaurantBtn.png; sourceTree = "<group>"; };
 		60580F0721EB1E460072565D /* resultBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultBackground.png; sourceTree = "<group>"; };
 		609B635B21EE240E0097CEFE /* LisenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisenceViewController.swift; sourceTree = "<group>"; };
+		609B638821F0C7990097CEFE /* searchBtn_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBtn_blue.png; sourceTree = "<group>"; };
 		60B464B521EC9D82005C1ADD /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		60B464B721ECA359005C1ADD /* searchBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBtn.png; sourceTree = "<group>"; };
 		60B464B921ECD239005C1ADD /* homeBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeBtn.png; sourceTree = "<group>"; };
@@ -160,12 +160,10 @@
 		60B60C3E21EB7A1C003F0F49 /* 양꼬치.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "양꼬치.png"; sourceTree = "<group>"; };
 		60B60C5121EB7AA8003F0F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60B60C7521EB8A26003F0F49 /* signUpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUpBtn.png; sourceTree = "<group>"; };
-		60B60C7721EB8B03003F0F49 /* randomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = randomBackground.png; path = "../../../../../../../Downloads/오늘 뭐 먹지_이미지_버전2/randomBackground.png"; sourceTree = "<group>"; };
 		60B60C7A21EC2937003F0F49 /* signUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUpBackground.png; sourceTree = "<group>"; };
 		60B60C7C21EC2A31003F0F49 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		60B60C7E21EC388A003F0F49 /* imageSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSample.png; sourceTree = "<group>"; };
 		60B60C8421EC7BD6003F0F49 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
-		60B60C8A21EC9B00003F0F49 /* foodListBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = foodListBackground.png; path = ../../../../../../../Downloads/foodListBackground.png; sourceTree = "<group>"; };
 		60E2C40F21D9D92F001098B9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		60E2C41121D9D938001098B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		60E2C41321D9E90C001098B9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +171,8 @@
 		60E2C41721D9F66B001098B9 /* FoodList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodList.storyboard; sourceTree = "<group>"; };
 		60E2C41921D9F67E001098B9 /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
 		60E2C41B21DA07DA001098B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		60F47A8121F2A11C00E0DCB2 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
+		60F47A8221F2A11C00E0DCB2 /* randomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = randomBackground.png; sourceTree = "<group>"; };
 		60FBD11921D3A7A10012B70F /* FoodCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FBD11C21D3A7A10012B70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60FBD11E21D3A7A10012B70F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -286,11 +286,11 @@
 		60580EEA21EB088A0072565D /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				60F47A8121F2A11C00E0DCB2 /* loginBackground.png */,
+				60F47A8221F2A11C00E0DCB2 /* randomBackground.png */,
 				60B464BD21ECD9C4005C1ADD /* defaultImage.png */,
-				60B60C8A21EC9B00003F0F49 /* foodListBackground.png */,
 				60B60C7E21EC388A003F0F49 /* imageSample.png */,
 				60B60C7A21EC2937003F0F49 /* signUpBackground.png */,
-				60B60C7721EB8B03003F0F49 /* randomBackground.png */,
 				60580F0721EB1E460072565D /* resultBackground.png */,
 				60580EED21EB0A990072565D /* mainBackground.png */,
 				60580EF121EB0D2A0072565D /* splashBackground.png */,
@@ -298,7 +298,6 @@
 				60580EF621EB0DD20072565D /* roundOf8.png */,
 				60580EF421EB0DD20072565D /* roundOf16.png */,
 				60580EF521EB0DD20072565D /* roundOfFinal.png */,
-				60580F0221EB18010072565D /* loginBackground.png */,
 			);
 			path = Background;
 			sourceTree = "<group>";
@@ -315,6 +314,7 @@
 		60580F0621EB1C620072565D /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				609B638821F0C7990097CEFE /* searchBtn_blue.png */,
 				60B464B721ECA359005C1ADD /* searchBtn.png */,
 				60B60C7521EB8A26003F0F49 /* signUpBtn.png */,
 				60580F0421EB1C5A0072565D /* searchRestaurantBtn.png */,
@@ -609,7 +609,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60580F0321EB18010072565D /* loginBackground.png in Resources */,
 				60580EFE21EB15500072565D /* 경기천년바탕OTF_Bold.otf in Resources */,
 				60B60C4B21EB7A1C003F0F49 /* 족발.png in Resources */,
 				60580EFF21EB15500072565D /* 경기천년바탕OTF_Regular.otf in Resources */,
@@ -639,17 +638,18 @@
 				60E2C41821D9F66B001098B9 /* FoodList.storyboard in Resources */,
 				60B60C7621EB8A26003F0F49 /* signUpBtn.png in Resources */,
 				60FBD13821D3C2C90012B70F /* GoogleService-Info.plist in Resources */,
+				60F47A8321F2A11C00E0DCB2 /* loginBackground.png in Resources */,
 				60FBD2FE21D5DD3E0012B70F /* map_pin_red.png in Resources */,
 				60580EF821EB0DD20072565D /* roundOf16.png in Resources */,
 				60FBD30821D5DD3E0012B70F /* map_present_background_update.png in Resources */,
 				60580EEE21EB0A990072565D /* mainBackground.png in Resources */,
 				60FBD30221D5DD3E0012B70F /* info_box_tail.png in Resources */,
-				60B60C7821EB8B03003F0F49 /* randomBackground.png in Resources */,
 				60B464BC21ECD23A005C1ADD /* logout.png in Resources */,
 				60FBD30A21D5DD3E0012B70F /* map_pin_shadow.png in Resources */,
 				60B60C7F21EC388A003F0F49 /* imageSample.png in Resources */,
 				60B60C4921EB7A1C003F0F49 /* 치킨.png in Resources */,
 				60B60C4521EB7A1C003F0F49 /* 김밥.png in Resources */,
+				609B638921F0C7990097CEFE /* searchBtn_blue.png in Resources */,
 				60FBD2F621D5DD3E0012B70F /* map_pin_shadow@3x.png in Resources */,
 				60E2C41621D9E917001098B9 /* SignUp.storyboard in Resources */,
 				60B464BE21ECD9C4005C1ADD /* defaultImage.png in Resources */,
@@ -684,8 +684,8 @@
 				60B60C4821EB7A1C003F0F49 /* 부대찌개.png in Resources */,
 				60FBD2F221D5DD3E0012B70F /* map_pinup.png in Resources */,
 				60B60C4E21EB7A1C003F0F49 /* 보쌈.png in Resources */,
-				60B60C8B21EC9B00003F0F49 /* foodListBackground.png in Resources */,
 				60B60C5221EB7AA8003F0F49 /* Assets.xcassets in Resources */,
+				60F47A8421F2A11C00E0DCB2 /* randomBackground.png in Resources */,
 				60FBD30521D5DD3E0012B70F /* map_pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
