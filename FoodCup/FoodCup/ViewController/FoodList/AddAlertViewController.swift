@@ -13,6 +13,7 @@ import Alamofire
 import AlamofireObjectMapper
 import Firebase
 import PopupDialog
+import AssetsLibrary
 
 class AddAlertViewController: UIViewController {
     // MARK:- Outlets
@@ -75,7 +76,7 @@ extension AddAlertViewController: UIImagePickerControllerDelegate, UINavigationC
         picker.delegate = self
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
-        
+
         self.present(picker, animated: true)
     }
     

@@ -62,6 +62,7 @@
 		60E2C41C21DA07DA001098B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2C41B21DA07DA001098B9 /* DetailViewController.swift */; };
 		60F47A8321F2A11C00E0DCB2 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F47A8121F2A11C00E0DCB2 /* loginBackground.png */; };
 		60F47A8421F2A11C00E0DCB2 /* randomBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F47A8221F2A11C00E0DCB2 /* randomBackground.png */; };
+		60F47A8621F2FD1D00E0DCB2 /* foodListBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F47A8521F2FD1D00E0DCB2 /* foodListBackground.png */; };
 		60FBD11D21D3A7A10012B70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11C21D3A7A10012B70F /* AppDelegate.swift */; };
 		60FBD11F21D3A7A10012B70F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBD11E21D3A7A10012B70F /* SplashViewController.swift */; };
 		60FBD12221D3A7A10012B70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD12021D3A7A10012B70F /* Main.storyboard */; };
@@ -173,6 +174,7 @@
 		60E2C41B21DA07DA001098B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		60F47A8121F2A11C00E0DCB2 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
 		60F47A8221F2A11C00E0DCB2 /* randomBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = randomBackground.png; sourceTree = "<group>"; };
+		60F47A8521F2FD1D00E0DCB2 /* foodListBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodListBackground.png; sourceTree = "<group>"; };
 		60FBD11921D3A7A10012B70F /* FoodCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FBD11C21D3A7A10012B70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60FBD11E21D3A7A10012B70F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		60580EEA21EB088A0072565D /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				60F47A8521F2FD1D00E0DCB2 /* foodListBackground.png */,
 				60F47A8121F2A11C00E0DCB2 /* loginBackground.png */,
 				60F47A8221F2A11C00E0DCB2 /* randomBackground.png */,
 				60B464BD21ECD9C4005C1ADD /* defaultImage.png */,
@@ -659,6 +662,7 @@
 				60B60C4F21EB7A1C003F0F49 /* 김치찌개.png in Resources */,
 				60FBD30321D5DD3E0012B70F /* noimage256.png in Resources */,
 				60FBD13421D3BEAF0012B70F /* RemoteConfigDefaults.plist in Resources */,
+				60F47A8621F2FD1D00E0DCB2 /* foodListBackground.png in Resources */,
 				60FBD2EF21D5DD3E0012B70F /* map_pinup_custom@3x.png in Resources */,
 				60FBD30121D5DD3E0012B70F /* map_pinup_custom.png in Resources */,
 				60FBD32721D8B89C0012B70F /* Splash.storyboard in Resources */,
@@ -946,7 +950,7 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = FoodCup/Supporting/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -977,7 +981,7 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = FoodCup/Supporting/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
