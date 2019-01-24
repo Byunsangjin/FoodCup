@@ -44,3 +44,14 @@ extension UIViewController {
         }
     }
 }
+
+
+
+extension Date {
+    func string() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let day = formatter.string(from: self)
+        return day
+    }
+}

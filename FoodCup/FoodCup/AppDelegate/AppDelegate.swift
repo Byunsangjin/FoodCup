@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getFoodInfo(completion: (()->Void)? = nil) {
         let uid = Auth.auth().currentUser?.uid
         let dataRef = Database.database().reference()
-        dataRef.child("users").child(uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
+        dataRef.child("users").child(uid!).queryOrdered(byChild: "date") .observeSingleEvent(of: .value) { (dataSnapshot) in
             // 데이터 순회하며 유저 정보 배열 검색
             var count = dataSnapshot.childrenCount
             if count == 0 {
@@ -100,10 +100,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         foodContent.image = image
                     }
                     
-                    self.foodList.append(foodContent)
+                    self.foodList.append(foodContent)                    
                     
                     count = count - 1
                     if count == 0 {
+                        self.foodList.sort(by: {$0.date! < $1.date!})
+                        
                         completion?()
                     }
                 }

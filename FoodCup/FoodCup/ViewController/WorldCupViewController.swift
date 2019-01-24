@@ -11,6 +11,7 @@ import DCAnimationKit
 
 // 토너먼트 몇강인지
 enum Tournament {
+    case roundOfSixteen
     case quarterfinal
     case semifinal
     case final
@@ -33,10 +34,11 @@ class WorldCupViewController: UIViewController {
     
     
     // MARK:- Variables
-    var foodList = ["간장게장", "김밥", "김치찌개", "냉면", "닭발", "돈까스", "떡볶이", "보쌈"]
-    var topNum = 6
-    var bottomNum = 7
-    var tournament: Tournament = Tournament.quarterfinal // 현재 토너먼트가 몇강인지 나타내 주는 변수
+    var allFood = ["간장게장", "김밥", "김치찌개", "냉면", "닭발", "돈까스", "떡볶이", "보쌈", "부대찌개", "삼겹살", "순대", "순대국", "양꼬치", "족발", "짬뽕", "치킨", "탕수육", "파스타"]
+    var foodList = [String]()
+    var topNum = 14
+    var bottomNum = 15
+    var tournament: Tournament = Tournament.roundOfSixteen // 현재 토너먼트가 몇강인지 나타내 주는 변수
     
     
     
@@ -57,7 +59,7 @@ class WorldCupViewController: UIViewController {
     // 첫 뷰 세팅
     func viewInit() {
         // 배경 이미지 설정
-        self.bgImageView.image = UIImage(named: "roundOf8")
+        self.bgImageView.image = UIImage(named: "roundOf16")
         
         // 이미지 비스듬하게 보이게 하기
         self.topImageView.transform = CGAffineTransform(rotationAngle: 0.1)
@@ -67,7 +69,13 @@ class WorldCupViewController: UIViewController {
         self.bottomStickerView.transform = CGAffineTransform(rotationAngle: -0.7)
         
         // 음식 String List 섞기
-        self.foodList.shuffle()
+        self.allFood.shuffle()
+        
+        var i = 0
+        for _ in 0..<16 {
+            self.foodList.append(allFood[i])
+            i = i + 1
+        }
         
         self.drawImage()
         
@@ -114,6 +122,9 @@ class WorldCupViewController: UIViewController {
         }
         
         switch tournament {
+            case .roundOfSixteen:
+                roundOfSixteen()
+                break
             case .quarterfinal:
                 quarterfinal()
                 break
@@ -125,6 +136,35 @@ class WorldCupViewController: UIViewController {
                 break
         }
     }
+    
+    
+    
+    //16강
+    func roundOfSixteen() {
+        if topNum == 0 {
+            self.tournament = .quarterfinal
+            
+            // 음식 String List 섞기
+            self.foodList.shuffle()
+            
+            // 4강 시작
+            bottomNum = foodList.count - 1
+            topNum = bottomNum - 1
+            
+            // 배경 사진 4강으로 바꾸기
+            self.bgImageView.image = UIImage(named: "roundOf8")
+            drawImage()
+            
+            return
+        }
+        
+        // 다음 비교할 사진의 배열 번호
+        topNum -= 2
+        bottomNum -= 2
+        
+        drawImage()
+    }
+    
     
     
     

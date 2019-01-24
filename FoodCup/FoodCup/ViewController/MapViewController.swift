@@ -18,7 +18,7 @@ class MapViewController: UIViewController, MTMapViewDelegate{
     lazy var daumMapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
     var currentLat: String? // 현재 위치 위도
     var currentLng: String? // 현재 위치 경도
-    var radius: String? = "3000" // 반경
+    var radius: String? = "2000" // 반경
     
     var mapList = [MapVO]() // REST API를 이용해 받은 주변 정보
     

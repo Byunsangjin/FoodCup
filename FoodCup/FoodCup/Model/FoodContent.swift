@@ -16,4 +16,5 @@ class FoodContent: NSObject {
     @objc var lat: String? = "" // 위도
     @objc var lng: String? = ""// 경도
     @objc var imgUrl: String? // 이미지 경로
+    @objc var date: String? // 저장 시간
 }

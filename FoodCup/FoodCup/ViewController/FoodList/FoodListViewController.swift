@@ -78,7 +78,7 @@ class FoodListViewController: UIViewController {
                 }
                 
                 // 데이터 베이스에 접근해서 이름 값과 이미지 다운로드 url을 넣어준다
-                self.dataRef.child("users").child(self.uid!).childByAutoId().setValue(["imgUrl": url!.absoluteString, "text": foodContent.text, "name": foodContent.name ,"address": foodContent.address!, "lng": foodContent.lng, "lat": foodContent.lat], withCompletionBlock: { (erro, ref) in
+                self.dataRef.child("users").child(self.uid!).childByAutoId().setValue(["imgUrl": url!.absoluteString, "text": foodContent.text, "name": foodContent.name ,"address": foodContent.address!, "lng": foodContent.lng, "lat": foodContent.lat, "date": Date().string() ], withCompletionBlock: { (erro, ref) in
                     print("데이터 저장 성공")
                 })
             }
