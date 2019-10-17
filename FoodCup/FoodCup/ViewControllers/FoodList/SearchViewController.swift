@@ -104,7 +104,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             DaumMapManager.shared.showMarker(daumMapView: self.daumMapView, mapList: self.mapList) // 마커 찍기
             
             if let meta = addressDTO?.meta {
-                print(meta.totalCount)
                 if meta.totalCount! == 0 {
                     self.okAlert("존재 하지 않습니다.", nil)
                 }

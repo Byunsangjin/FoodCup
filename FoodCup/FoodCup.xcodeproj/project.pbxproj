@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		60580EFF21EB15500072565D /* 경기천년바탕OTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60580EFD21EB14B70072565D /* 경기천년바탕OTF_Regular.otf */; };
 		60580F0521EB1C5A0072565D /* searchRestaurantBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 60580F0421EB1C5A0072565D /* searchRestaurantBtn.png */; };
 		60580F0821EB1E460072565D /* resultBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 60580F0721EB1E460072565D /* resultBackground.png */; };
+		607E535B2358B5DD00B08DB4 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E535A2358B5DD00B08DB4 /* Extension+UIColor.swift */; };
 		609B635C21EE240E0097CEFE /* LisenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B635B21EE240E0097CEFE /* LisenceViewController.swift */; };
 		609B638921F0C7990097CEFE /* searchBtn_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 609B638821F0C7990097CEFE /* searchBtn_blue.png */; };
 		60B464B621EC9D82005C1ADD /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B464B521EC9D82005C1ADD /* CollectionCell.swift */; };
@@ -134,6 +135,7 @@
 		60580EFD21EB14B70072565D /* 경기천년바탕OTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "경기천년바탕OTF_Regular.otf"; sourceTree = "<group>"; };
 		60580F0421EB1C5A0072565D /* searchRestaurantBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchRestaurantBtn.png; sourceTree = "<group>"; };
 		60580F0721EB1E460072565D /* resultBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultBackground.png; sourceTree = "<group>"; };
+		607E535A2358B5DD00B08DB4 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		609B635B21EE240E0097CEFE /* LisenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisenceViewController.swift; sourceTree = "<group>"; };
 		609B638821F0C7990097CEFE /* searchBtn_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBtn_blue.png; sourceTree = "<group>"; };
 		60B464B521EC9D82005C1ADD /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -327,6 +329,14 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		607E53592358B59300B08DB4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				607E535A2358B5DD00B08DB4 /* Extension+UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		60B464B421EC9D65005C1ADD /* FoodList */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +396,7 @@
 		60FBD11B21D3A7A10012B70F /* FoodCup */ = {
 			isa = PBXGroup;
 			children = (
+				607E53592358B59300B08DB4 /* Extension */,
 				60580EE921EA3AA90072565D /* FoodCup.entitlements */,
 				60FBD13121D3A84F0012B70F /* Storyboard */,
 				60FBD12F21D3A83C0012B70F /* AppDelegate */,
@@ -764,6 +775,7 @@
 				60E2C41221D9D938001098B9 /* LoginViewController.swift in Sources */,
 				60E2C41A21D9F67E001098B9 /* FoodListViewController.swift in Sources */,
 				60E2C41C21DA07DA001098B9 /* DetailViewController.swift in Sources */,
+				607E535B2358B5DD00B08DB4 /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,10 +23,13 @@ class MapDataDTO: Mappable {
         
     }
     
+    
+    
     func mapping(map: Map) {
         document <- map["documents"]
         meta <- map["meta"]
     }
+    
     
     
     class Document: Mappable {
@@ -68,7 +71,5 @@ class MapDataDTO: Mappable {
             totalCount <- map["total_count"]
             isEnd <- map["is_end"]
         }
-        
-        
     }
 }
