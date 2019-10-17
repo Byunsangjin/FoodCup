@@ -136,6 +136,7 @@ extension FoodListViewController:  UICollectionViewDelegateFlowLayout, UICollect
         let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         detailVC.foodContent = self.delegate.foodList[indexPath.row]
+        detailVC.modalPresentationStyle = .fullScreen
         
         self.present(detailVC, animated: true)
     }
@@ -161,6 +162,8 @@ extension FoodListViewController: CircleMenuDelegate {
         if atIndex == 4 {
             let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
             let licenseVC = storyboard.instantiateViewController(withIdentifier: "_LisenceViewController") as! UINavigationController
+            
+            licenseVC.modalPresentationStyle = .fullScreen
             self.present(licenseVC, animated: true)
         } else if atIndex == 5 {
             let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)

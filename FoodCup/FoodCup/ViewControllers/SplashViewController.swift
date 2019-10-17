@@ -87,6 +87,7 @@ class SplashViewController: UIViewController {
     func presentVC() {
         let storyborad = UIStoryboard.init(name: "Main", bundle: nil)
         let mainVC = storyborad.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        mainVC.modalPresentationStyle = .fullScreen
         
         self.present(mainVC, animated: true)
     }

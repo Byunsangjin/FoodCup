@@ -233,6 +233,7 @@ class WorldCupViewController: UIViewController {
             return
         }
         
+        resultVC.modalPresentationStyle = .fullScreen
         resultVC.result = foodList[0]
         self.userDefaults.setValue(foodList[0], forKey: "result")
 

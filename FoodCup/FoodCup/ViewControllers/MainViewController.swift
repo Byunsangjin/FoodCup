@@ -39,6 +39,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func worldCupPressed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "WorldCup", bundle: nil)
         let worldCupVC = storyboard.instantiateViewController(withIdentifier: "WorldCupViewController") as! WorldCupViewController
+        worldCupVC.modalPresentationStyle = .fullScreen
         
         self.present(worldCupVC, animated: true)
     }
@@ -54,6 +55,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         let storyboard = UIStoryboard.init(name: "Result", bundle: nil)
         let resultVC = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+        resultVC.modalPresentationStyle = .fullScreen
         
         resultVC.result = result
         
@@ -65,6 +67,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func randomBtnPressed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "Random", bundle: nil)
         let randomVC = storyboard.instantiateViewController(withIdentifier: "RandomViewController") as! RandomViewController
+        randomVC.modalPresentationStyle = .fullScreen
         
         self.present(randomVC, animated: true)
     }
@@ -77,6 +80,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
             let foodListVC = storyboard.instantiateViewController(withIdentifier: "FoodListViewController") as! FoodListViewController
             
+            foodListVC.modalPresentationStyle = .fullScreen
             foodListVC.hero.isEnabled = true
             foodListVC.hero.modalAnimationType = .selectBy(presenting: .pull(direction: .left), dismissing: .pull(direction: .right))
             
@@ -85,6 +89,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
             let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             
+            loginVC.modalPresentationStyle = .fullScreen
             loginVC.hero.isEnabled = true
             loginVC.hero.modalAnimationType = .selectBy(presenting: .pull(direction: .left), dismissing: .pull(direction: .right))
             self.present(loginVC, animated: true, completion: nil)
@@ -97,6 +102,4 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func gotoMainVC(_ sender: UIStoryboardSegue) {
         
     }
-    
-    
 }

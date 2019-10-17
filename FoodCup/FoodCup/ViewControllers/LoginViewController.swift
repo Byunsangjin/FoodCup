@@ -77,6 +77,8 @@ class LoginViewController: UIViewController {
                 self.delegate.getFoodInfo() {
                     let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
                     let foodListVC = storyboard.instantiateViewController(withIdentifier: "FoodListViewController")
+                    
+                    foodListVC.modalPresentationStyle = .fullScreen
                     self.present(foodListVC, animated: true, completion: nil)
                 }
                 
@@ -92,6 +94,7 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard.init(name: "SignUp", bundle: nil)
         let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         
+        signUpVC.modalPresentationStyle = .fullScreen
         self.initTextField()
         
         self.present(signUpVC, animated: true)

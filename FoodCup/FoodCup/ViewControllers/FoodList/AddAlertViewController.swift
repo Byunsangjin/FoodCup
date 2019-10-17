@@ -63,6 +63,7 @@ class AddAlertViewController: UIViewController {
     @objc func searchBtnPressed() {
         let storyboard = UIStoryboard.init(name: "FoodList", bundle: nil)
         let mapVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        mapVC.modalPresentationStyle = .fullScreen
         
         self.present(mapVC, animated: true)
     }

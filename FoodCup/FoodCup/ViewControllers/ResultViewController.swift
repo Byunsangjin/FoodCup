@@ -39,6 +39,7 @@ class ResultViewController: UIViewController {
         let storyboard = UIStoryboard.init(name: "Map", bundle: nil)
         let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         
+        mapVC.modalPresentationStyle = .fullScreen
         mapVC.resultFood = self.result!
         
         present(mapVC, animated: true)

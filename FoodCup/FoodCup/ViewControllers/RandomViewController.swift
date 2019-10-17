@@ -69,6 +69,7 @@ class RandomViewController: UIViewController {
         let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         
         mapVC.resultFood = self.resultFood
+        mapVC.modalPresentationStyle = .fullScreen
         
         self.present(mapVC, animated: true)
     }
