@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,13 +24,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="foodListBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="T2h-t1-DK5">
-                                <rect key="frame" x="-6" y="0.0" width="381" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodListBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="T2h-t1-DK5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-es-arr">
-                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-es-arr">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="9ia-Ku-mpc">
                                     <size key="itemSize" width="50" height="50"/>
@@ -69,9 +65,12 @@
                                     <outlet property="delegate" destination="rVW-b0-9GE" id="pPJ-cJ-GXe"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wng-F2-hQ1">
-                                <rect key="frame" x="6" y="22" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wng-F2-hQ1">
+                                <rect key="frame" x="8" y="20" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Ey9-3I-pDu"/>
+                                    <constraint firstAttribute="height" constant="35" id="Nln-Cf-kmq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangBOTF" family="GyeonggiBatangOTF" pointSize="30"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,9 +84,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUl-6h-QAV" customClass="CircleMenu" customModule="CircleMenu">
-                                <rect key="frame" x="327" y="15" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUl-6h-QAV" customClass="CircleMenu" customModule="CircleMenu">
+                                <rect key="frame" x="332" y="20" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="nMU-3q-yBd"/>
+                                    <constraint firstAttribute="width" constant="35" id="ram-Sw-uSI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,6 +97,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="leading" secondItem="uag-oW-Pac" secondAttribute="leading" id="3bw-it-Q36"/>
+                            <constraint firstItem="ZUl-6h-QAV" firstAttribute="top" secondItem="uag-oW-Pac" secondAttribute="top" constant="20" id="9O0-ff-106"/>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="trailing" secondItem="uag-oW-Pac" secondAttribute="trailing" id="O3b-8K-f6l"/>
+                            <constraint firstItem="T2h-t1-DK5" firstAttribute="bottom" secondItem="uag-oW-Pac" secondAttribute="bottom" id="OiG-qP-FCP"/>
+                            <constraint firstItem="wng-F2-hQ1" firstAttribute="leading" secondItem="uag-oW-Pac" secondAttribute="leading" constant="8" id="Qis-QF-v8J"/>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="top" secondItem="wng-F2-hQ1" secondAttribute="bottom" constant="5" id="S5Y-hQ-OWf"/>
+                            <constraint firstItem="wng-F2-hQ1" firstAttribute="top" secondItem="uag-oW-Pac" secondAttribute="top" constant="20" id="ZcX-h3-dIR"/>
+                            <constraint firstItem="T2h-t1-DK5" firstAttribute="trailing" secondItem="uag-oW-Pac" secondAttribute="trailing" id="bgk-Nm-6Wj"/>
+                            <constraint firstItem="T2h-t1-DK5" firstAttribute="top" secondItem="uag-oW-Pac" secondAttribute="top" id="kT8-dV-OgU"/>
+                            <constraint firstItem="T2h-t1-DK5" firstAttribute="leading" secondItem="Azq-Ho-yU7" secondAttribute="leading" id="ogQ-cr-6TO"/>
+                            <constraint firstItem="cSY-es-arr" firstAttribute="bottom" secondItem="uag-oW-Pac" secondAttribute="bottom" id="u4r-im-vCP"/>
+                            <constraint firstItem="uag-oW-Pac" firstAttribute="trailing" secondItem="ZUl-6h-QAV" secondAttribute="trailing" constant="8" id="xzW-5u-mSQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uag-oW-Pac"/>
                     </view>
                     <navigationItem key="navigationItem" title="내 맛집 리스트" id="bcM-lX-L2p">
@@ -214,7 +230,6 @@
                                 <rect key="frame" x="16" y="29" width="304" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -397,7 +412,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
                 <navigationController storyboardIdentifier="_LisenceViewController" automaticallyAdjustsScrollViewInsets="NO" id="Acj-GF-mfG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JI4-PO-q8P">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -465,7 +480,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
         </scene>
     </scenes>
     <resources>
-        <image name="defaultImage.png" width="480" height="480"/>
+        <image name="defaultImage.png" width="384" height="384"/>
         <image name="foodListBackground.png" width="539" height="960"/>
         <image name="menu" width="24" height="24"/>
         <image name="searchBtn.png" width="210" height="37"/>
