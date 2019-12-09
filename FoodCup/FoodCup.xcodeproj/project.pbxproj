@@ -932,6 +932,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework/Resources",
 				);
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = sjbyun.FoodCup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoodCup/Supporting/Bridging-Header.h";
@@ -963,6 +964,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework/Resources",
 				);
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = sjbyun.FoodCup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoodCup/Supporting/Bridging-Header.h";
