@@ -112,8 +112,8 @@ PODS:
   - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.5)
-  - AlamofireObjectMapper (~> 5.2)
+  - AlamofireImage
+  - AlamofireObjectMapper
   - CircleMenu
   - DCAnimationKit
   - Firebase/Auth
@@ -123,9 +123,9 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Storage
   - Hero
-  - PopupDialog (~> 0.9)
+  - PopupDialog
   - RHSideButtons
-  - SnapKit (~> 4.0.0)
+  - SnapKit
   - TextFieldEffects
 
 SPEC REPOS:
@@ -193,6 +193,6 @@ SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 72e976b6f29fd7b47d21110d7b30b116516234da
+PODFILE CHECKSUM: 32cb13c47d5e133668280040c06764e55010b142
 
 COCOAPODS: 1.7.5
