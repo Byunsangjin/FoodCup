@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2cV-R3-V1Y">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2cV-R3-V1Y">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,16 +24,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmM-ve-djV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-na-d7N">
-                                <rect key="frame" x="119.5" y="112.5" width="136" height="42"/>
-                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
-                                <state key="normal" title="푸드월드컵">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="worldCupPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="CVb-ca-6wr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-a5-adv">
                                 <rect key="frame" x="134" y="246" width="107" height="42"/>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
@@ -66,6 +54,16 @@
                                     <action selector="boardBtnPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="iTz-HG-EMq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-na-d7N">
+                                <rect key="frame" x="119" y="112" width="136" height="42"/>
+                                <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
+                                <state key="normal" title="푸드월드컵">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="worldCupPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="CVb-ca-6wr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -76,10 +74,10 @@
                             <constraint firstItem="CZS-a5-adv" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="0.8" id="K5d-ke-OML"/>
                             <constraint firstItem="sps-na-d7N" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="XSV-kE-mZl"/>
                             <constraint firstItem="bjh-GP-f5j" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="bPh-xL-iRV"/>
-                            <constraint firstItem="xmM-ve-djV" firstAttribute="top" secondItem="0Ix-0w-KWW" secondAttribute="top" id="m8B-oS-g75"/>
                             <constraint firstItem="sps-na-d7N" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="0.4" id="may-Md-ayI"/>
                             <constraint firstItem="bjh-GP-f5j" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="1.2" id="po6-qg-YsH"/>
                             <constraint firstItem="xmM-ve-djV" firstAttribute="trailing" secondItem="1Hp-0R-8dT" secondAttribute="trailing" id="u4J-Y8-gS6"/>
+                            <constraint firstItem="xmM-ve-djV" firstAttribute="top" secondItem="1Hp-0R-8dT" secondAttribute="top" id="yQN-V0-89x"/>
                             <constraint firstItem="xmM-ve-djV" firstAttribute="leading" secondItem="1Hp-0R-8dT" secondAttribute="leading" id="zik-gU-SYF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Hp-0R-8dT"/>
