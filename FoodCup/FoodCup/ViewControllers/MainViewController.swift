@@ -23,7 +23,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     let userDefaults = UserDefaults.standard
     let locationManager = CLLocationManager()
     let ud = UserDefaults.standard
-    let adID : String? = nil
+    let adID : String? = "ca-app-pub-9096146193275422/8881619691"
     
     
     
