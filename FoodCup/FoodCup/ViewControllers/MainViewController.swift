@@ -9,11 +9,13 @@
 import UIKit
 import CoreLocation
 import Hero
+import GoogleMobileAds
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK:- Outlets
     @IBOutlet var bgImageView: UIImageView!
+    @IBOutlet var bannerView: GADBannerView!
     
     
     
@@ -21,6 +23,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     let userDefaults = UserDefaults.standard
     let locationManager = CLLocationManager()
     let ud = UserDefaults.standard
+    let adID : String? = nil
     
     
     
@@ -31,6 +34,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // 배경 이미지 설정
         self.bgImageView.image = UIImage(named: "mainBackground.png")
         
+        self.bannerView.adUnitID = adID
+        self.bannerView.rootViewController = self
+        self.bannerView.load(GADRequest())
     }
     
     

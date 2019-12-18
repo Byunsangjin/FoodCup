@@ -102,19 +102,17 @@ class WorldCupViewController: UIViewController {
     
     // 이미지를 탭했을 때 동작하는 메소드
     @objc func viewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        print(tapGestureRecognizer.view!.tag)
-        
         var selectedFood: String?
         if tapGestureRecognizer.view!.tag == 1 { // topView 선택시
             selectedFood = topFoodImageList.popLast()
             bottomFoodImageList.removeLast()
             
-            self.topView.expand(into: self.view, finished: nil)
+            self.topImageView.expand(into: self.topView, finished: nil)
         } else { // bottomView 선택시
             topFoodImageList.removeLast()
             selectedFood = bottomFoodImageList.popLast()
     
-            self.bottomView.expand(into: self.view, finished: nil)
+            self.bottomImageView.expand(into: self.bottomView, finished: nil)
         }
         
         selectedList.append(selectedFood!)

@@ -21,5 +21,6 @@ target 'FoodCup' do
   pod 'DCAnimationKit'
   pod 'CircleMenu'
   pod 'RHSideButtons'
+  pod 'Google-Mobile-Ads-SDK'
 
 end

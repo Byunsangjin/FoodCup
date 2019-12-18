@@ -11,6 +11,7 @@ import Firebase
 import SnapKit
 import Alamofire
 import AlamofireImage
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 테마 색상 불러오기
         self.themeColor = RemoteConfig.remoteConfig()["splash_background"].stringValue
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
     }

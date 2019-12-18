@@ -54,8 +54,8 @@
                                     <action selector="boardBtnPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="iTz-HG-EMq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-na-d7N">
-                                <rect key="frame" x="119" y="112" width="136" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-na-d7N">
+                                <rect key="frame" x="119.5" y="112.5" width="136" height="42"/>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="30"/>
                                 <state key="normal" title="푸드월드컵">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,9 +64,18 @@
                                     <action selector="worldCupPressed:" destination="2cV-R3-V1Y" eventType="touchUpInside" id="CVb-ca-6wr"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmn-eC-pib" customClass="GADBannerView">
+                                <rect key="frame" x="27.5" y="617" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Eel-SN-BJ0"/>
+                                    <constraint firstAttribute="width" constant="320" id="GQt-jA-UAv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Vmn-eC-pib" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="EVl-d3-LQC"/>
                             <constraint firstItem="33X-bt-Yz4" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="1.6" id="G5E-71-K53"/>
                             <constraint firstItem="33X-bt-Yz4" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="IdE-5h-sK9"/>
                             <constraint firstItem="CZS-a5-adv" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="Ig7-rm-Bmq"/>
@@ -74,6 +83,7 @@
                             <constraint firstItem="CZS-a5-adv" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="0.8" id="K5d-ke-OML"/>
                             <constraint firstItem="sps-na-d7N" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="XSV-kE-mZl"/>
                             <constraint firstItem="bjh-GP-f5j" firstAttribute="centerX" secondItem="0Ix-0w-KWW" secondAttribute="centerX" id="bPh-xL-iRV"/>
+                            <constraint firstItem="1Hp-0R-8dT" firstAttribute="bottom" secondItem="Vmn-eC-pib" secondAttribute="bottom" id="ddA-aC-lGF"/>
                             <constraint firstItem="sps-na-d7N" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="0.4" id="may-Md-ayI"/>
                             <constraint firstItem="bjh-GP-f5j" firstAttribute="centerY" secondItem="0Ix-0w-KWW" secondAttribute="centerY" multiplier="1.2" id="po6-qg-YsH"/>
                             <constraint firstItem="xmM-ve-djV" firstAttribute="trailing" secondItem="1Hp-0R-8dT" secondAttribute="trailing" id="u4J-Y8-gS6"/>
@@ -83,6 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="1Hp-0R-8dT"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="Vmn-eC-pib" id="hA7-eS-Oua"/>
                         <outlet property="bgImageView" destination="xmM-ve-djV" id="0iG-VE-22Q"/>
                     </connections>
                 </viewController>
