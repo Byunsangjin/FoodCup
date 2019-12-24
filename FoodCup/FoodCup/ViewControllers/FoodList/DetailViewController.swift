@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, MTMapViewDelegate {
+class DetailViewController: UIViewController, MTMapViewDelegate, UITextViewDelegate {
     // MARK:- Outlets
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var textView: UITextView!
@@ -25,6 +25,8 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
     // MARK:- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textView.delegate = self
         
         self.imageView.image = self.foodContent?.image
         self.textView.text = self.foodContent?.text
@@ -47,6 +49,12 @@ class DetailViewController: UIViewController, MTMapViewDelegate {
         self.daumMapView.baseMapType = .standard
         
         self.mapView.addSubview(self.daumMapView)
+    }
+    
+    
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return false
     }
     
     
