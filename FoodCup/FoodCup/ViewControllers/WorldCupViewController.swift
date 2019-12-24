@@ -23,13 +23,14 @@ class WorldCupViewController: UIViewController {
     // MARK:- Outlets
     @IBOutlet var topImageView: UIImageView!
     @IBOutlet var bottomImageView: UIImageView!
-    @IBOutlet var bgImageView: UIImageView!
     
     @IBOutlet var topStickerView: UIView!
     @IBOutlet var bottomStickerView: UIView!
     
     @IBOutlet var topView: UIView!
     @IBOutlet var bottomView: UIView!
+    
+    @IBOutlet var roundLabel: UILabel!
     
     
     
@@ -60,7 +61,7 @@ class WorldCupViewController: UIViewController {
     
     // 첫 뷰 세팅
     func viewInit() {
-        self.bgImageView.image = UIImage(named: "mainBackground")
+        roundLabel.text = "Round 16"
         
         // 이미지 비스듬하게 보이게 하기
         self.topView.transform = CGAffineTransform(rotationAngle: 0.1)
@@ -127,15 +128,15 @@ class WorldCupViewController: UIViewController {
             switch tournament {
                 case .roundOfSixteen:
                     tournament = .quarterfinal
-                    bgImageView.image = UIImage(named: "roundOf8")
+                    roundLabel.text = "Round 8"
                     break
                 case .quarterfinal:
                     self.tournament = .semifinal
-                    self.bgImageView.image = UIImage(named: "roundOf4")
+                    roundLabel.text = "Round 4"
                     break
                 case .semifinal:
                     self.tournament = .final
-                    self.bgImageView.image = UIImage(named: "roundOfFinal")
+                    roundLabel.text = "Final"
                     break
                 case .final:
                     finalMatching()
