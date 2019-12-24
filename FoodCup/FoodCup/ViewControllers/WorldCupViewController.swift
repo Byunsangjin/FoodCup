@@ -60,13 +60,13 @@ class WorldCupViewController: UIViewController {
     
     // 첫 뷰 세팅
     func viewInit() {
-        self.bgImageView.image = UIImage(named: "roundOf16")
+        self.bgImageView.image = UIImage(named: "mainBackground")
         
         // 이미지 비스듬하게 보이게 하기
-        self.topImageView.transform = CGAffineTransform(rotationAngle: 0.1)
+        self.topView.transform = CGAffineTransform(rotationAngle: 0.1)
         self.topStickerView.transform = CGAffineTransform(rotationAngle: 0.7)
         
-        self.bottomImageView.transform = CGAffineTransform(rotationAngle: -0.1)
+        self.bottomView.transform = CGAffineTransform(rotationAngle: -0.1)
         self.bottomStickerView.transform = CGAffineTransform(rotationAngle: -0.7)
         
         self.allFood.shuffle()
