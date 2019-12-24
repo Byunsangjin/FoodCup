@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g1h-Eg-3S2">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g1h-Eg-3S2">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,17 +24,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cIB-5v-cZH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchRestaurantBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-cj-cFa">
-                                <rect key="frame" x="112" y="485" width="151" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchRestaurantBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-cj-cFa">
+                                <rect key="frame" x="85.5" y="483.5" width="204" height="39"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-Ja-gtk">
-                                <rect key="frame" x="32" y="231" width="310" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-Ja-gtk">
+                                <rect key="frame" x="30" y="233.5" width="315" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="MZ9-fW-MLJ"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-Gd-dWD">
-                                <rect key="frame" x="16" y="43" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-Gd-dWD">
+                                <rect key="frame" x="15" y="30" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="n4Z-Qf-0yl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="20"/>
                                 <state key="normal" title="&lt; Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,8 +50,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="trailing" secondItem="NnK-kM-e1H" secondAttribute="trailing" id="4at-9V-qbI"/>
+                            <constraint firstItem="5dS-Ja-gtk" firstAttribute="centerY" secondItem="WA6-Fp-wbP" secondAttribute="centerY" id="8UZ-tw-nhY"/>
+                            <constraint firstItem="Qa3-Gd-dWD" firstAttribute="top" secondItem="NnK-kM-e1H" secondAttribute="top" constant="30" id="A6C-p6-7XU"/>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="top" secondItem="WA6-Fp-wbP" secondAttribute="top" id="CLh-Ie-ckc"/>
+                            <constraint firstItem="tDc-cj-cFa" firstAttribute="centerX" secondItem="5dS-Ja-gtk" secondAttribute="centerX" id="Jdq-XQ-h5o"/>
+                            <constraint firstItem="Qa3-Gd-dWD" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="15" id="LQc-pA-UeW"/>
+                            <constraint firstItem="tDc-cj-cFa" firstAttribute="top" secondItem="5dS-Ja-gtk" secondAttribute="bottom" constant="50" id="W2n-Bt-gdO"/>
+                            <constraint firstItem="NnK-kM-e1H" firstAttribute="trailing" secondItem="5dS-Ja-gtk" secondAttribute="trailing" constant="30" id="dB4-C4-bbA"/>
+                            <constraint firstItem="tDc-cj-cFa" firstAttribute="top" secondItem="5dS-Ja-gtk" secondAttribute="bottom" constant="50" id="kXF-BP-vNo"/>
+                            <constraint firstItem="5dS-Ja-gtk" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" constant="30" id="nGo-WW-NHH"/>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="bottom" secondItem="NnK-kM-e1H" secondAttribute="bottom" id="plp-5a-W3S"/>
+                            <constraint firstItem="5dS-Ja-gtk" firstAttribute="centerX" secondItem="WA6-Fp-wbP" secondAttribute="centerX" id="qXG-Md-CLB"/>
                             <constraint firstItem="cIB-5v-cZH" firstAttribute="leading" secondItem="NnK-kM-e1H" secondAttribute="leading" id="z6d-bf-7BQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NnK-kM-e1H"/>
