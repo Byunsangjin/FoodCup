@@ -104,7 +104,6 @@ class FoodListViewController: UIViewController {
 extension FoodListViewController:  UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     // collectionView 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.delegate.foodList.count)
         return delegate.foodList.count
     }
     
