@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, MTMapViewDelegate, UITextViewDelegate {
+class DetailViewController: UIViewController, MTMapViewDelegate {
     // MARK:- Outlets
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var textView: UITextView!
@@ -53,14 +53,16 @@ class DetailViewController: UIViewController, MTMapViewDelegate, UITextViewDeleg
     
     
     
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        return false
-    }
-    
-    
-    
     // MARK:- Actions
     @IBAction func backBtnPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+
+extension DetailViewController : UITextViewDelegate {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return false
     }
 }

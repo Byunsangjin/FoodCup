@@ -235,9 +235,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-pa-nyk">
-                                <rect key="frame" x="335" y="29" width="31" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-pa-nyk">
+                                <rect key="frame" x="334" y="14.5" width="31" height="29"/>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="17"/>
                                 <state key="normal" title="검색">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -246,18 +245,19 @@
                                     <action selector="searchBtnPressed:" destination="j3Z-03-dPX" eventType="touchUpInside" id="adu-wf-JJm"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="예) 맘스터치 옥길점" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcB-Jq-kuL">
-                                <rect key="frame" x="16" y="29" width="304" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="예) 맘스터치 옥길점" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcB-Jq-kuL">
+                                <rect key="frame" x="68" y="14" width="256" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DbY-rT-a0r"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNT-Ie-nqL">
-                                <rect key="frame" x="335" y="66" width="30" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNT-Ie-nqL">
+                                <rect key="frame" x="10" y="15" width="48" height="28"/>
                                 <fontDescription key="fontDescription" name="GyeonggiBatangROTF" family="GyeonggiBatangOTF" pointSize="16"/>
-                                <state key="normal" title="취소">
+                                <state key="normal" title="&lt; Back">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -266,6 +266,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Keq-pa-nyk" firstAttribute="centerY" secondItem="cNT-Ie-nqL" secondAttribute="centerY" id="IJV-dj-zYM"/>
+                            <constraint firstItem="cNT-Ie-nqL" firstAttribute="top" secondItem="GWE-mi-PnS" secondAttribute="top" constant="15" id="LlO-OA-U0M"/>
+                            <constraint firstItem="UcB-Jq-kuL" firstAttribute="centerY" secondItem="cNT-Ie-nqL" secondAttribute="centerY" id="OO2-8Q-7h3"/>
+                            <constraint firstItem="Keq-pa-nyk" firstAttribute="leading" secondItem="UcB-Jq-kuL" secondAttribute="trailing" constant="10" id="dGK-7F-Ncf"/>
+                            <constraint firstItem="UcB-Jq-kuL" firstAttribute="leading" secondItem="cNT-Ie-nqL" secondAttribute="trailing" constant="10" id="f6K-we-4yL"/>
+                            <constraint firstItem="cNT-Ie-nqL" firstAttribute="leading" secondItem="GWE-mi-PnS" secondAttribute="leading" constant="10" id="mgf-ke-klW"/>
+                            <constraint firstItem="GWE-mi-PnS" firstAttribute="trailing" secondItem="Keq-pa-nyk" secondAttribute="trailing" constant="10" id="zzp-6b-xHI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GWE-mi-PnS"/>
                     </view>
                     <connections>
